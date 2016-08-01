@@ -7,8 +7,9 @@
 //
 
 #import "giftStrategyViewController.h"
-
+#import "GGImagePageView.h"
 @interface giftStrategyViewController ()
+@property (nonatomic,strong)UIScrollView *backGround;//底层
 
 @end
 
@@ -16,9 +17,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _backGround=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+    _backGround.backgroundColor=[UIColor whiteColor];
+    self.view = _backGround;
+    [self view1];
 }
-
+-(void)view1{
+    UIView *viwepager=[[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenWidth*270/750)];
+    viwepager.backgroundColor=[UIColor lightGrayColor];
+    [_backGround addSubview:viwepager];
+    GGImagePageView *imagePageView = [[GGImagePageView alloc]initWithFrame:viwepager.frame withSelectImageBlock:^(int selectIndex) {
+        /**
+         *  点击图片
+         */
+        NSLog(@"%d",selectIndex);
+        
+    }];
+    
+    imagePageView.isTimer = YES;
+    
+    imagePageView.showPageControl = YES;
+    
+    imagePageView.imageAarray = @[@"2.jpg",@"2.jpg",@"2.jpg",@"2.jpg",@"2.jpg"];
+    
+    [viwepager addSubview:imagePageView];
+}
+-(void)view2{
+    NSMutableArray *adImages=[NSMutableArray arrayWithObject:@[@"2.jpg",@"2.jpg",@"2.jpg",@"2.jpg",@"2.jpg"]];
+    UIScrollView *adScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, ScreenWidth*270/750, ScreenWidth, 80)];
+    adScrollView.contentSize=CGSizeMake(80*adImages.count, 0);
+    
+    
+}
+-(void)view3{
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
