@@ -6,6 +6,8 @@
 //  Copyright © 2016年 GG. All rights reserved.
 //
 
+
+
 #import <UIKit/UIKit.h>
 
 //自动翻页的时间间隔

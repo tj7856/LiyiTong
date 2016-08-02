@@ -8,9 +8,6 @@
 
 #import "giftStrategyViewController.h"
 
-
-@interface giftStrategyViewController ()
-
 #import "GGImagePageView.h"
 #import "giftTableViewCell.h"
 #import <SDAutoLayout.h>
