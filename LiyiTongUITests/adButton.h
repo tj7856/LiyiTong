@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface adButton : UIView
+@property (nonatomic,strong)UIButton *button;
+@property (nonatomic,strong)UILabel *label;
 
 @end

@@ -13,6 +13,9 @@
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 
+//屏幕与PS切图像素的比例
+#define WidthScale ScreenWidth/750
+#define HeightScale ScreenWidth/1600
 // 首页的选择器的宽度
 #define Home_Seleted_Item_W 60
 #define DefaultMargin       10
