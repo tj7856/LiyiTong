@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2487E311D4F3B910085107B /* adButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C2487E301D4F3B910085107B /* adButton.m */; };
 		E8D19DF3CF495B076A7799E1 /* libPods-LiyiTong.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC81BE6512EA60F4A7EF5858 /* libPods-LiyiTong.a */; };
 		FB47D6441D485D01008EE4D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB47D63D1D485D01008EE4D6 /* AppDelegate.m */; };
 		FB47D6451D485D01008EE4D6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB47D6401D485D01008EE4D6 /* Info.plist */; };
@@ -60,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		BC81BE6512EA60F4A7EF5858 /* libPods-LiyiTong.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LiyiTong.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2487E2F1D4F3B910085107B /* adButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adButton.h; path = LiyiTongUITests/adButton.h; sourceTree = SOURCE_ROOT; };
+		C2487E301D4F3B910085107B /* adButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = adButton.m; path = LiyiTongUITests/adButton.m; sourceTree = SOURCE_ROOT; };
 		C4F53843F46E2B2802D8E641 /* Pods-LiyiTong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiyiTong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiyiTong/Pods-LiyiTong.debug.xcconfig"; sourceTree = "<group>"; };
 		DFB8B417ACA1A68B14756E6A /* Pods-LiyiTong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiyiTong.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiyiTong/Pods-LiyiTong.release.xcconfig"; sourceTree = "<group>"; };
 		FB47D63C1D485D01008EE4D6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -453,6 +456,8 @@
 		FB47D6821D488586008EE4D6 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				C2487E2F1D4F3B910085107B /* adButton.h */,
+				C2487E301D4F3B910085107B /* adButton.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -812,6 +817,7 @@
 				FB47D7091D48935C008EE4D6 /* ViewController+MASAdditions.m in Sources */,
 				FB47D6901D4885C1008EE4D6 /* GuessViewController.m in Sources */,
 				FB47D64E1D486251008EE4D6 /* LytNavigationViewController.m in Sources */,
+				C2487E311D4F3B910085107B /* adButton.m in Sources */,
 				FB47D68D1D4885AB008EE4D6 /* GiveViewController.m in Sources */,
 				FB47D66C1D486978008EE4D6 /* HomeViewController.m in Sources */,
 				FB47D66F1D48698B008EE4D6 /* MeViewController.m in Sources */,
