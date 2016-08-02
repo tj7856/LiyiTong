@@ -13,7 +13,10 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     self=[super initWithFrame:frame];
     if (self) {
-        
+        self.button=[[UIButton alloc]initWithFrame:frame];
+        [self addSubview:self.button];
+        self.label=[[UILabel alloc]initWithFrame:CGRectMake(0, frame.size.height-10, frame.size.width, 10)];
+        [self addSubview:self.label];
     }
     return self;
 }
