@@ -35,10 +35,10 @@
 		FB47D7081D48935C008EE4D6 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB47D6FC1D48935C008EE4D6 /* View+MASAdditions.m */; };
 		FB47D7091D48935C008EE4D6 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB47D6FF1D48935C008EE4D6 /* ViewController+MASAdditions.m */; };
 		FB58F9681D4846A500C207DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB58F9661D4846A500C207DD /* Main.storyboard */; };
-		FB58F96A1D4846A500C207DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB58F9691D4846A500C207DD /* Assets.xcassets */; };
 		FB58F96D1D4846A500C207DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB58F96B1D4846A500C207DD /* LaunchScreen.storyboard */; };
 		FB58F9781D4846A500C207DD /* LiyiTongTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB58F9771D4846A500C207DD /* LiyiTongTests.m */; };
 		FB58F9831D4846A500C207DD /* LiyiTongUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB58F9821D4846A500C207DD /* LiyiTongUITests.m */; };
+		FB5CA1D71D50313200BD9CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB5CA1D61D50313200BD9CD7 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,7 +120,6 @@
 		FB47D6FF1D48935C008EE4D6 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		FB58F95A1D4846A500C207DD /* LiyiTong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiyiTong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB58F9671D4846A500C207DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FB58F9691D4846A500C207DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB58F96C1D4846A500C207DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB58F9731D4846A500C207DD /* LiyiTongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiyiTongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB58F9771D4846A500C207DD /* LiyiTongTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiyiTongTests.m; sourceTree = "<group>"; };
@@ -128,6 +127,7 @@
 		FB58F97E1D4846A500C207DD /* LiyiTongUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiyiTongUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB58F9821D4846A500C207DD /* LiyiTongUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiyiTongUITests.m; sourceTree = "<group>"; };
 		FB58F9841D4846A500C207DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB5CA1D61D50313200BD9CD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -580,9 +580,9 @@
 		FB58F95C1D4846A500C207DD /* LiyiTong */ = {
 			isa = PBXGroup;
 			children = (
+				FB5CA1D61D50313200BD9CD7 /* Assets.xcassets */,
 				FB47D63B1D485D01008EE4D6 /* classes */,
 				FB47D6431D485D01008EE4D6 /* Resource */,
-				FB58F9691D4846A500C207DD /* Assets.xcassets */,
 				FB58F96B1D4846A500C207DD /* LaunchScreen.storyboard */,
 				FB58F9661D4846A500C207DD /* Main.storyboard */,
 				FB58F95D1D4846A500C207DD /* Supporting Files */,
@@ -685,6 +685,7 @@
 				TargetAttributes = {
 					FB58F9591D4846A500C207DD = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8EGJFWVPRL;
 					};
 					FB58F9721D4846A500C207DD = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -723,7 +724,7 @@
 			files = (
 				FB47D6451D485D01008EE4D6 /* Info.plist in Resources */,
 				FB58F96D1D4846A500C207DD /* LaunchScreen.storyboard in Resources */,
-				FB58F96A1D4846A500C207DD /* Assets.xcassets in Resources */,
+				FB5CA1D71D50313200BD9CD7 /* Assets.xcassets in Resources */,
 				FB58F9681D4846A500C207DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

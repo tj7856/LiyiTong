@@ -82,8 +82,8 @@
 
 - (void)setup
 {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"head_crown_24x24"] style:UIBarButtonItemStyleDone target:nil action:nil];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_15x14"] style:UIBarButtonItemStyleDone target:self action:@selector(rankCrown)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_15x14"] style:UIBarButtonItemStyleDone target:nil action:nil];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"head_crown_24x24"] style:UIBarButtonItemStyleDone target:self action:@selector(rankCrown)];
     [self setupTopMenu];
 }
 
@@ -108,6 +108,7 @@
 {
     // 设置顶部选择视图
     SelectedView *selectedView = [[SelectedView alloc] initWithFrame:self.navigationController.navigationBar.bounds];
+    
     selectedView.x = 45;
     selectedView.width = ScreenWidth - 45 * 2;
     [selectedView setSelectedBlock:^(HomeType type) {
@@ -120,13 +121,18 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    NSLog(@"--%f--%f",scrollView.contentOffset.x,ScreenWidth);
+    NSLog(@"000%@",scrollView.subviews);
     CGFloat page = scrollView.contentOffset.x / ScreenWidth;
-    CGFloat offsetX = scrollView.contentOffset.x / ScreenWidth * (self.selectedView.width * 0.5 - Home_Seleted_Item_W * 0.5 - 15);
-    self.selectedView.underLine.x = 15 + offsetX;
+//    CGFloat offsetX = scrollView.contentOffset.x / ScreenWidth * (self.selectedView.width * 0.5 - Home_Seleted_Item_W * 0.5 - 15);
+    CGFloat offsetX = scrollView.contentOffset.x / ScreenWidth * ((self.selectedView.width - DefaultMargin * 8 - Home_Seleted_Item_W*3)/2+Home_Seleted_Item_W);
+//    self.selectedView.underLine.x = 15 + offsetX;
+    
+    self.selectedView.underLine.x = DefaultMargin*4+offsetX;
     if (page == 1 ) {
-        self.selectedView.underLine.x = offsetX + 10;
+        self.selectedView.underLine.x = offsetX + DefaultMargin*4;
     }else if (page > 1){
-        self.selectedView.underLine.x = offsetX + 5;
+        self.selectedView.underLine.x = offsetX + DefaultMargin*4;
     }
     self.selectedView.selectedType = (int)(page + 0.5);
 }
