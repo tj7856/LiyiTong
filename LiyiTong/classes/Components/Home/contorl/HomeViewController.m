@@ -11,6 +11,7 @@
 #import "GiveViewController.h"
 #import "giftStrategyViewController.h"
 #import "GuessViewController.h"
+#import "confrimOrderViewController.h"
 
 @interface HomeViewController ()<UIScrollViewDelegate>
 /** 顶部选择视图 */
@@ -89,12 +90,14 @@
 
 - (void)rankCrown
 {
-    UIViewController *search = [[UIViewController alloc] init];
-    search.navigationItem.title = @"搜索";
-    search.view.backgroundColor = [UIColor greenColor];
+//    UIViewController *search = [[UIViewController alloc] init];
+//    search.navigationItem.title = @"搜索";
+//    search.view.backgroundColor = [UIColor greenColor];
+   UIStoryboard *storyboard = [UIStoryboard storyboardWithName:NSStringFromClass([confrimOrderViewController class]) bundle:nil];
+    confrimOrderViewController * confirm = [storyboard instantiateInitialViewController];
     [_selectedView removeFromSuperview];
     _selectedView = nil;
-    [self.navigationController pushViewController:search animated:YES];
+    [self.navigationController pushViewController:confirm animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -121,8 +124,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"--%f--%f",scrollView.contentOffset.x,ScreenWidth);
-    NSLog(@"000%@",scrollView.subviews);
+//    NSLog(@"--%f--%f",scrollView.contentOffset.x,ScreenWidth);
+//    NSLog(@"000%@",scrollView.subviews);
     CGFloat page = scrollView.contentOffset.x / ScreenWidth;
 //    CGFloat offsetX = scrollView.contentOffset.x / ScreenWidth * (self.selectedView.width * 0.5 - Home_Seleted_Item_W * 0.5 - 15);
     CGFloat offsetX = scrollView.contentOffset.x / ScreenWidth * ((self.selectedView.width - DefaultMargin * 8 - Home_Seleted_Item_W*3)/2+Home_Seleted_Item_W);

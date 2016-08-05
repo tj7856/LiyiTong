@@ -22,6 +22,7 @@
     
     self.window.rootViewController = [[MainViewController alloc] init];
     
+    
     [self.window makeKeyAndVisible];
 
     return YES;

@@ -9,7 +9,7 @@
 #import "SelectedView.h"
 
 // 首页的选择器的宽度
-#define Home_Seleted_Item_W 60
+#define Home_Seleted_Item_W  60
 #define DefaultMargin       10
 
 
@@ -52,13 +52,13 @@
     
     [newBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
-        make.width.equalTo(@Home_Seleted_Item_W);
+        make.width.equalTo(@(Home_Seleted_Item_W));
     }];
     
     [hotBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(DefaultMargin*4 ));
         make.centerY.equalTo(self);
-        make.width.equalTo(@Home_Seleted_Item_W);
+        make.width.equalTo(@(Home_Seleted_Item_W));
     }];
     
     [careBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -83,10 +83,11 @@
 - (UIButton *)createBtn:(NSString *)title tag:(HomeType)tag
 {
     UIButton *btn = [[UIButton alloc] init];
-    btn.titleLabel.font = [UIFont systemFontOfSize:19];
+//    btn.titleLabel.font = [UIFont systemFontOfSize:19];
     [btn setTitle:title forState:UIControlStateNormal];
     [btn setTitleColor:[[UIColor whiteColor] colorWithAlphaComponent:0.6] forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    btn.titleLabel.adjustsFontSizeToFitWidth =YES;
     btn.tag = tag;
     [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
     return btn;

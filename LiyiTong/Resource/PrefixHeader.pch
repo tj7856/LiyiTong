@@ -20,6 +20,71 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#define DEFAULT_BG_COLOR    LYTCOLOR(247,247,247)
+#define THEME_COLOR         LYTCOLOR(0,147,255)
+/**
+ *  系统版本
+ **/
+#define SYSTEM_VERSION      [[[UIDevice currentDevice] systemVersion] floatValue]
+// .判断是否为iOS7
+#define iOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
+// .判断是否为iOS8以上
+#define iOS8 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+/**
+ *  判断是否为iPhone6 plus
+ **/
+#define iPhone6p ([UIScreen mainScreen].bounds.size.height == 736)
+/**
+ *  判断是否为iPhone6
+ **/
+#define iPhone6 ([UIScreen mainScreen].bounds.size.height == 667)
+/**
+ *  判断是否为iPhone5
+ **/
+#define iPhone5 ([UIScreen mainScreen].bounds.size.height == 568)
+/**
+ *  判断是否为iPhone4
+ **/
+#define iPhone4 ([UIScreen mainScreen].bounds.size.height == 480)
+/**
+ *  屏幕比例
+ **/
+#define LYT_FRAME_SCALE     SCREEN_WIDTH/375.0
+/**
+ *  字体比例
+ **/
+#define LYT_FONT_SCALE      ([UIScreen mainScreen].bounds.size.width>320.0?1.15:1.0)
+/**
+ *  字号
+ **/
+#define LYT_FONT(size) [UIFont systemFontOfSize:size]
+/**
+ *  字号加粗
+ **/
+#define LYT_BOLD_FONT(size) [UIFont boldSystemFontOfSize:size]
+/**
+ *  自定义适配字号
+ **/
+#define LYTSCALEFONT(size)  [UIFont systemFontOfSize:size*LYT_FONT_SCALE]
+/**
+ *  自定义颜色方法
+ **/
+#define LYTCOLOR(r, g, b)    [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+/**
+ *  自定义文字颜色方法
+ **/
+#define LYTTEXTCOLOR(b)    [UIColor colorWithRed:(b)/255.0 green:(b)/255.0 blue:(b)/255.0 alpha:1]
+/**
+ *  自定义颜色方法带透明度
+ **/
+#define LYT_COLOR(r, g, b,a)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+/**
+ *  十六进制自定义颜色方法带透明度
+ **/
+#define LYT_COLOR_HEX(rgbValue,a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
+
+
+
 #import "Constant.h"
 #import "UIView+SLExtension.h"
 #import "Masonry.h"

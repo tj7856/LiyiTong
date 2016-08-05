@@ -11,6 +11,9 @@
 #import "GGImagePageView.h"
 #import "giftTableViewCell.h"
 #import <SDAutoLayout.h>
+#import "LYTAfnetworkingManager.h"
+#import "CheckPhone.h"
+#import "UIViewController+SLHUD.h"
 @interface giftStrategyViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UIView *viwepager;
@@ -23,10 +26,29 @@
 
 @implementation giftStrategyViewController
 
+
+-(void)downLoadSelfReflection
+{
+    LYTAfnetworkingManager *manager = [LYTAfnetworkingManager new];
+    CheckPhone *req = [CheckPhone new];
+   
+    req.parameters =  @{@"phone":@"18701986201"}; //@(month)
+    [self showHint:@""];
+    [manager sendRequest:req response:^(NSError *err) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (!err) {
+            //         NSLog(@"%@",req.SRMsgArray);
+
+        }
+        
+        
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-   
+    [self downLoadSelfReflection];
 
     _backGround=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     _backGround.backgroundColor=[UIColor whiteColor];

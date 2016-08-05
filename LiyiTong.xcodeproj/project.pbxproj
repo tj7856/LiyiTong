@@ -31,8 +31,9 @@
 		C2487E631D4F4D780085107B /* vow.png in Resources */ = {isa = PBXBuildFile; fileRef = C2487E4F1D4F4D780085107B /* vow.png */; };
 		C2487E641D4F4D780085107B /* z_active.png in Resources */ = {isa = PBXBuildFile; fileRef = C2487E501D4F4D780085107B /* z_active.png */; };
 		C2487E671D4F565E0085107B /* giftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2487E661D4F565E0085107B /* giftTableViewCell.m */; };
-		C27FF4231D50C5BB00C732A7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C27FF4221D50C5BB00C732A7 /* Info.plist */; };
 		E8D19DF3CF495B076A7799E1 /* libPods-LiyiTong.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC81BE6512EA60F4A7EF5858 /* libPods-LiyiTong.a */; };
+		FB2F6F481D545FE900FF5D14 /* LYTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2F6F471D545FE900FF5D14 /* LYTAlertView.m */; };
+		FB2F6F4B1D546CFC00FF5D14 /* CheckPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2F6F4A1D546CFC00FF5D14 /* CheckPhone.m */; };
 		FB47D6441D485D01008EE4D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB47D63D1D485D01008EE4D6 /* AppDelegate.m */; };
 		FB47D6461D485D01008EE4D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB47D6411D485D01008EE4D6 /* main.m */; };
 		FB47D64B1D486128008EE4D6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB47D64A1D486128008EE4D6 /* MainViewController.m */; };
@@ -58,11 +59,19 @@
 		FB47D7071D48935C008EE4D6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB47D6FA1D48935C008EE4D6 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		FB47D7081D48935C008EE4D6 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB47D6FC1D48935C008EE4D6 /* View+MASAdditions.m */; };
 		FB47D7091D48935C008EE4D6 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB47D6FF1D48935C008EE4D6 /* ViewController+MASAdditions.m */; };
+		FB4E3BE91D53F49C00FA78D5 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4E3BE81D53F49C00FA78D5 /* Order.m */; };
+		FB4E3BEE1D5433AB00FA78D5 /* LYTAfnetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4E3BED1D5433AB00FA78D5 /* LYTAfnetworkingManager.m */; };
+		FB4E3BF11D5434BC00FA78D5 /* LYTAFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4E3BF01D5434BC00FA78D5 /* LYTAFRequest.m */; };
+		FB4E3BF71D543BCB00FA78D5 /* NSObject+LYTHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4E3BF41D543BCB00FA78D5 /* NSObject+LYTHUD.m */; };
+		FB4E3BF81D543BCB00FA78D5 /* UIViewController+SLHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4E3BF61D543BCB00FA78D5 /* UIViewController+SLHUD.m */; };
 		FB58F9681D4846A500C207DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB58F9661D4846A500C207DD /* Main.storyboard */; };
 		FB58F96D1D4846A500C207DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB58F96B1D4846A500C207DD /* LaunchScreen.storyboard */; };
 		FB58F9781D4846A500C207DD /* LiyiTongTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB58F9771D4846A500C207DD /* LiyiTongTests.m */; };
 		FB58F9831D4846A500C207DD /* LiyiTongUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB58F9821D4846A500C207DD /* LiyiTongUITests.m */; };
 		FB5CA1D71D50313200BD9CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB5CA1D61D50313200BD9CD7 /* Assets.xcassets */; };
+		FBF322AC1D5486A4005CCA00 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBF322AB1D5486A4005CCA00 /* Info.plist */; };
+		FBF513391D520E2500AB88F2 /* confrimOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF513371D520E2500AB88F2 /* confrimOrderViewController.m */; };
+		FBF5133C1D52E99700AB88F2 /* confrimOrderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF5133B1D52E99700AB88F2 /* confrimOrderViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,9 +119,12 @@
 		C2487E501D4F4D780085107B /* z_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = z_active.png; sourceTree = "<group>"; };
 		C2487E651D4F565E0085107B /* giftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = giftTableViewCell.h; sourceTree = "<group>"; };
 		C2487E661D4F565E0085107B /* giftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = giftTableViewCell.m; sourceTree = "<group>"; };
-		C27FF4221D50C5BB00C732A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4F53843F46E2B2802D8E641 /* Pods-LiyiTong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiyiTong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiyiTong/Pods-LiyiTong.debug.xcconfig"; sourceTree = "<group>"; };
 		DFB8B417ACA1A68B14756E6A /* Pods-LiyiTong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiyiTong.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiyiTong/Pods-LiyiTong.release.xcconfig"; sourceTree = "<group>"; };
+		FB2F6F461D545FE900FF5D14 /* LYTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTAlertView.h; sourceTree = "<group>"; };
+		FB2F6F471D545FE900FF5D14 /* LYTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTAlertView.m; sourceTree = "<group>"; };
+		FB2F6F491D546CFC00FF5D14 /* CheckPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckPhone.h; sourceTree = "<group>"; };
+		FB2F6F4A1D546CFC00FF5D14 /* CheckPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckPhone.m; sourceTree = "<group>"; };
 		FB47D63C1D485D01008EE4D6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FB47D63D1D485D01008EE4D6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FB47D6411D485D01008EE4D6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -168,6 +180,16 @@
 		FB47D6FD1D48935C008EE4D6 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		FB47D6FE1D48935C008EE4D6 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		FB47D6FF1D48935C008EE4D6 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		FB4E3BE71D53F49C00FA78D5 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		FB4E3BE81D53F49C00FA78D5 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		FB4E3BEC1D5433AB00FA78D5 /* LYTAfnetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTAfnetworkingManager.h; sourceTree = "<group>"; };
+		FB4E3BED1D5433AB00FA78D5 /* LYTAfnetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTAfnetworkingManager.m; sourceTree = "<group>"; };
+		FB4E3BEF1D5434BC00FA78D5 /* LYTAFRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTAFRequest.h; sourceTree = "<group>"; };
+		FB4E3BF01D5434BC00FA78D5 /* LYTAFRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTAFRequest.m; sourceTree = "<group>"; };
+		FB4E3BF31D543BCB00FA78D5 /* NSObject+LYTHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LYTHUD.h"; sourceTree = "<group>"; };
+		FB4E3BF41D543BCB00FA78D5 /* NSObject+LYTHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LYTHUD.m"; sourceTree = "<group>"; };
+		FB4E3BF51D543BCB00FA78D5 /* UIViewController+SLHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SLHUD.h"; sourceTree = "<group>"; };
+		FB4E3BF61D543BCB00FA78D5 /* UIViewController+SLHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SLHUD.m"; sourceTree = "<group>"; };
 		FB58F95A1D4846A500C207DD /* LiyiTong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiyiTong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB58F9671D4846A500C207DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB58F96C1D4846A500C207DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -178,6 +200,10 @@
 		FB58F9821D4846A500C207DD /* LiyiTongUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiyiTongUITests.m; sourceTree = "<group>"; };
 		FB58F9841D4846A500C207DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB5CA1D61D50313200BD9CD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FBF322AB1D5486A4005CCA00 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBF513361D520E2500AB88F2 /* confrimOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = confrimOrderViewController.h; sourceTree = "<group>"; };
+		FBF513371D520E2500AB88F2 /* confrimOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = confrimOrderViewController.m; sourceTree = "<group>"; };
+		FBF5133B1D52E99700AB88F2 /* confrimOrderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = confrimOrderViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,14 +279,13 @@
 		FB47D63B1D485D01008EE4D6 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				FB4E3BEA1D54334E00FA78D5 /* API */,
 				FB47D63E1D485D01008EE4D6 /* category */,
 				FB47D63F1D485D01008EE4D6 /* Components */,
 				FB47D6421D485D01008EE4D6 /* Tool */,
 				FB47D6411D485D01008EE4D6 /* main.m */,
 				FB47D63C1D485D01008EE4D6 /* AppDelegate.h */,
 				FB47D63D1D485D01008EE4D6 /* AppDelegate.m */,
-				FB47D6761D487D54008EE4D6 /* View */,
-				FB47D67B1D4882FB008EE4D6 /* Other */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -275,6 +300,7 @@
 		FB47D63F1D485D01008EE4D6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FBF513321D520DBA00AB88F2 /* baobei */,
 				FB47D67F1D488586008EE4D6 /* giftStrategy */,
 				FB47D6831D488586008EE4D6 /* give */,
 				FB47D6871D488586008EE4D6 /* guess */,
@@ -291,7 +317,9 @@
 		FB47D6421D485D01008EE4D6 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				C27FF4221D50C5BB00C732A7 /* Info.plist */,
+				FB4E3BF21D543BCB00FA78D5 /* HUD */,
+				FB47D6761D487D54008EE4D6 /* View */,
+				FB47D67B1D4882FB008EE4D6 /* Other */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -487,11 +515,12 @@
 		FB47D6761D487D54008EE4D6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FB2F6F461D545FE900FF5D14 /* LYTAlertView.h */,
+				FB2F6F471D545FE900FF5D14 /* LYTAlertView.m */,
 				FB47D6771D487D54008EE4D6 /* UIView+SLExtension.h */,
 				FB47D6781D487D54008EE4D6 /* UIView+SLExtension.m */,
 			);
-			name = View;
-			path = Tool/View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		FB47D67B1D4882FB008EE4D6 /* Other */ = {
@@ -500,7 +529,8 @@
 				FB47D67C1D4882FB008EE4D6 /* Constant.h */,
 				FB47D67D1D4882FB008EE4D6 /* Constant.m */,
 			);
-			path = Other;
+			name = Other;
+			path = ../Other;
 			sourceTree = "<group>";
 		};
 		FB47D67F1D488586008EE4D6 /* giftStrategy */ = {
@@ -640,6 +670,38 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		FB4E3BEA1D54334E00FA78D5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FB4E3BEB1D54334E00FA78D5 /* Util */,
+				FB2F6F491D546CFC00FF5D14 /* CheckPhone.h */,
+				FB2F6F4A1D546CFC00FF5D14 /* CheckPhone.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FB4E3BEB1D54334E00FA78D5 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FB4E3BEC1D5433AB00FA78D5 /* LYTAfnetworkingManager.h */,
+				FB4E3BED1D5433AB00FA78D5 /* LYTAfnetworkingManager.m */,
+				FB4E3BEF1D5434BC00FA78D5 /* LYTAFRequest.h */,
+				FB4E3BF01D5434BC00FA78D5 /* LYTAFRequest.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		FB4E3BF21D543BCB00FA78D5 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				FB4E3BF31D543BCB00FA78D5 /* NSObject+LYTHUD.h */,
+				FB4E3BF41D543BCB00FA78D5 /* NSObject+LYTHUD.m */,
+				FB4E3BF51D543BCB00FA78D5 /* UIViewController+SLHUD.h */,
+				FB4E3BF61D543BCB00FA78D5 /* UIViewController+SLHUD.m */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
 		FB58F9511D4846A500C207DD = {
 			isa = PBXGroup;
 			children = (
@@ -666,6 +728,7 @@
 			isa = PBXGroup;
 			children = (
 				FB5CA1D61D50313200BD9CD7 /* Assets.xcassets */,
+				FBF322AB1D5486A4005CCA00 /* Info.plist */,
 				FB47D63B1D485D01008EE4D6 /* classes */,
 				FB47D6431D485D01008EE4D6 /* Resource */,
 				FB58F96B1D4846A500C207DD /* LaunchScreen.storyboard */,
@@ -698,6 +761,42 @@
 				FB58F9841D4846A500C207DD /* Info.plist */,
 			);
 			path = LiyiTongUITests;
+			sourceTree = "<group>";
+		};
+		FBF513321D520DBA00AB88F2 /* baobei */ = {
+			isa = PBXGroup;
+			children = (
+				FBF513331D520DBA00AB88F2 /* contorl */,
+				FBF513341D520DBA00AB88F2 /* model */,
+				FBF513351D520DBA00AB88F2 /* view */,
+			);
+			path = baobei;
+			sourceTree = "<group>";
+		};
+		FBF513331D520DBA00AB88F2 /* contorl */ = {
+			isa = PBXGroup;
+			children = (
+				FBF513361D520E2500AB88F2 /* confrimOrderViewController.h */,
+				FBF513371D520E2500AB88F2 /* confrimOrderViewController.m */,
+				FBF5133B1D52E99700AB88F2 /* confrimOrderViewController.storyboard */,
+			);
+			path = contorl;
+			sourceTree = "<group>";
+		};
+		FBF513341D520DBA00AB88F2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				FB4E3BE71D53F49C00FA78D5 /* Order.h */,
+				FB4E3BE81D53F49C00FA78D5 /* Order.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		FBF513351D520DBA00AB88F2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -770,7 +869,7 @@
 				TargetAttributes = {
 					FB58F9591D4846A500C207DD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = UG6P8XMXWW;
+						DevelopmentTeam = 8EGJFWVPRL;
 					};
 					FB58F9721D4846A500C207DD = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -816,10 +915,10 @@
 				C2487E531D4F4D780085107B /* banner.png in Resources */,
 				C2487E621D4F4D780085107B /* top_bg.png in Resources */,
 				C2487E5B1D4F4D780085107B /* seeAll.PNG in Resources */,
+				FBF5133C1D52E99700AB88F2 /* confrimOrderViewController.storyboard in Resources */,
 				C2487E541D4F4D780085107B /* contacts.png in Resources */,
 				FB58F96D1D4846A500C207DD /* LaunchScreen.storyboard in Resources */,
 				FB5CA1D71D50313200BD9CD7 /* Assets.xcassets in Resources */,
-				C27FF4231D50C5BB00C732A7 /* Info.plist in Resources */,
 				C2487E361D4F447E0085107B /* 2.jpg in Resources */,
 				C2487E631D4F4D780085107B /* vow.png in Resources */,
 				C2487E571D4F4D780085107B /* magnifying.png in Resources */,
@@ -827,6 +926,7 @@
 				C2487E561D4F4D780085107B /* home.png in Resources */,
 				C2487E641D4F4D780085107B /* z_active.png in Resources */,
 				C2487E5A1D4F4D780085107B /* message_05.png in Resources */,
+				FBF322AC1D5486A4005CCA00 /* Info.plist in Resources */,
 				FB58F9681D4846A500C207DD /* Main.storyboard in Resources */,
 				C2487E601D4F4D780085107B /* tmp.png in Resources */,
 				C2487E551D4F4D780085107B /* help.png in Resources */,
@@ -913,24 +1013,32 @@
 				FB47D7041D48935C008EE4D6 /* MASViewAttribute.m in Sources */,
 				FB47D7031D48935C008EE4D6 /* MASLayoutConstraint.m in Sources */,
 				FB47D7071D48935C008EE4D6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				FB4E3BEE1D5433AB00FA78D5 /* LYTAfnetworkingManager.m in Sources */,
 				FB47D7021D48935C008EE4D6 /* MASConstraintMaker.m in Sources */,
 				FB47D64B1D486128008EE4D6 /* MainViewController.m in Sources */,
 				FB47D6721D48699B008EE4D6 /* WishViewController.m in Sources */,
+				FB2F6F4B1D546CFC00FF5D14 /* CheckPhone.m in Sources */,
 				FB47D7091D48935C008EE4D6 /* ViewController+MASAdditions.m in Sources */,
+				FB4E3BF11D5434BC00FA78D5 /* LYTAFRequest.m in Sources */,
 				FB47D6901D4885C1008EE4D6 /* GuessViewController.m in Sources */,
 				FB47D64E1D486251008EE4D6 /* LytNavigationViewController.m in Sources */,
 				FB47D68D1D4885AB008EE4D6 /* GiveViewController.m in Sources */,
 				FB47D66C1D486978008EE4D6 /* HomeViewController.m in Sources */,
 				FB47D66F1D48698B008EE4D6 /* MeViewController.m in Sources */,
+				FB4E3BE91D53F49C00FA78D5 /* Order.m in Sources */,
 				FB47D7001D48935C008EE4D6 /* MASCompositeConstraint.m in Sources */,
+				FB4E3BF71D543BCB00FA78D5 /* NSObject+LYTHUD.m in Sources */,
 				FB47D7061D48935C008EE4D6 /* NSArray+MASAdditions.m in Sources */,
+				FB2F6F481D545FE900FF5D14 /* LYTAlertView.m in Sources */,
 				C2487E341D4F44630085107B /* GGImagePageView.m in Sources */,
 				FB47D6441D485D01008EE4D6 /* AppDelegate.m in Sources */,
 				FB47D6751D487CA1008EE4D6 /* SelectedView.m in Sources */,
 				FB47D7081D48935C008EE4D6 /* View+MASAdditions.m in Sources */,
 				C2487E671D4F565E0085107B /* giftTableViewCell.m in Sources */,
+				FBF513391D520E2500AB88F2 /* confrimOrderViewController.m in Sources */,
 				FB47D7051D48935C008EE4D6 /* MASViewConstraint.m in Sources */,
 				FB47D7011D48935C008EE4D6 /* MASConstraint.m in Sources */,
+				FB4E3BF81D543BCB00FA78D5 /* UIViewController+SLHUD.m in Sources */,
 				FB47D67E1D4882FB008EE4D6 /* Constant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1080,9 +1188,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LiyiTong/Resource/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/LiyiTong/classes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.www.LiyiTong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.www.LiyiTong1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1098,9 +1206,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LiyiTong/Resource/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/LiyiTong/classes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.www.LiyiTong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.www.LiyiTong1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
