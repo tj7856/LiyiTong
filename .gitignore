@@ -6,6 +6,7 @@
 build/
 DerivedData/
 
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
@@ -26,6 +27,7 @@ xcuserdata/
 *.ipa
 *.dSYM.zip
 *.dSYM
+.DS_Store
 
 # CocoaPods
 #

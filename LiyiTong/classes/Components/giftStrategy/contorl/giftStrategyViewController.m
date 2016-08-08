@@ -14,6 +14,9 @@
 #import "LYTAfnetworkingManager.h"
 #import "CheckPhone.h"
 #import "UIViewController+SLHUD.h"
+#import "strategyViewController.h"
+//#import "login.h"
+#import "loginViewController.h"
 @interface giftStrategyViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UIView *viwepager;
@@ -26,29 +29,8 @@
 
 @implementation giftStrategyViewController
 
-
--(void)downLoadSelfReflection
-{
-    LYTAfnetworkingManager *manager = [LYTAfnetworkingManager new];
-    CheckPhone *req = [CheckPhone new];
-   
-    req.parameters =  @{@"phone":@"18701986201"}; //@(month)
-    [self showHint:@""];
-    [manager sendRequest:req response:^(NSError *err) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        if (!err) {
-            //         NSLog(@"%@",req.SRMsgArray);
-
-        }
-        
-        
-    }];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [self downLoadSelfReflection];
 
     _backGround=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     _backGround.backgroundColor=[UIColor whiteColor];
@@ -102,6 +84,7 @@
         }
         btn.tag=100+i;
         [adScrollView addSubview:btn];
+        [btn addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventTouchUpInside];
         UILabel *btnText=[[UILabel alloc]initWithFrame:CGRectMake((219*WidthScale*i)+17*WidthScale, CGRectGetMaxY(btn.frame)-52*WidthScale, btnWidth, 30*WidthScale)];
         btnText.adjustsFontSizeToFitWidth=YES;
         btnText.textColor=[UIColor whiteColor];
@@ -182,6 +165,22 @@
 //点击选中cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%ld",indexPath.row);
+    strategyViewController *strategy=[[strategyViewController alloc]init];
+    [self.navigationController pushViewController:strategy animated:YES];
+}
+
+-(void)changePage:(UIButton *)sender{
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstStart"]){
+        //        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstStart"];
+        NSLog(@"第一次启动");
+        loginViewController *loginviewController=[[loginViewController alloc]init];
+        //
+        [self presentViewController:loginviewController animated:YES completion:nil];
+        //            [login login:self];
+    }else{
+        NSLog(@"不是第一次启动");
+    }
+    
 }
 
 
