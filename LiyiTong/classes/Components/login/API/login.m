@@ -1,16 +1,16 @@
 //
-//  CheckPhone.m
+//  login.m
 //  LiyiTong
 //
-//  Created by zhangtijie on 16/8/5.
+//  Created by 耿远风 on 16/8/6.
 //  Copyright © 2016年 WanYu. All rights reserved.
 //
 
-#import "CheckPhone.h"
+#import "login.h"
 
-@implementation CheckPhone
+@implementation login
 - (NSString *)urlDomain {
-    return @"home/checkPhone";
+    return @"home/login";
 }
 
 - (RequestType)reqType {

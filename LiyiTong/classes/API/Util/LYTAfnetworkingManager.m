@@ -24,7 +24,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _timeoutInterval = 30;
+        _timeoutInterval = 10;
     }
     return self;
 }
