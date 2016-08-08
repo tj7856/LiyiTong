@@ -106,6 +106,9 @@
 		FB58F9831D4846A500C207DD /* LiyiTongUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB58F9821D4846A500C207DD /* LiyiTongUITests.m */; };
 		FB5CA1D71D50313200BD9CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB5CA1D61D50313200BD9CD7 /* Assets.xcassets */; };
 		FBF322AC1D5486A4005CCA00 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBF322AB1D5486A4005CCA00 /* Info.plist */; };
+		FBF322B41D58619F005CCA00 /* AccountMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF322B11D58619F005CCA00 /* AccountMgr.m */; };
+		FBF322B51D58619F005CCA00 /* PreferencesMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF322B31D58619F005CCA00 /* PreferencesMgr.m */; };
+		FBF322B91D586457005CCA00 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF322B81D586457005CCA00 /* User.m */; };
 		FBF513391D520E2500AB88F2 /* confrimOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF513371D520E2500AB88F2 /* confrimOrderViewController.m */; };
 		FBF5133C1D52E99700AB88F2 /* confrimOrderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF5133B1D52E99700AB88F2 /* confrimOrderViewController.storyboard */; };
 /* End PBXBuildFile section */
@@ -286,6 +289,12 @@
 		FB58F9841D4846A500C207DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB5CA1D61D50313200BD9CD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBF322AB1D5486A4005CCA00 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBF322B01D58619F005CCA00 /* AccountMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountMgr.h; sourceTree = "<group>"; };
+		FBF322B11D58619F005CCA00 /* AccountMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountMgr.m; sourceTree = "<group>"; };
+		FBF322B21D58619F005CCA00 /* PreferencesMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesMgr.h; sourceTree = "<group>"; };
+		FBF322B31D58619F005CCA00 /* PreferencesMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesMgr.m; sourceTree = "<group>"; };
+		FBF322B71D586457005CCA00 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FBF322B81D586457005CCA00 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FBF513361D520E2500AB88F2 /* confrimOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = confrimOrderViewController.h; sourceTree = "<group>"; };
 		FBF513371D520E2500AB88F2 /* confrimOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = confrimOrderViewController.m; sourceTree = "<group>"; };
 		FBF5133B1D52E99700AB88F2 /* confrimOrderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = confrimOrderViewController.storyboard; sourceTree = "<group>"; };
@@ -342,6 +351,7 @@
 				C2192A451D54A95D00F8F6A4 /* findPassWordViewController.h */,
 				C2192A461D54A95D00F8F6A4 /* findPassWordViewController.m */,
 				C23263101D55DE5F008F7751 /* API */,
+				FBF322B61D58640F005CCA00 /* model */,
 				C23263091D55BA2C008F7751 /* view */,
 			);
 			path = login;
@@ -458,6 +468,7 @@
 		FB47D63B1D485D01008EE4D6 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				FBF322AF1D58619F005CCA00 /* Utility */,
 				FB4E3BEA1D54334E00FA78D5 /* API */,
 				FB47D63E1D485D01008EE4D6 /* category */,
 				FB47D63F1D485D01008EE4D6 /* Components */,
@@ -961,6 +972,26 @@
 			path = LiyiTongUITests;
 			sourceTree = "<group>";
 		};
+		FBF322AF1D58619F005CCA00 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FBF322B01D58619F005CCA00 /* AccountMgr.h */,
+				FBF322B11D58619F005CCA00 /* AccountMgr.m */,
+				FBF322B21D58619F005CCA00 /* PreferencesMgr.h */,
+				FBF322B31D58619F005CCA00 /* PreferencesMgr.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		FBF322B61D58640F005CCA00 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				FBF322B71D586457005CCA00 /* User.h */,
+				FBF322B81D586457005CCA00 /* User.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		FBF513321D520DBA00AB88F2 /* baobei */ = {
 			isa = PBXGroup;
 			children = (
@@ -1067,7 +1098,7 @@
 				TargetAttributes = {
 					FB58F9591D4846A500C207DD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = UG6P8XMXWW;
+						DevelopmentTeam = 8EGJFWVPRL;
 					};
 					FB58F9721D4846A500C207DD = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1249,6 +1280,7 @@
 				FB4E3BF11D5434BC00FA78D5 /* LYTAFRequest.m in Sources */,
 				C2192A471D54A95D00F8F6A4 /* loginViewController.m in Sources */,
 				FB47D64E1D486251008EE4D6 /* LytNavigationViewController.m in Sources */,
+				FBF322B51D58619F005CCA00 /* PreferencesMgr.m in Sources */,
 				FB47D66C1D486978008EE4D6 /* HomeViewController.m in Sources */,
 				FB47D66F1D48698B008EE4D6 /* MeViewController.m in Sources */,
 				FB4E3BE91D53F49C00FA78D5 /* Order.m in Sources */,
@@ -1263,6 +1295,7 @@
 				C2487E341D4F44630085107B /* GGImagePageView.m in Sources */,
 				FB47D6441D485D01008EE4D6 /* AppDelegate.m in Sources */,
 				FB47D6751D487CA1008EE4D6 /* SelectedView.m in Sources */,
+				FBF322B91D586457005CCA00 /* User.m in Sources */,
 				FB47D7081D48935C008EE4D6 /* View+MASAdditions.m in Sources */,
 				C2487E671D4F565E0085107B /* giftTableViewCell.m in Sources */,
 				FBF513391D520E2500AB88F2 /* confrimOrderViewController.m in Sources */,
@@ -1271,6 +1304,7 @@
 				FB47D7011D48935C008EE4D6 /* MASConstraint.m in Sources */,
 				C2192A481D54A95D00F8F6A4 /* findPassWordViewController.m in Sources */,
 				FB4E3BF81D543BCB00FA78D5 /* UIViewController+SLHUD.m in Sources */,
+				FBF322B41D58619F005CCA00 /* AccountMgr.m in Sources */,
 				C2192A401D54A80E00F8F6A4 /* strategyViewController.m in Sources */,
 				FB47D67E1D4882FB008EE4D6 /* Constant.m in Sources */,
 				C2192A811D54AB1100F8F6A4 /* TOPModel.m in Sources */,
@@ -1424,7 +1458,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/LiyiTong/classes/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.www.LiyiTongw;
+				PRODUCT_BUNDLE_IDENTIFIER = com.www.LiyiTongw1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1442,7 +1476,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/LiyiTong/classes/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.www.LiyiTongw;
+				PRODUCT_BUNDLE_IDENTIFIER = com.www.LiyiTongw1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
