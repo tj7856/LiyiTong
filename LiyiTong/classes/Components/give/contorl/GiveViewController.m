@@ -9,6 +9,7 @@
 #import "GiveViewController.h"
 #import "TOPTableViewCell.h"
 #import "TOPModel.h"
+#import "detailViewController.h"
 @interface GiveViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSArray *dataList;
@@ -82,13 +83,20 @@
     cell.imageview.image=[UIImage imageNamed:@"热门psd_11"];
     cell.price.text=model.price;
     cell.personNum.text=[NSString stringWithFormat:@"%@人已送",model.personNum];
+    UIButton *topBtn=cell.topbutton;
+    topBtn.tag=10+indexPath.row;
+    [topBtn addTarget:self action:@selector(goToDetail:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 //点击选中cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"TOP%ld",(long)indexPath.row);
 }
-
+-(void)goToDetail:(UIButton *)sender{
+    NSLog(@"ttttt%ld",(long)sender.tag);
+    detailViewController *detal=[[detailViewController alloc]init];
+    [self.navigationController pushViewController:detal animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

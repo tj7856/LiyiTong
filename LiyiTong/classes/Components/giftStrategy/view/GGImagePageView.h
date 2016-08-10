@@ -6,8 +6,6 @@
 //  Copyright © 2016年 GG. All rights reserved.
 //
 
-
-
 #import <UIKit/UIKit.h>
 
 //自动翻页的时间间隔
@@ -15,10 +13,20 @@
 //多长时间没拖拽后自动翻页
 #define kNoResponse 2
 
-typedef void(^SelectedImageViewBlcok)(int selectIndex);
 
+@protocol GGImagePageViewDelegate <NSObject>
+
+@optional
+/**
+ *  点击图片触发
+ *
+ *  @param index 会得到一个选中的图片下标
+ */
+- (void)didSelectViewWithIndex:(NSInteger)index;
+
+@end
 @interface GGImagePageView : UIView
-
+@property (nonatomic, assign) id<GGImagePageViewDelegate>lazyDelegate;
 //轮播图的数据源
 @property (nonatomic,copy) NSArray *imageAarray;
 
@@ -29,6 +37,6 @@ typedef void(^SelectedImageViewBlcok)(int selectIndex);
 @property (nonatomic,assign) BOOL isTimer;
 
 //block监听点击事件
-- (instancetype)initWithFrame:(CGRect)frame withSelectImageBlock:(SelectedImageViewBlcok)block;
+- (instancetype)initWithFrame:(CGRect)frame;
 
 @end

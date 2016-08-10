@@ -16,8 +16,6 @@
 
 @property (nonatomic,strong) UIScrollView *scrollView;
 
-//选中某个图片的block
-@property (nonatomic,weak)SelectedImageViewBlcok block;
 
 //是否正在拖动
 @property (nonatomic,assign) BOOL isDraging;
@@ -41,12 +39,12 @@
 
 @implementation GGImagePageView
 
-- (instancetype)initWithFrame:(CGRect)frame withSelectImageBlock:(SelectedImageViewBlcok)block
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         
-        _block = block;
+        
         
         self.scrollViewHeight = frame.size.height;
         
@@ -156,8 +154,9 @@
 
 
 - (void)tapScrollow{
-    
-    _block((int)self.pageControl.currentPage);
+    if ([self.lazyDelegate respondsToSelector:@selector(didSelectViewWithIndex:)]) {
+        [self.lazyDelegate didSelectViewWithIndex:self.pageControl.currentPage];
+    }
     
 }
 

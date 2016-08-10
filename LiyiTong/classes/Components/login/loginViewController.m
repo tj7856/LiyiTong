@@ -19,6 +19,9 @@
 #import "login.h"
 #import "AFNetworkReachabilityManager.h"
 @interface loginViewController ()
+{
+    NSString *isNot;
+}
 @property (nonatomic,strong)UIView *view1;
 @property (nonatomic,strong)UITextField *view1PhoneNum;
 @property (nonatomic,strong)UITextField *view1PassWord;
@@ -182,6 +185,7 @@
     [self.loginBtn setTitle:@"登录" forState:UIControlStateNormal];
     [self.loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.loginBtn.titleLabel.font=[UIFont systemFontOfSize:24];
+    [self.loginBtn addTarget:self action:@selector(passWordLogin:) forControlEvents:UIControlEventTouchUpInside];
     [self.view1 addSubview:self.loginBtn];
     self.loginBtn.sd_layout.leftEqualToView(self.view1PassWord).rightEqualToView(self.view1PassWord).topSpaceToView(findBtn,100*HeightScale).heightIs(80*WidthScale);
     
@@ -371,6 +375,7 @@
     [self.registerBtn setTitle:@"注册" forState:UIControlStateNormal];
     [self.registerBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.registerBtn.titleLabel.font=[UIFont systemFontOfSize:24];
+    [self.registerBtn addTarget:self action:@selector(userRegister:) forControlEvents:UIControlEventTouchUpInside];
     [self.view3 addSubview:self.registerBtn];
     self.registerBtn.sd_layout.leftEqualToView(self.view3PassWord).rightEqualToView(self.view3PassWord).topSpaceToView(findBtn,100*HeightScale).heightIs(80*WidthScale);
     
@@ -432,7 +437,7 @@
 #pragma mark---获取验证码---
 -(void)view3GetCode:(UIButton *)sender{
     BOOL isPhone=[self isMobileNumber:self.view3PhoneNum.text];
-    NSString *isnot=[self isNotRegister:self.view3PhoneNum.text];
+    
     NSInteger networkState=[self reachability];
         if (networkState==0||networkState==1) {
         if (networkState==0) {
@@ -444,14 +449,8 @@
     } else {
 
     if (isPhone==YES) {
-        if ([isnot isEqualToString:@"尚未注册"]) {
-            [self getPassNum:self.view3GetCode withPhoneNum:self.view3PhoneNum];
-        }if ([isnot isEqualToString:@"已经注册"]) {
-            [YFAlert showAlertViewCertainWithTitle:@"手机号已被注册" WithUIViewController:self];
-        }else {
-            [YFAlert showAlertViewCertainWithTitle:@"服务器开小差了o(╯□╰)o" WithUIViewController:self];
-        }
-    } else {
+        [self isNotRegister:self.view3PhoneNum.text];
+            } else {
         [YFAlert showAlertViewCertainWithTitle:@"请检查您的手机号是否有误" WithUIViewController:self];
     }
     
@@ -460,7 +459,8 @@
 }
 -(void)view2GetCode:(UIButton *)sender{
     BOOL isPhone=[self isMobileNumber:self.view2PhoneNum.text];
-    NSString *isnot=[self isNotRegister:self.view2PhoneNum.text];
+    [self isNotRegister:self.view2PhoneNum.text];
+    NSString *isnot=@"";
     NSInteger networkState=[self reachability];
     if (networkState==0||networkState==1) {
         if (networkState==0) {
@@ -579,28 +579,49 @@
     
     return [regextestmobile evaluateWithObject:mobileNum];
 }
-//是否已经注册或服务器错误
--(NSString *)isNotRegister:(NSString *)mobileNum{
-    __block NSString *isNot=@"";
+//发送验证码结果
+-(void)isNotRegister:(NSString *)mobileNum{
+    
     LYTAfnetworkingManager *manager = [LYTAfnetworkingManager new];
     CheckPhone *req = [CheckPhone new];
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     req.parameters =  @{@"phone":mobileNum}; //@(month)
     [manager sendRequest:req response:^(NSError *err) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (!err) {
-            NSInteger regisrered=(long)req.success[@"status"];
+            int regisrered=[req.success[@"status"] intValue];
+            NSLog(@"%d",regisrered);
             if (regisrered==1) {
-                isNot=@"尚未注册";
+                [MBProgressHUD hideHUDForView:self.view animated:NO];
+                [self getPassNum:self.view3GetCode withPhoneNum:self.view3PhoneNum];
+//                isNot=@"尚未注册";
+                NSLog(@"isNot%@",@"尚未注册");
+                [self returnIsNot:isNot];
             }else{
-                isNot=@"已经注册";
+                [YFAlert showAlertViewCertainWithTitle:@"手机号已被注册" WithUIViewController:self];
+//                isNot=@"已经注册";
+                [self returnIsNot:@"已经注册"];
+                NSLog(@"isNot%@",isNot);
             }
         }else{
-            isNot=@"服务器错误";
+//            isNot=@"服务器错误";
+            [YFAlert showAlertViewCertainWithTitle:@"服务器开小差了o(╯□╰)o" WithUIViewController:self];
+            [self returnIsNot:@"服务器错误"];
+            NSLog(@"err%@",err);
         }
+        
+//        NSLog(@"isNot%@",isNot);
     }];
-            return isNot;
     
+}
+-(void)returnIsNot:(NSString *)isnot{
+    isNot=isnot;
+    NSLog(@"isNot%@",isNot);
+    
+}
+-(NSString *)isnotregister{
+    NSString *notregister=[isNot copy];
+    return notregister;
 }
 //监测网络状态
 -(NSInteger )reachability{
@@ -611,15 +632,19 @@
         switch (status) {
             case AFNetworkReachabilityStatusUnknown:
                 statusR=status;
+                NSLog(@"当前网络>>>未检测到网络");
                 break;
             case AFNetworkReachabilityStatusNotReachable:
                 statusR=status;
+                NSLog(@"当前网络>>>网络关闭");
                 break;
             case AFNetworkReachabilityStatusReachableViaWWAN:
                 statusR=status;
+                NSLog(@"当前网络>>>蜂窝网络");
                 break;
             case AFNetworkReachabilityStatusReachableViaWiFi:
                 statusR=status;
+                NSLog(@"当前网络>>>WIFI");
                 break;
                 
             default:
@@ -680,8 +705,8 @@
         }
     } else {
     if (self.agree.selected==YES) {
-        
-        if (self.view3CodeNum.text.length==4) {
+        sendSMS *req = [sendSMS new];
+        if ([self.view3CodeNum.text isEqualToString:req.success[@"msg"]]) {
             LYTAfnetworkingManager *manager = [LYTAfnetworkingManager new];
             userRegister *sendSms=[userRegister new];
             sendSms.parameters=@{@"phone":self.view3PhoneNum.text,@"password":self.view3PassWord.text,@"code":self.view3CodeNum.text};
@@ -692,6 +717,8 @@
                     [YFAlert showAlertViewCertainWithTitle:@"注册失败" WithUIViewController:self];
                 }
             }];
+        }else{
+            [YFAlert showAlertViewCertainWithTitle:@"验证码错误" WithUIViewController:self];
         }
 
     }else{

@@ -26,4 +26,5 @@
 @property (nonatomic,strong)UILabel *price;
 @property (nonatomic,strong)UILabel *personNum;
 
+@property (nonatomic,strong)UIButton *topbutton;
 @end

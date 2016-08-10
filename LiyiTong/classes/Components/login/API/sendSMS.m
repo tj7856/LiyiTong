@@ -20,7 +20,8 @@
 - (void)ResponseSuccess:(id)response{
     if (!response) return;
     if ([response isKindOfClass:[NSDictionary class]]) {
-        NSLog(@"sign in success and response is %@",response);
+        NSLog(@"发送验证码返回的数据 %@",response);
+        NSLog(@"发送验证码返回的数据 %@",response[@"msg"]);
         self.success=[response copy];
         NSLog(@">>>>>success>>>>>%@",self.success[@"status"]);
     }

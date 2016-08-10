@@ -17,7 +17,7 @@
 #import "strategyViewController.h"
 //#import "login.h"
 #import "loginViewController.h"
-@interface giftStrategyViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface giftStrategyViewController ()<UITableViewDelegate,UITableViewDataSource,GGImagePageViewDelegate>
 {
     UIView *viwepager;
     UIScrollView *adScrollView;
@@ -47,14 +47,8 @@
     viwepager=[[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenWidth*270/750)];
     viwepager.backgroundColor=[UIColor lightGrayColor];
     [_backGround addSubview:viwepager];
-    GGImagePageView *imagePageView = [[GGImagePageView alloc]initWithFrame:viwepager.frame withSelectImageBlock:^(int selectIndex) {
-        /**
-         *  点击图片
-         */
-        NSLog(@"%d",selectIndex);
-        
-    }];
-    
+    GGImagePageView *imagePageView = [[GGImagePageView alloc]initWithFrame:viwepager.frame];
+    imagePageView.lazyDelegate=self;
     imagePageView.isTimer = YES;
     
     imagePageView.showPageControl = YES;
@@ -182,7 +176,9 @@
     }
     
 }
-
+- (void)didSelectViewWithIndex:(NSInteger)index{
+    NSLog(@"图片轮播%ld",index);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

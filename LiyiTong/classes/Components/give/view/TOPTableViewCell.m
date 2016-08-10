@@ -118,18 +118,20 @@
     self.personNum=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(sellNum.frame), CGRectGetMaxY(self.imageview.frame)+55*WidthScale, 60, 30)];
     self.personNum.adjustsFontSizeToFitWidth=YES;
     [backView addSubview:self.personNum];
-    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame=CGRectMake(432*WidthScale, CGRectGetMaxY(self.imageview.frame)+22*WidthScale, 285*WidthScale, 80*WidthScale);
-    [button setTitle:@"查看详情" forState:UIControlStateNormal];
-    [button setTitleColor:Color(0, 243, 199) forState:UIControlStateNormal];
-    [button.layer setBorderWidth:1.0];
-    [button.layer setBorderColor:Color(0, 243, 199).CGColor];
-    [backView addSubview:button];
-    [button addTarget:self action:@selector(go:) forControlEvents:UIControlEventTouchUpInside];
+    self.topbutton=[UIButton buttonWithType:UIButtonTypeCustom];
+    self.topbutton.frame=CGRectMake(432*WidthScale, CGRectGetMaxY(self.imageview.frame)+22*WidthScale, 285*WidthScale, 80*WidthScale);
+    
+    [self.topbutton setTitle:@"查看详情" forState:UIControlStateNormal];
+    [self.topbutton setTitleColor:Color(0, 243, 199) forState:UIControlStateNormal];
+    [self.topbutton.layer setBorderWidth:1.0];
+    [self.topbutton.layer setBorderColor:Color(0, 243, 199).CGColor];
+    [backView addSubview:self.topbutton];
+    [self.topbutton addTarget:self action:@selector(go:) forControlEvents:UIControlEventTouchUpInside];
 
 }
 -(void)go:(UIButton *)sender{
     NSLog(@"%@",self.TopNum.text);
+    
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

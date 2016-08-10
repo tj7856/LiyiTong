@@ -15,18 +15,21 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.12)
   - SDAutoLayout (2.1.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - MBProgressHUD (~> 1.0.0)
+  - MJRefresh (~> 3.1.12)
   - SDAutoLayout
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDAutoLayout: 1b2926b193a63287f473dae426ed07861e21e271
 
-PODFILE CHECKSUM: 02971806f636bc04eb6769d9868cdaf97baf8d02
+PODFILE CHECKSUM: d0d740a0c543c4532822c9e1a89074344e5b4307
 
 COCOAPODS: 1.0.1
