@@ -53,6 +53,9 @@
     self.order.KouEdian = sender.isOn?60:0;
     [self updataOrder];
 }
+- (IBAction)duihao:(UIButton*)sender {
+    sender.selected = !sender.selected;
+}
 - (IBAction)huanci:(id)sender {
 }
 - (IBAction)tijiao:(id)sender {

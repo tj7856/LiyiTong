@@ -88,7 +88,7 @@
 		C2B605A31D58AEB400110E39 /* choose.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B6059E1D58AEB400110E39 /* choose.png */; };
 		C2B605A41D58AEB400110E39 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B6059F1D58AEB400110E39 /* more.png */; };
 		C2B605A61D58AEE700110E39 /* 手链.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B605A51D58AEE700110E39 /* 手链.png */; };
-		E8D19DF3CF495B076A7799E1 /* libPods-LiyiTong.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC81BE6512EA60F4A7EF5858 /* libPods-LiyiTong.a */; };
+		D30CE0891B3BBC8A3B2B6BC5 /* libPods-LiyiTong.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BB1F0939620908233385A6 /* libPods-LiyiTong.a */; };
 		FB2F6F481D545FE900FF5D14 /* LYTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2F6F471D545FE900FF5D14 /* LYTAlertView.m */; };
 		FB2F6F4B1D546CFC00FF5D14 /* CheckPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2F6F4A1D546CFC00FF5D14 /* CheckPhone.m */; };
 		FB47D6441D485D01008EE4D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB47D63D1D485D01008EE4D6 /* AppDelegate.m */; };
@@ -125,6 +125,9 @@
 		FB58F9831D4846A500C207DD /* LiyiTongUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB58F9821D4846A500C207DD /* LiyiTongUITests.m */; };
 		FB5CA1D71D50313200BD9CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB5CA1D61D50313200BD9CD7 /* Assets.xcassets */; };
 		FBF322AC1D5486A4005CCA00 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBF322AB1D5486A4005CCA00 /* Info.plist */; };
+		FBF322B41D58619F005CCA00 /* AccountMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF322B11D58619F005CCA00 /* AccountMgr.m */; };
+		FBF322B51D58619F005CCA00 /* PreferencesMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF322B31D58619F005CCA00 /* PreferencesMgr.m */; };
+		FBF322B91D586457005CCA00 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF322B81D586457005CCA00 /* User.m */; };
 		FBF513391D520E2500AB88F2 /* confrimOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF513371D520E2500AB88F2 /* confrimOrderViewController.m */; };
 		FBF5133C1D52E99700AB88F2 /* confrimOrderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF5133B1D52E99700AB88F2 /* confrimOrderViewController.storyboard */; };
 /* End PBXBuildFile section */
@@ -147,7 +150,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BC81BE6512EA60F4A7EF5858 /* libPods-LiyiTong.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LiyiTong.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3BB1F0939620908233385A6 /* libPods-LiyiTong.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LiyiTong.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20834BE1D59B1CB00E1AC2E /* ChoseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoseView.h; sourceTree = "<group>"; };
 		C20834BF1D59B1CB00E1AC2E /* ChoseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoseView.m; sourceTree = "<group>"; };
 		C20834C01D59B1CB00E1AC2E /* TypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeView.h; sourceTree = "<group>"; };
@@ -251,8 +254,8 @@
 		C2B6059E1D58AEB400110E39 /* choose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = choose.png; sourceTree = "<group>"; };
 		C2B6059F1D58AEB400110E39 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		C2B605A51D58AEE700110E39 /* 手链.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手链.png"; sourceTree = "<group>"; };
-		C4F53843F46E2B2802D8E641 /* Pods-LiyiTong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiyiTong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiyiTong/Pods-LiyiTong.debug.xcconfig"; sourceTree = "<group>"; };
-		DFB8B417ACA1A68B14756E6A /* Pods-LiyiTong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiyiTong.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiyiTong/Pods-LiyiTong.release.xcconfig"; sourceTree = "<group>"; };
+		CC1B21355FC9E90361820D4F /* Pods-LiyiTong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiyiTong.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiyiTong/Pods-LiyiTong.release.xcconfig"; sourceTree = "<group>"; };
+		DC0D62E23CA69BE6431E10A2 /* Pods-LiyiTong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiyiTong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiyiTong/Pods-LiyiTong.debug.xcconfig"; sourceTree = "<group>"; };
 		FB2F6F461D545FE900FF5D14 /* LYTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTAlertView.h; sourceTree = "<group>"; };
 		FB2F6F471D545FE900FF5D14 /* LYTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTAlertView.m; sourceTree = "<group>"; };
 		FB2F6F491D546CFC00FF5D14 /* CheckPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckPhone.h; sourceTree = "<group>"; };
@@ -329,6 +332,12 @@
 		FB58F9841D4846A500C207DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB5CA1D61D50313200BD9CD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBF322AB1D5486A4005CCA00 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBF322B01D58619F005CCA00 /* AccountMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountMgr.h; sourceTree = "<group>"; };
+		FBF322B11D58619F005CCA00 /* AccountMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountMgr.m; sourceTree = "<group>"; };
+		FBF322B21D58619F005CCA00 /* PreferencesMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesMgr.h; sourceTree = "<group>"; };
+		FBF322B31D58619F005CCA00 /* PreferencesMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesMgr.m; sourceTree = "<group>"; };
+		FBF322B71D586457005CCA00 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FBF322B81D586457005CCA00 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FBF513361D520E2500AB88F2 /* confrimOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = confrimOrderViewController.h; sourceTree = "<group>"; };
 		FBF513371D520E2500AB88F2 /* confrimOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = confrimOrderViewController.m; sourceTree = "<group>"; };
 		FBF5133B1D52E99700AB88F2 /* confrimOrderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = confrimOrderViewController.storyboard; sourceTree = "<group>"; };
@@ -339,7 +348,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8D19DF3CF495B076A7799E1 /* libPods-LiyiTong.a in Frameworks */,
+				D30CE0891B3BBC8A3B2B6BC5 /* libPods-LiyiTong.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +372,7 @@
 		0CCA69FDA87ECC7FF6FC03CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC81BE6512EA60F4A7EF5858 /* libPods-LiyiTong.a */,
+				A3BB1F0939620908233385A6 /* libPods-LiyiTong.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -371,8 +380,8 @@
 		748D56DB5D932F5141123352 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C4F53843F46E2B2802D8E641 /* Pods-LiyiTong.debug.xcconfig */,
-				DFB8B417ACA1A68B14756E6A /* Pods-LiyiTong.release.xcconfig */,
+				DC0D62E23CA69BE6431E10A2 /* Pods-LiyiTong.debug.xcconfig */,
+				CC1B21355FC9E90361820D4F /* Pods-LiyiTong.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -407,6 +416,7 @@
 				C2192A451D54A95D00F8F6A4 /* findPassWordViewController.h */,
 				C2192A461D54A95D00F8F6A4 /* findPassWordViewController.m */,
 				C23263101D55DE5F008F7751 /* API */,
+				FBF322B61D58640F005CCA00 /* model */,
 				C23263091D55BA2C008F7751 /* view */,
 			);
 			path = login;
@@ -536,6 +546,7 @@
 		FB47D63B1D485D01008EE4D6 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				FBF322AF1D58619F005CCA00 /* Utility */,
 				FB4E3BEA1D54334E00FA78D5 /* API */,
 				FB47D63E1D485D01008EE4D6 /* category */,
 				FB47D63F1D485D01008EE4D6 /* Components */,
@@ -1052,6 +1063,26 @@
 			path = LiyiTongUITests;
 			sourceTree = "<group>";
 		};
+		FBF322AF1D58619F005CCA00 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FBF322B01D58619F005CCA00 /* AccountMgr.h */,
+				FBF322B11D58619F005CCA00 /* AccountMgr.m */,
+				FBF322B21D58619F005CCA00 /* PreferencesMgr.h */,
+				FBF322B31D58619F005CCA00 /* PreferencesMgr.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		FBF322B61D58640F005CCA00 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				FBF322B71D586457005CCA00 /* User.h */,
+				FBF322B81D586457005CCA00 /* User.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		FBF513321D520DBA00AB88F2 /* baobei */ = {
 			isa = PBXGroup;
 			children = (
@@ -1095,12 +1126,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB58F9871D4846A500C207DD /* Build configuration list for PBXNativeTarget "LiyiTong" */;
 			buildPhases = (
-				ECB60CE6A1E40C5ED0E297CF /* [CP] Check Pods Manifest.lock */,
+				F073D6844E8655A1102C2C3A /* [CP] Check Pods Manifest.lock */,
 				FB58F9561D4846A500C207DD /* Sources */,
 				FB58F9571D4846A500C207DD /* Frameworks */,
 				FB58F9581D4846A500C207DD /* Resources */,
 				540A7167B704AF2CB431205F /* [CP] Embed Pods Frameworks */,
-				941EF1C6BFF7FE29A72872EF /* [CP] Copy Pods Resources */,
+				0D405A001A2B3A60A6B33163 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1158,7 +1189,7 @@
 				TargetAttributes = {
 					FB58F9591D4846A500C207DD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = UG6P8XMXWW;
+						DevelopmentTeam = 8EGJFWVPRL;
 					};
 					FB58F9721D4846A500C207DD = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1279,6 +1310,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0D405A001A2B3A60A6B33163 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiyiTong/Pods-LiyiTong-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		540A7167B704AF2CB431205F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1294,22 +1340,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiyiTong/Pods-LiyiTong-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		941EF1C6BFF7FE29A72872EF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiyiTong/Pods-LiyiTong-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ECB60CE6A1E40C5ED0E297CF /* [CP] Check Pods Manifest.lock */ = {
+		F073D6844E8655A1102C2C3A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1356,6 +1387,7 @@
 				FB4E3BF11D5434BC00FA78D5 /* LYTAFRequest.m in Sources */,
 				C2192A471D54A95D00F8F6A4 /* loginViewController.m in Sources */,
 				FB47D64E1D486251008EE4D6 /* LytNavigationViewController.m in Sources */,
+				FBF322B51D58619F005CCA00 /* PreferencesMgr.m in Sources */,
 				FB47D66C1D486978008EE4D6 /* HomeViewController.m in Sources */,
 				FB47D66F1D48698B008EE4D6 /* MeViewController.m in Sources */,
 				FB4E3BE91D53F49C00FA78D5 /* Order.m in Sources */,
@@ -1371,6 +1403,7 @@
 				C2487E341D4F44630085107B /* GGImagePageView.m in Sources */,
 				FB47D6441D485D01008EE4D6 /* AppDelegate.m in Sources */,
 				FB47D6751D487CA1008EE4D6 /* SelectedView.m in Sources */,
+				FBF322B91D586457005CCA00 /* User.m in Sources */,
 				FB47D7081D48935C008EE4D6 /* View+MASAdditions.m in Sources */,
 				C2487E671D4F565E0085107B /* giftTableViewCell.m in Sources */,
 				C20835961D5A149D00E1AC2E /* ChineseToPinyin.m in Sources */,
@@ -1381,6 +1414,7 @@
 				C2192A481D54A95D00F8F6A4 /* findPassWordViewController.m in Sources */,
 				C20834C31D59B1CB00E1AC2E /* TypeView.m in Sources */,
 				FB4E3BF81D543BCB00FA78D5 /* UIViewController+SLHUD.m in Sources */,
+				FBF322B41D58619F005CCA00 /* AccountMgr.m in Sources */,
 				C2192A401D54A80E00F8F6A4 /* strategyViewController.m in Sources */,
 				FB47D67E1D4882FB008EE4D6 /* Constant.m in Sources */,
 				C2192A811D54AB1100F8F6A4 /* TOPModel.m in Sources */,
@@ -1524,7 +1558,7 @@
 		};
 		FB58F9881D4846A500C207DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4F53843F46E2B2802D8E641 /* Pods-LiyiTong.debug.xcconfig */;
+			baseConfigurationReference = DC0D62E23CA69BE6431E10A2 /* Pods-LiyiTong.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1534,7 +1568,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/LiyiTong/classes/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.www.LiyiTongw;
+				PRODUCT_BUNDLE_IDENTIFIER = com.www.LiyiTongw1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1542,7 +1576,7 @@
 		};
 		FB58F9891D4846A500C207DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DFB8B417ACA1A68B14756E6A /* Pods-LiyiTong.release.xcconfig */;
+			baseConfigurationReference = CC1B21355FC9E90361820D4F /* Pods-LiyiTong.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1552,7 +1586,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/LiyiTong/classes/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.www.LiyiTongw;
+				PRODUCT_BUNDLE_IDENTIFIER = com.www.LiyiTongw1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
