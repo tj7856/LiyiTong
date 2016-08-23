@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "AccountMgr.h"
-
+#import "WXApiManager.h"
 
 @interface AppDelegate ()
 
@@ -29,6 +29,8 @@
     
     [self.window makeKeyAndVisible];
 
+    //向微信注册wxd930ea5d5a258f4f
+    [WXApi registerApp:@"wxb4ba3c02aa476ea1" withDescription:@"demo 2.0"];
     return YES;
 }
 
