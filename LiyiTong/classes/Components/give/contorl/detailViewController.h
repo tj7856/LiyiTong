@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class giftdetail;
 
 @interface detailViewController : UIViewController
+@property(nonatomic,strong)giftdetail* gift;
 
 @end

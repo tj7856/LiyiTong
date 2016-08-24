@@ -42,7 +42,9 @@
     label.text=[[NSUserDefaults standardUserDefaults] objectForKey:@"nickname"];
     label.center=self.view.center;
     [self.view addSubview:label];
+    
 }
+
 -(void)doit:(UIButton *)sender{
     giftListViewController *giftList=[[giftListViewController alloc]init];
     [self.navigationController pushViewController:giftList animated:YES];

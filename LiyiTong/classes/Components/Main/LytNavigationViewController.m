@@ -7,6 +7,9 @@
 //
 
 #import "LytNavigationViewController.h"
+#import "SelectedView.h"
+#import "confrimOrderViewController.h"
+
 
 @interface LytNavigationViewController ()
 
@@ -22,8 +25,16 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    
     if (self.childViewControllers.count) { // 隐藏导航栏
         viewController.hidesBottomBarWhenPushed = YES;
+        if (self.childViewControllers.count ==1) {
+            for (UIView *view in self.navigationBar.subviews) {
+            if ([view isKindOfClass:[SelectedView class]]) {
+                [view removeFromSuperview];
+            }
+        }
+        }
         
         // 自定义返回按钮
         UIButton *btn = [[UIButton alloc] init];
@@ -39,13 +50,28 @@
     [super pushViewController:viewController animated:animated];
 }
 
+//-(UIViewController *)popViewControllerAnimated:(BOOL)animated
+//{
+//   return  [super popViewControllerAnimated:animated];
+//}
+
 - (void)back
 {
-    // 判断两种情况: push 和 present
-    if ((self.presentedViewController || self.presentingViewController) && self.childViewControllers.count == 1) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }else
+//    // 判断两种情况: push 和 present
+//    if ((self.presentedViewController || self.presentingViewController) && self.childViewControllers.count == 1) {
+//        [self dismissViewControllerAnimated:YES completion:nil];
+//    }else
+//        [self popViewControllerAnimated:YES];
+//}
+    NSLog(@"%@, %@",self.presentingViewController,self.presentedViewController);
+    if ( [self.presentingViewController isKindOfClass:[confrimOrderViewController class]]) {
+        [(confrimOrderViewController *)self.presentedViewController rightButtonAction];
+    
+    }
+    else
+    {
         [self popViewControllerAnimated:YES];
+    }
 }
 
 @end

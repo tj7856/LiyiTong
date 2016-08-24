@@ -8,8 +8,9 @@
 
 #import "confrimOrderViewController.h"
 #import "Order.h"
+#import "zhifuModeViewController.h"
 
-@interface confrimOrderViewController ()
+@interface confrimOrderViewController ()<UIActionSheetDelegate>
 //@property (strong, nonatomic) IBOutlet UIScrollView *scroll;
 @property (weak, nonatomic) IBOutlet UIImageView *picture;
 @property (weak, nonatomic) IBOutlet UILabel *jiage;
@@ -36,11 +37,33 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self setup];
+}
+
+-(void)setup
+{
+    self.title =@"确认订单";
+//    self.navigationItem.titleView = nil;
     self.order.fenshu =self.order.renshu=1;
     self.order.KouEdian = 60;
     self.order.yunfei = 0;
- 
+    
+//    self.navigationItem.leftBarButtonItem=
+//    [self itemWithTarget:self action:@selector(rightButtonAction) Title:@""];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_9x16"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonItemClick)];
+
 }
+-(void)leftBarButtonItemClick
+{
+    UIActionSheet * sheet = [[UIActionSheet alloc]initWithTitle:@"陛下真的要放弃提交订单吗？" delegate:self cancelButtonTitle:@"待朕想想" destructiveButtonTitle:@"朕去意已决" otherButtonTitles:nil, nil];
+    [sheet showInView:self.view];
+}
+
+
+//-(void)rightButtonAction
+//{
+////    NSLog(@"hahhah");
+//}
 
 -(Order *)order
 {
@@ -59,6 +82,10 @@
 - (IBAction)huanci:(id)sender {
 }
 - (IBAction)tijiao:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:NSStringFromClass([zhifuModeViewController class]) bundle:nil];
+    zhifuModeViewController * zhifu = [storyboard instantiateInitialViewController];
+    zhifu.pricen =self.zongjia.text ;
+    [self.navigationController pushViewController:zhifu animated:YES];
 }
 - (IBAction)JiajianAction:(UIButton *)sender {
     switch (sender.tag) {
@@ -104,10 +131,23 @@
     self.jianjia.text =[NSString stringWithFormat:@"已减去%.02f", self.order.jianjia];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma Mark actionSheetDelegate
+
+//-(void)actionSheetCancel:(UIActionSheet *)actionSheet
+//{
+//    NSLog(@"Cancel");
+//}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else if (buttonIndex == 1) {
+//        NSLog(@"Cancel1");
+    }
 }
+
+//-(void)acti
 
 /*
 #pragma mark - Navigation

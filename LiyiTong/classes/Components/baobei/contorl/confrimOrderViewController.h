@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void (^ClickBackBlock) (UIViewController *controller);
 
 @interface confrimOrderViewController : UITableViewController
+@property(nonatomic,copy)ClickBackBlock block;
+
+-(void)rightButtonAction;
 
 @end

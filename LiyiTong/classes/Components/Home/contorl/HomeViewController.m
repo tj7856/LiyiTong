@@ -15,7 +15,7 @@
 
 @interface HomeViewController ()<UIScrollViewDelegate>
 /** 顶部选择视图 */
-@property(nonatomic, assign) SelectedView *selectedView;
+@property(nonatomic, weak) SelectedView *selectedView;
 /** UIScrollView */
 @property(nonatomic, weak) UIScrollView *scrollView;
 /** 礼物攻略**/

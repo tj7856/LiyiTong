@@ -15,6 +15,7 @@
 #import "loginViewController.h"
 #import <AFNetworking.h>
 #import "WXApi.h"
+#import "WXApiManager.h"
 #import <AFHTTPSessionManager.h>
 #import <TencentOpenAPI/TencentOAuth.h>
 static void uncaughtExceptionHandler(NSException *exception) {
@@ -28,6 +29,7 @@ static void uncaughtExceptionHandler(NSException *exception) {
 }
 
 @interface AppDelegate ()<WXApiDelegate>
+
 
 @end
 
@@ -45,6 +47,7 @@ static void uncaughtExceptionHandler(NSException *exception) {
     
     
     [self.window makeKeyAndVisible];
+
     [UMSocialData setAppKey:@"57abd5eae0f55a3a230035fb"];
     //设置微信AppId、appSecret，分享url
     [UMSocialWechatHandler setWXAppId:@"wxa569aa9c820763f8" appSecret:@"dfb01834d478baae575446862212bcc1" url:@"http://www.umeng.com/social"];
@@ -53,6 +56,7 @@ static void uncaughtExceptionHandler(NSException *exception) {
     //向微信注册
     [WXApi registerApp:@"wxa569aa9c820763f8"];
     
+
     return YES;
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url

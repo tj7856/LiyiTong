@@ -11,6 +11,7 @@
 #import <SDAutoLayout.h>
 #import "MJRefresh.h"
 #import "ChoseView.h"
+#import "confrimOrderViewController.h"
 @interface detailViewController ()<UIScrollViewDelegate,GGImagePageViewDelegate,UITableViewDelegate,UITableViewDataSource,TypeSeleteDelegete>
 {
     ChoseView *choseView;
@@ -270,6 +271,7 @@
     send.backgroundColor=Color(0, 240, 200);
     [send setTitle:@"送Ta" forState:UIControlStateNormal];
     [send setTintColor:[UIColor whiteColor]];
+    [send addTarget:self action:@selector(sendTA) forControlEvents:UIControlEventTouchUpInside];
     [tabbarView addSubview:send];
     send.sd_layout.leftSpaceToView(self.hotBtn,0).rightSpaceToView(tabbarView,0).topSpaceToView(tabbarView,0).bottomSpaceToView(tabbarView,0);
 }
@@ -346,6 +348,13 @@
     NSLog(@"hot");
     sender.selected=!sender.selected;
     self.hotLabel.textColor=self.hotLabel.textColor==[UIColor grayColor]?Color(0, 240, 200):[UIColor grayColor];
+}
+
+-(void)sendTA{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:NSStringFromClass([confrimOrderViewController class]) bundle:nil];
+    confrimOrderViewController * confirm = [storyboard instantiateInitialViewController];
+    [self.navigationController pushViewController:confirm animated:YES];
+    
 }
 #pragma mark---选择尺码颜色---
 /**
@@ -546,7 +555,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    self.tabBarController.tabBar.hidden=NO;
+//    self.tabBarController.tabBar.hidden=NO;
     self.navigationController.navigationBar.hidden=YES;
     //    self.navigationController.navigationBar.translucent = NO;
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
