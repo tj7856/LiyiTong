@@ -76,7 +76,7 @@
             [btn setImage:[UIImage imageNamed:adImages[i]] forState:UIControlStateNormal];
 //            btn.backgroundColor=[UIColor blueColor];
         }
-        btn.tag=100+i;
+        btn.tag=200+i;
         [adScrollView addSubview:btn];
         [btn addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventTouchUpInside];
         UILabel *btnText=[[UILabel alloc]initWithFrame:CGRectMake((219*WidthScale*i)+17*WidthScale, CGRectGetMaxY(btn.frame)-52*WidthScale, btnWidth, 30*WidthScale)];
@@ -95,7 +95,7 @@
 }
 -(void)view3{
     
-    NSLog(@"--%@",NSStringFromCGRect(_backGround.frame));
+//    NSLog(@"--%@",NSStringFromCGRect(_backGround.frame));
     tabview=[[UITableView alloc]initWithFrame:CGRectMake(0, ScreenWidth*270/750+235*WidthScale, ScreenWidth, 450*WidthScale*10+74*WidthScale) style:UITableViewStylePlain];
     tabview.backgroundColor=[UIColor lightGrayColor];
     tabview.scrollEnabled=NO;

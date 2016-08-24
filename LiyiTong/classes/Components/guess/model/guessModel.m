@@ -19,9 +19,9 @@
     if (self) {
         //分解字典内容
         self.title=dic[@"title"];
-        NSLog(@">>>%@",self.title);
+//        NSLog(@">>>%@",self.title);
         self.detailArray=dic[@"detail"];
-        NSLog(@"!!!%@",self.detailArray[0][@"因为"]);
+//        NSLog(@"!!!%@",self.detailArray[0][@"因为"]);
 //        self.title=dic[@"title"];
 //        self.imageList=dic[@"imageList"];
     }

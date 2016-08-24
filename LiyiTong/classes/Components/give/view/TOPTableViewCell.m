@@ -61,10 +61,10 @@
     label.text=@"热门指数 :";
     label.adjustsFontSizeToFitWidth=YES;
     [backView addSubview:label];
-    NSLog(@"___%0.2f",_hotIndex);
+//    NSLog(@"___%0.2f",_hotIndex);
     float aaa=_hotIndex*10;
     int integer=(int)aaa%10;
-    NSLog(@"inter%d",integer);
+//    NSLog(@"inter%d",integer);
     if (integer==0) {
         for (int i=0; i<_hotIndex; i++) {
             UIImageView *xing=[[UIImageView alloc]initWithFrame:CGRectMake(210*WidthScale+40*i*WidthScale+2*i, 10, 40*WidthScale, 40*WidthScale)];
@@ -73,7 +73,7 @@
         }
     } else {
         int full=(int)_hotIndex/1;
-        NSLog(@"full%d",full);
+//        NSLog(@"full%d",full);
         for (int i=0; i<full+1; i++) {
             UIImageView *xing=[[UIImageView alloc]initWithFrame:CGRectMake(210*WidthScale+40*i*WidthScale+2*i, 10, 40*WidthScale, 40*WidthScale)];
             xing.image=[UIImage imageNamed:@"12_07"];

@@ -56,7 +56,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor whiteColor];
-    
     _scrollview=[[UIScrollView alloc]initWithFrame:CGRectMake(0, -20, ScreenWidth, ScreenHeight)];
     _scrollview.backgroundColor=Color(237, 238, 239);
     _scrollview.showsVerticalScrollIndicator = NO;
@@ -92,6 +91,8 @@
     colorarr = [[NSArray alloc] initWithObjects:@"Mhao(W17*E19*H67CM)1",@"Mhao(W17*E19*H67CM)2",@"Mhao(W17*E19*H67CM)3",@"Mhao(W17*E19*H67CM)4",nil];
     NSString *str = [[NSBundle mainBundle] pathForResource: @"stock" ofType:@"plist"];
     stockarr = [[NSDictionary alloc] initWithContentsOfURL:[NSURL fileURLWithPath:str]];
+    
+    NSLog(@"%@",stockarr);
     
     [self initChoseView];
 }

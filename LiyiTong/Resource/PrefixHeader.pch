@@ -22,6 +22,14 @@
 
 #define DEFAULT_BG_COLOR    LYTCOLOR(247,247,247)
 #define THEME_COLOR         LYTCOLOR(0,147,255)
+
+// 测试 - AppKey
+/*微信*/
+#define WEXIN_AppID       @"wxa569aa9c820763f8"
+#define WEIXIN_AppSecret   @"db426a9829e4b49a0dcac7b4162da6b6"
+
+#define Share_Url      @"http://img4.18183.duoku.com/h5/allimg/160504/4-160504112145-50.jpg"
+
 /**
  *  系统版本
  **/

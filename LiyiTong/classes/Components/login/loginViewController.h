@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface loginViewController : UIViewController
-
+- (void)getUserInfoWithAccessToken:(NSString *)accessToken andOpenId:(NSString *)openId;
 @end

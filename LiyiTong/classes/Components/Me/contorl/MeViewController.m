@@ -7,9 +7,12 @@
 //
 
 #import "MeViewController.h"
+#import "giftListViewController.h"
 
 @interface MeViewController ()
-
+{
+    UIScrollView *backScroll;
+}
 @end
 
 @implementation MeViewController
@@ -17,9 +20,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"我";
-    // Do any additional setup after loading the view.
+    backScroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+//    backScroll.contentSize=CGSizeMake(0, 338*WidthScale+10+80*WidthScale+[_newCityDic allKeys].count*20+_oldCityList.count*53+64);
+    backScroll.backgroundColor=Color(238, 238, 238);
+    backScroll.showsVerticalScrollIndicator = NO;
+    [self.view addSubview:backScroll];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(100, 100, 100, 50);
+    [button setTitle:@"礼物详情" forState:UIControlStateNormal];
+    button.backgroundColor = [UIColor brownColor];
+    [button addTarget:self action:@selector(doit:) forControlEvents:UIControlEventTouchUpInside];
+    button.showsTouchWhenHighlighted=YES;
+    [backScroll addSubview:button];
+    
+    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 40)];
+    label.backgroundColor=[UIColor purpleColor];
+    label.textAlignment=NSTextAlignmentCenter;
+    label.textColor=[UIColor blueColor];
+    //    label.numberOfLines=0;
+    label.adjustsFontSizeToFitWidth=YES;
+    label.text=[[NSUserDefaults standardUserDefaults] objectForKey:@"nickname"];
+    label.center=self.view.center;
+    [self.view addSubview:label];
 }
-
+-(void)doit:(UIButton *)sender{
+    giftListViewController *giftList=[[giftListViewController alloc]init];
+    [self.navigationController pushViewController:giftList animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

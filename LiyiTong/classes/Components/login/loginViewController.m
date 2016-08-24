@@ -18,9 +18,16 @@
 #import "userRegister.h"
 #import "login.h"
 #import "AFNetworkReachabilityManager.h"
-@interface loginViewController ()
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
+#import "WXApi.h"
+#import <TencentOpenAPI/TencentOAuth.h>
+
+@interface loginViewController ()<TencentSessionDelegate>
 {
     NSString *isNot;
+    TencentOAuth *tencentOAuth;
 }
 @property (nonatomic,strong)UIView *view1;
 @property (nonatomic,strong)UITextField *view1PhoneNum;
@@ -48,6 +55,9 @@
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor whiteColor];
     self.navigationController.navigationBar.hidden=YES;
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(action:) name:@"获取用户信息" object:nil];
+    
     
     UIImageView *img =
     [[UIImageView alloc]initWithFrame:
@@ -118,6 +128,7 @@
     [weixin setTitle:@"微信登录" forState:UIControlStateNormal];
     [weixin  setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     weixin.backgroundColor=[UIColor whiteColor];
+    [weixin addTarget:self action:@selector(weixinLogin:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:weixin];
     weixin.sd_layout.leftSpaceToView(self.view,90*WidthScale).bottomSpaceToView(self.view,97*WidthScale).widthIs(280*WidthScale).heightIs(80*WidthScale);
     
@@ -125,6 +136,7 @@
     [QQ setTitle:@"QQ登录" forState:UIControlStateNormal];
     [QQ  setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     QQ.backgroundColor=[UIColor whiteColor];
+    [QQ addTarget:self action:@selector(QQLogin:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:QQ];
     QQ.sd_layout.rightSpaceToView(self.view,90*WidthScale).bottomSpaceToView(self.view,97*WidthScale).widthIs(280*WidthScale).heightIs(80*WidthScale);
 
@@ -727,19 +739,133 @@
     }
     
 }
+#pragma mark---QQ与微信登录---
+-(void)QQLogin:(UIButton *)sender{
+    tencentOAuth=[[TencentOAuth alloc]initWithAppId:@"1105518549"andDelegate:self];
+    NSArray *permissions= [NSArray arrayWithObjects:@"get_user_info",@"get_simple_userinfo",@"get_vip_info",@"get_vip_rich_info",@"get_info",@"add_t",nil];
+    //    permissions = [NSArray arrayWithObjects:
+    //                   kOPEN_PERMISSION_GET_USER_INFO,
+    //                   kOPEN_PERMISSION_GET_SIMPLE_USER_INFO,
+    //                   kOPEN_PERMISSION_ADD_SHARE,
+    //                   kOPEN_PERMISSION_CHECK_PAGE_FANS,
+    //                   kOPEN_PERMISSION_GET_INFO,
+    //                   kOPEN_PERMISSION_GET_OTHER_INFO,
+    //                   kOPEN_PERMISSION_GET_VIP_INFO,
+    //                   kOPEN_PERMISSION_GET_VIP_RICH_INFO,
+    //                   nil];
+    [tencentOAuth authorize:permissions inSafari:NO];
+}
+#pragma mark -- TencentSessionDelegate
+//登陆完成调用
+- (void)tencentDidLogin
+{
+//    resultLable.text =@"登录完成";
+//    [YFAlert showAlertViewCertainWithTitle:@"登录完成" WithUIViewController:self];
+    if (tencentOAuth.accessToken &&0 != [tencentOAuth.accessToken length])
+    {
+        //  记录登录用户的OpenID、Token以及过期时间
+//        tokenLable.text =tencentOAuth.accessToken;
+        [tencentOAuth getUserInfo];
+        [self getuserJson:tencentOAuth.accessToken openid:tencentOAuth.openId];
+    }
+    else
+    {
+//        tokenLable.text =@"登录不成功没有获取accesstoken";
+        [YFAlert showAlertViewCertainWithTitle:@"登录失败" WithUIViewController:self];
+    }
+}
+-(void)getuserJson:(NSString *)accessToken openid:(NSString *)openId{
+    __weak __typeof(self) weakSelf = self;
+    NSString *urlString =[NSString stringWithFormat:@"https://graph.qq.com/user/get_user_info?access_token=%@&oauth_consumer_key=1105518549&openid=%@&format=json",accessToken,openId];
+    //    NSDictionary *parameters =@{@"access_token":accessToken,@"oauth_consumer_key":@"12345",@"openid":openId,@"format":@"json"};
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];//请求
+    [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        NSLog(@"用户的信息%@",dic);
+        //        NSLog(@"用户的名字%@",dic[@"nickname"]);
+        //        [[NSUserDefaults standardUserDefaults] setObject:dic[@"nickname"] forKey:@"nickname"];
+        //        [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        [weakSelf dismissViewControllerAnimated:YES completion:nil];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"获取用户信息失败");
+    }];
+}
+
+//非网络错误导致登录失败：
+-(void)tencentDidNotLogin:(BOOL)cancelled
+{
+    NSLog(@"tencentDidNotLogin");
+    if (cancelled)
+    {
+//        resultLable.text =@"用户取消登录";
+        [YFAlert showAlertViewCertainWithTitle:@"您已取消登录" WithUIViewController:self];
+    }else{
+//        resultLable.text =@"登录失败";
+        [YFAlert showAlertViewCertainWithTitle:@"登录失败" WithUIViewController:self];
+    }
+}
+// 网络错误导致登录失败：
+-(void)tencentDidNotNetWork
+{
+    NSLog(@"tencentDidNotNetWork");
+//    resultLable.text =@"无网络连接，请设置网络";
+    [YFAlert showAlertViewCertainWithTitle:@"无网络连接，请设置网络" WithUIViewController:self];
+}
+
+-(void)weixinLogin:(UIButton *)sender{
+//    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToWechatSession];
+//    
+//    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
+//        
+//        if (response.responseCode == UMSResponseCodeSuccess) {
+//            
+//            NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
+//            NSLog(@"%@",dict);
+//            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:snsPlatform.platformName];
+//            NSLog(@"\nusername = %@,\n usid = %@,\n token = %@ iconUrl = %@,\n unionId = %@,\n thirdPlatformUserProfile = %@,\n thirdPlatformResponse = %@ \n, message = %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL, snsAccount.unionId, response.thirdPlatformUserProfile, response.thirdPlatformResponse, response.message);
+//            
+//        }
+//        
+//    });
+    SendAuthReq* req =[[SendAuthReq alloc ] init ];
+    req.scope = @"snsapi_userinfo" ;
+    req.state = @"123" ;
+    //第三方向微信终端发送一个SendAuthReq消息结构
+    [WXApi sendReq:req];
+}
+//wx获取用户信息
+- (void)getUserInfoWithAccessToken:(NSString *)accessToken andOpenId:(NSString *)openId{
+    __weak __typeof(self) weakSelf = self;
+
+    NSString *urlString =[NSString stringWithFormat:@"https://api.weixin.qq.com/sns/userinfo"];
+    NSDictionary *parameters =@{@"access_token":accessToken,@"openid":openId};
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];//请求
+    [manager GET:urlString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        NSLog(@"用户的信息%@",dic);
+        NSLog(@"用户的名字%@",dic[@"nickname"]);
+        [[NSUserDefaults standardUserDefaults] setObject:dic[@"nickname"] forKey:@"nickname"];
+        [weakSelf dismissViewControllerAnimated:YES completion:nil];
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"获取用户信息失败");
+    }];
+}
+-(void)action:(NSNotification *)not{
+    NSLog(@"接到通知%@",not.name);
+    NSLog(@"接到通知%@",not.userInfo);
+    NSDictionary *dic=not.userInfo;
+    [self getUserInfoWithAccessToken:[dic objectForKey:@"access_token"] andOpenId:[dic objectForKey:@"openid"]];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -24,7 +24,7 @@
         self.image=dic[@"image"];
         self.price=dic[@"price"];
         self.personNum=dic[@"personNum"];
-        NSLog(@">>>%@",self.view1Title);
+//        NSLog(@">>>%@",self.view1Title);
 //        self.detailArray=dic[@"detail"];
 //        NSLog(@"!!!%@",self.detailArray[0][@"因为"]);
         //        self.title=dic[@"title"];

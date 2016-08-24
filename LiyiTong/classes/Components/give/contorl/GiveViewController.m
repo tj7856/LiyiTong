@@ -40,7 +40,7 @@
     for (NSDictionary *dic in dataList) {
         [modelList addObject:[TOPModel modelWithDic:dic]];
     }
-    NSLog(@"mmmmm%lu %@",dataList.count,modelList[3]);
+//    NSLog(@"mmmmm%lu %@",dataList.count,modelList[3]);
     
     UIScrollView *scrollview=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     scrollview.backgroundColor=Color(238, 238, 238);

@@ -4,13 +4,15 @@
 //
 //  Created by 耿远风 on 16/8/4.
 //  Copyright © 2016年 WanYu. All rights reserved.
-//
+
 
 #import "strategyViewController.h"
 #import "strategyTableViewCell.h"
 #import <SDAutoLayout.h>
 #import "YFActionSheet.h"
-
+#import <UMSocialWechatHandler.h>
+#import "UMSocialControllerService.h"
+#import "UMSocial.h"
 @interface strategyViewController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 @property (nonatomic,strong)UIScrollView *scrollview;
@@ -67,7 +69,7 @@
     backButton.frame=CGRectMake(10, 25, 25, 25);
     //设置UIButton的图像
     [backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
-    //    backButton.backgroundColor=[UIColor orangeColor];
+//        backButton.backgroundColor=[UIColor orangeColor];
     
     [backButton addTarget:self action:@selector(backItemClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];
@@ -76,6 +78,7 @@
     UIButton *shareButton=[[UIButton alloc]init];
     [shareButton setImage:[UIImage imageNamed:@"share"] forState:UIControlStateNormal];
     shareButton.frame=CGRectMake(ScreenWidth-35, 25, 25, 25);
+//    shareButton.backgroundColor=[UIColor orangeColor];
     [self.view addSubview:shareButton];
 //    shareButton.sd_layout.rightSpaceToView(self.view,25*WidthScale).topSpaceToView(self.view,20*WidthScale).widthIs(25).heightIs(25);
     [shareButton addTarget:self action:@selector(share) forControlEvents:UIControlEventTouchUpInside];
@@ -171,10 +174,66 @@
 -(void)share{
     NSArray *titles = @[@"分享到QQ空间",@"分享到QQ",@"分享到朋友圈",@"分享到微信"];
     NSArray *imageNames = @[@"kongjian",@"QQ",@"quan",@"weixin"];
+    NSString * titleStr = @"皖豫网络科技";
+    NSString * urlStr = Share_Url;
+    UIImage  * images = [UIImage imageNamed:@"1.jpg"];
     YFActionSheet *sheet = [[YFActionSheet alloc] initWithTitles:titles iconNames:imageNames];
     [sheet showActionSheetWithClickBlock:^(int btnIndex) {
         NSLog(@"btnIndex:%d",btnIndex);
-    } cancelBlock:^{
+        if (btnIndex==0) {
+            //QQ空间
+            [UMSocialData defaultData].extConfig.qzoneData.title = @"QQ分享title";
+            //点击跳转
+            [UMSocialData defaultData].extConfig.qzoneData.url = @"http://baidu.com";
+            [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToQzone] content:titleStr image:images  location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *response){
+                if (response.responseCode == UMSResponseCodeSuccess) {
+                    NSLog(@"分享成功！");
+                }
+            }];
+
+        }
+        if (btnIndex==1) {
+            //标题
+            [UMSocialData defaultData].extConfig.qqData.title = @"QQ分享title";
+            //点击跳转
+            [UMSocialData defaultData].extConfig.qqData.url = urlStr;
+            //发送到为qq消息类型
+//            [UMSocialData defaultData].extConfig.qqData.qqMessageType = UMSocialQQMessageTypeImage;
+            [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToQQ] content:titleStr image:images  location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *response){
+                if (response.responseCode == UMSResponseCodeSuccess) {
+                    NSLog(@"分享成功！");
+                }
+            }];
+        }
+        if (btnIndex==2) {
+            // 微信朋友圈
+            [UMSocialData defaultData].extConfig.title = @"朋友圈分享";
+            [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://baidu.com";
+            UMSocialUrlResource *urlResource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeImage url:
+                                                 urlStr];
+            [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToWechatTimeline] content:@"礼意通" image:images location:nil urlResource:urlResource presentedController:self completion:^(UMSocialResponseEntity *shareResponse){
+                if (shareResponse.responseCode == UMSResponseCodeSuccess) {
+//                    NSLog(@"分享成功！%@",shareResponse.thirdPlatformUserProfile);
+                    NSLog(@"分享成功！%@",shareResponse);
+                    
+                }
+            }];
+
+        }
+        if (btnIndex==3) {
+            // 微信
+            [UMSocialData defaultData].extConfig.title = titleStr;
+            [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://baidu.com";
+            UMSocialUrlResource *urlResource1 = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeImage url:
+                                                 urlStr];
+            [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToWechatSession] content:@"礼意通" image:images location:nil urlResource:urlResource1 presentedController:self completion:^(UMSocialResponseEntity *shareResponse){
+                if (shareResponse.responseCode == UMSResponseCodeSuccess) {
+                    NSLog(@"分享成功！");
+                }
+            }];
+
+        }
+        } cancelBlock:^{
         NSLog(@"取消");
     }];
 }
