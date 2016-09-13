@@ -18,6 +18,9 @@ PODS:
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - SDAutoLayout (2.1.4)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
   - UMengSocialCOM (5.2.1)
 
 DEPENDENCIES:
@@ -26,6 +29,7 @@ DEPENDENCIES:
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
   - SDAutoLayout
+  - SDWebImage
   - UMengSocialCOM (~> 5.2.1)
 
 SPEC CHECKSUMS:
@@ -34,8 +38,9 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDAutoLayout: 1b2926b193a63287f473dae426ed07861e21e271
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   UMengSocialCOM: 074c135ce349aa4c8848d3fb8458757bcb6ffb67
 
-PODFILE CHECKSUM: 7050d5bb4541e2bcda296d775c8e38140f8a3bfd
+PODFILE CHECKSUM: 40c63753ef275de02a3917ccb20b033c542a3e69
 
 COCOAPODS: 1.0.1

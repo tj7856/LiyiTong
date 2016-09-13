@@ -24,7 +24,7 @@
 - (UIView *)underLine
 {
     if (!_underLine) {
-        UIView *underLine = [[UIView alloc] initWithFrame:CGRectMake(DefaultMargin*4, self.height-4, Home_Seleted_Item_W , 2)];
+        UIView *underLine = [[UIView alloc] initWithFrame:CGRectMake(DefaultMargin*7, self.height-4, Home_Seleted_Item_W , 2)];
         underLine.backgroundColor = [UIColor whiteColor];
         [self addSubview:underLine];
         _underLine = underLine;
@@ -42,30 +42,33 @@
 
 - (void)setup
 {
-    UIButton *hotBtn = [self createBtn:@"精选" tag:HomeTypegift];
-    UIButton *newBtn = [self createBtn:@"猜ta" tag:HomeTypeguess];
-    UIButton *careBtn = [self createBtn:@"热门" tag:HomeTypegive];
+    UIButton *hotBtn = [self createBtn:@"推荐" tag:HomeTypegift];
+    UIButton *newBtn = [self createBtn:@"关注" tag:HomeTypeguess];
+//    UIButton *careBtn = [self createBtn:@"热门" tag:HomeTypegive];
     [self addSubview:hotBtn];
     [self addSubview:newBtn];
-    [self addSubview:careBtn];
+//    [self addSubview:careBtn];
     _hotBtn = hotBtn;
     
     [newBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self);
-        make.width.equalTo(@(Home_Seleted_Item_W));
+//        make.center.equalTo(self);
+//        make.width.equalTo(@(Home_Seleted_Item_W));
+        make.right.equalTo(@(-DefaultMargin*7 ));
+                make.centerY.equalTo(self);
+                make.width.equalTo(@(Home_Seleted_Item_W));
     }];
     
     [hotBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@(DefaultMargin*4 ));
+        make.left.equalTo(@(DefaultMargin*7 ));
         make.centerY.equalTo(self);
         make.width.equalTo(@(Home_Seleted_Item_W));
     }];
     
-    [careBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(@(-DefaultMargin*4 ));
-        make.centerY.equalTo(self);
-        make.width.equalTo(@(Home_Seleted_Item_W));
-    }];
+//    [careBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.equalTo(@(-DefaultMargin*4 ));
+//        make.centerY.equalTo(self);
+//        make.width.equalTo(@(Home_Seleted_Item_W));
+//    }];
     
     // 强制更新一次
     [self layoutIfNeeded];

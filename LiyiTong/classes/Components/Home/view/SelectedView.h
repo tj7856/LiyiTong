@@ -13,7 +13,7 @@
 typedef NS_ENUM(NSUInteger, HomeType) {
     HomeTypegift, // 礼物攻略
     HomeTypeguess, // 猜
-    HomeTypegive // 大家送
+//    HomeTypegive // 大家送
 };
 
 @interface SelectedView : UIView

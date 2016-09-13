@@ -32,7 +32,7 @@
 - (void)loadView
 {
     UIScrollView *view = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    view.contentSize = CGSizeMake(ScreenWidth * 3, 0);
+    view.contentSize = CGSizeMake(ScreenWidth * 2, 0);
     view.backgroundColor = [UIColor whiteColor];
     // 去掉滚动条
     view.showsVerticalScrollIndicator = NO;
@@ -64,14 +64,14 @@
     _guessVc = guess;
     
 //    GiveViewController *care = [UIStoryboard storyboardWithName:NSStringFromClass([ALinCareViewController class]) bundle:nil].instantiateInitialViewController;
-    GiveViewController *give = [[GiveViewController alloc]init];
-    give.view.frame = [UIScreen mainScreen].bounds;
-    give.view.x = ScreenWidth * 2;
-    give.view.height = height;
-    [self addChildViewController:give];
-    [view addSubview:give.view];
-    _giveVc = give;
-    
+//    GiveViewController *give = [[GiveViewController alloc]init];
+//    give.view.frame = [UIScreen mainScreen].bounds;
+//    give.view.x = ScreenWidth * 2;
+//    give.view.height = height;
+//    [self addChildViewController:give];
+//    [view addSubview:give.view];
+//    _giveVc = give;
+//    
     self.view = view;
     self.scrollView = view;
 }
@@ -128,14 +128,14 @@
 //    NSLog(@"000%@",scrollView.subviews);
     CGFloat page = scrollView.contentOffset.x / ScreenWidth;
 //    CGFloat offsetX = scrollView.contentOffset.x / ScreenWidth * (self.selectedView.width * 0.5 - Home_Seleted_Item_W * 0.5 - 15);
-    CGFloat offsetX = scrollView.contentOffset.x / ScreenWidth * ((self.selectedView.width - DefaultMargin * 8 - Home_Seleted_Item_W*3)/2+Home_Seleted_Item_W);
+    CGFloat offsetX = scrollView.contentOffset.x / ScreenWidth * ((self.selectedView.width - DefaultMargin * 14 - Home_Seleted_Item_W*2)+Home_Seleted_Item_W);
 //    self.selectedView.underLine.x = 15 + offsetX;
     
-    self.selectedView.underLine.x = DefaultMargin*4+offsetX;
+    self.selectedView.underLine.x = DefaultMargin*7+offsetX;
     if (page == 1 ) {
-        self.selectedView.underLine.x = offsetX + DefaultMargin*4;
+        self.selectedView.underLine.x = offsetX + DefaultMargin*7;
     }else if (page > 1){
-        self.selectedView.underLine.x = offsetX + DefaultMargin*4;
+        self.selectedView.underLine.x = offsetX + DefaultMargin*7;
     }
     self.selectedView.selectedType = (int)(page + 0.5);
 }

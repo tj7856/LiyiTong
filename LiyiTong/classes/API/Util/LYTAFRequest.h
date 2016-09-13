@@ -19,17 +19,17 @@
 ////192.168.1.8:8080/lyitong/home/sendSMS
 #if USING_OUTER_NET
 //外网地址
-#define SRV_IP_ADDRESS  @"121.40.239.5:3500"//@"118.144.79.138"//
-#define RELEASE_HOST @"121.40.239.5:3500"//@"xdd.xindoudou.cn"//
-#define HOST @"121.40.239.5:3500"//@"xdd.xindoudou.cn"//
+#define SRV_IP_ADDRESS  @"123.56.29.24:8080"//@"118.144.79.138"//
+#define RELEASE_HOST @"123.56.29.24:8080"//@"xdd.xindoudou.cn"//
+#define HOST @"123.56.29.24:8080"//@"xdd.xindoudou.cn"//
 #define URL_BASE_WITH_HOST @"http://" HOST @"/lyitong/"
 #define FILE_SERVER_URL    @"http://" @"%@" @"/lyitong/"
 
 #else
 //内网地址
-#define SRV_IP_ADDRESS  @"192.168.1.8:8080"//@"118.144.79.138"//
-#define RELEASE_HOST @"192.168.1.8:8080"//@"xdd.xindoudou.cn"//
-#define HOST @"192.168.1.8:8080"//@"xdd.xindoudou.cn"//
+#define SRV_IP_ADDRESS  @"123.56.29.24:8080"//@"118.144.79.138"//
+#define RELEASE_HOST @"123.56.29.24:8080"//@"xdd.xindoudou.cn"//
+#define HOST @"123.56.29.24:8080"//@"xdd.xindoudou.cn"//
 #define URL_BASE_WITH_HOST @"http://" HOST @"/lyitong/"
 #define FILE_SERVER_URL    @"http://" @"%@" @"/lyitong/"
 

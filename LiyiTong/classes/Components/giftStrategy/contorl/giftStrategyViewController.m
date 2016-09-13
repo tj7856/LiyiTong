@@ -9,7 +9,8 @@
 #import "giftStrategyViewController.h"
 
 #import "GGImagePageView.h"
-#import "giftTableViewCell.h"
+//#import "giftTableViewCell.h"
+#import "TalkTableViewCell.h"
 #import <SDAutoLayout.h>
 #import "LYTAfnetworkingManager.h"
 #import "CheckPhone.h"
@@ -17,6 +18,7 @@
 #import "strategyViewController.h"
 //#import "login.h"
 #import "loginViewController.h"
+#import "LoginVC.h"
 @interface giftStrategyViewController ()<UITableViewDelegate,UITableViewDataSource,GGImagePageViewDelegate>
 {
     UIView *viwepager;
@@ -53,7 +55,7 @@
     
     imagePageView.showPageControl = YES;
     
-    imagePageView.imageAarray = @[@"banner",@"banner",@"banner",@"banner",@"banner"];
+    imagePageView.imageAarray = @[@"banner_02",@"banner_02",@"banner_02",@"banner_02",@"banner_02"];
     
     [viwepager addSubview:imagePageView];
 }
@@ -100,7 +102,7 @@
     tabview.backgroundColor=[UIColor lightGrayColor];
     tabview.scrollEnabled=NO;
     tabview.separatorStyle = UITableViewCellSeparatorStyleNone;
-    tabview.tableHeaderView=[self addHeaderView];
+//    tabview.tableHeaderView=[self addHeaderView];
     [_backGround addSubview:tabview];
     tabview.delegate=self;
     tabview.dataSource=self;
@@ -140,36 +142,40 @@
     return 1;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 450*WidthScale;
+    return 510*WidthScale;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellID = @"cellID";
-    giftTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    TalkTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell==nil) {
-        cell=[[giftTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell=[[TalkTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
-    cell.backImage.image=[UIImage imageNamed:@"tmp"];
-    cell.loveLabel.text=@"342";
-    cell.captionLabel.text=@"搞定身边挑剔的Geek死宅";
-    cell.describeLabel.text=@"今年是贯彻习近平主席改革强军战略，推动国防和军队改革向纵深发展的关键之年";
-    cell.label1.text=@"IT  领导  苹果  上班族";
+//    cell.backImage.image=[UIImage imageNamed:@"tmp"];
+//    cell.loveLabel.text=@"342";
+//    cell.captionLabel.text=@"搞定身边挑剔的Geek死宅";
+//    cell.describeLabel.text=@"今年是贯彻习近平主席改革强军战略，推动国防和军队改革向纵深发展的关键之年";
+//    cell.label1.text=@"IT  领导  苹果  上班族";
     return cell;
 }
 //点击选中cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%ld",indexPath.row);
-    strategyViewController *strategy=[[strategyViewController alloc]init];
-    [self.navigationController pushViewController:strategy animated:YES];
+//    strategyViewController *strategy=[[strategyViewController alloc]init];
+//    [self.navigationController pushViewController:strategy animated:YES];
 }
 
 -(void)changePage:(UIButton *)sender{
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstStart"]){
         //        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstStart"];
         NSLog(@"第一次启动");
-        loginViewController *loginviewController=[[loginViewController alloc]init];
-        //
-        [self presentViewController:loginviewController animated:YES completion:nil];
+//        loginViewController *loginviewController=[[loginViewController alloc]init];
+//        //
+//        [self presentViewController:loginviewController animated:YES completion:nil];
+       
+        LoginVC *login = [[LoginVC alloc]init];
+        UINavigationController *logNAV = [[UINavigationController alloc]initWithRootViewController:login];
+        [self presentViewController:logNAV animated:YES completion:nil];
         //            [login login:self];
     }else{
         NSLog(@"不是第一次启动");

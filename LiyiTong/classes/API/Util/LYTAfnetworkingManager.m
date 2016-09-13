@@ -199,8 +199,8 @@
         }
     }
     if (statusCode == 0) {
-        LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:@"网络有点慢，请稍后再试~" cancelButton:nil confirmButton:nil];
-        [Alert show];
+//        LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:@"网络有点慢，请稍后再试~" cancelButton:nil confirmButton:nil];
+//        [Alert show];
     }
     else{
         LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:@"数据异常" cancelButton:nil confirmButton:nil];

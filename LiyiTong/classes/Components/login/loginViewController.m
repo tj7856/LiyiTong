@@ -58,12 +58,12 @@
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(action:) name:@"获取用户信息" object:nil];
     
-    
-    UIImageView *img =
-    [[UIImageView alloc]initWithFrame:
-     [UIScreen mainScreen].bounds];
-    img.image=[UIImage imageNamed:@"密码登录"];
-    [self.view addSubview:img];
+//    
+//    UIImageView *img =
+//    [[UIImageView alloc]initWithFrame:
+//     [UIScreen mainScreen].bounds];
+//    img.image=[UIImage imageNamed:@"密码登录"];
+//    [self.view addSubview:img];
     
     UIButton *dismissBtn=[[UIButton alloc]init];
     [dismissBtn setImage:[UIImage imageNamed:@"x_03"] forState:UIControlStateNormal];
