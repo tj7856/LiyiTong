@@ -9,5 +9,5 @@
 #import "LYTAFRequest.h"
 
 @interface CodeLogin : LYTAFRequest
-
+@property(nonatomic,assign)NSInteger result;
 @end

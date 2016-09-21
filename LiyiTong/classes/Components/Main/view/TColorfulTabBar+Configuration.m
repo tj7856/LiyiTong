@@ -18,7 +18,7 @@
 
 - (NSInteger)itemCount {
     
-    return 5;
+    return 4;
 }
 
 @end

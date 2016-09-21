@@ -83,8 +83,8 @@
 
 - (void)setup
 {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_15x14"] style:UIBarButtonItemStyleDone target:nil action:nil];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"head_crown_Msg24x24"] style:UIBarButtonItemStyleDone target:self action:@selector(rankCrown)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"q_06"] style:UIBarButtonItemStyleDone target:nil action:nil];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"q_03"] style:UIBarButtonItemStyleDone target:self action:@selector(rankCrown)];
     [self setupTopMenu];
 }
 
@@ -93,11 +93,11 @@
 //    UIViewController *search = [[UIViewController alloc] init];
 //    search.navigationItem.title = @"搜索";
 //    search.view.backgroundColor = [UIColor greenColor];
-   UIStoryboard *storyboard = [UIStoryboard storyboardWithName:NSStringFromClass([confrimOrderViewController class]) bundle:nil];
-    confrimOrderViewController * confirm = [storyboard instantiateInitialViewController];
-    [_selectedView removeFromSuperview];
-    _selectedView = nil;
-    [self.navigationController pushViewController:confirm animated:YES];
+//   UIStoryboard *storyboard = [UIStoryboard storyboardWithName:NSStringFromClass([confrimOrderViewController class]) bundle:nil];
+//    confrimOrderViewController * confirm = [storyboard instantiateInitialViewController];
+//    [_selectedView removeFromSuperview];
+//    _selectedView = nil;
+//    [self.navigationController pushViewController:confirm animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated

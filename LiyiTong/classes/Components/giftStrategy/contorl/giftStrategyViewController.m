@@ -15,7 +15,8 @@
 #import "LYTAfnetworkingManager.h"
 #import "CheckPhone.h"
 #import "UIViewController+SLHUD.h"
-#import "strategyViewController.h"
+//#import "strategyViewController.h"
+#import "InvitationDetailViewController.h"
 //#import "login.h"
 #import "loginViewController.h"
 #import "LoginVC.h"
@@ -163,6 +164,10 @@
     NSLog(@"%ld",indexPath.row);
 //    strategyViewController *strategy=[[strategyViewController alloc]init];
 //    [self.navigationController pushViewController:strategy animated:YES];
+    InvitationDetailViewController *detail = [[InvitationDetailViewController alloc]init];
+    [self.navigationController pushViewController:detail animated:YES];
+    
+
 }
 
 -(void)changePage:(UIButton *)sender{

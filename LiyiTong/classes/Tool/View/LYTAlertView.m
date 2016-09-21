@@ -55,7 +55,7 @@
     _mainAlertViewHeight = 300;
     _mainAlertViewBgColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8];
     _cornerRadius = 5;
-    _msgTextColor = LYTTEXTCOLOR(52);//[UIColor blackColor];
+    _msgTextColor = [UIColor blackColor];//LYTTEXTCOLOR(52);//
     _cancelButtonTextColor = THEME_COLOR;//[UIColor colorWithRed:0/255.0 green:147/255.0 blue:255/255.0 alpha:1.0];
     _confirmButtonTextColor = LYTCOLOR(0, 101, 181);//[UIColor colorWithRed:0/255.0 green:103/255.0 blue:178/255.0 alpha:1.0];
     _sepViewBgColor = LYTTEXTCOLOR(216);//[UIColor colorWithRed:85/255.0 green:85/255.0 blue:85/255.0 alpha:1.0];

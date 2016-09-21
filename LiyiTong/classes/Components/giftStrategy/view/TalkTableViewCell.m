@@ -54,7 +54,7 @@
     UIButton *zan = [UIButton buttonWithType:(UIButtonTypeCustom)];
 //    zan.enabled = NO;
     [content addSubview:zan];
-    [zan setBackgroundImage:[UIImage imageNamed:@"describe_btn_03"] forState:(UIControlStateDisabled)];
+    [zan setBackgroundImage:[UIImage imageNamed:@"describe_btn_03"] forState:(UIControlStateNormal)];
     [zan setImage:[UIImage imageNamed:@"heart_07"] forState:(UIControlStateNormal)];
     [zan setImage:[UIImage imageNamed:@"heart_active"] forState:(UIControlStateSelected)];
     [zan setTitle:@"1234" forState:(UIControlStateDisabled)];

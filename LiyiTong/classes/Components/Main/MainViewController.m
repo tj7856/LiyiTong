@@ -14,6 +14,7 @@
 #import "MeViewController.h"
 #import "WishViewController.h"
 #import "TColorfulTabBar.h"
+#import "LYTtarBTN.h"
 
 @interface MainViewController ()
 
@@ -32,16 +33,20 @@
 -(void)setup
 {
     
+//    self.tabBar.delegate =nil;
     TColorfulTabBar *tabBar = [[TColorfulTabBar alloc] initWithFrame:self.tabBar.frame];
+//    tabBar.delegate = self;
     [self setValue:tabBar forKey:@"tabBar"];
 
-    [self addChildViewController:[[HomeViewController alloc] init] imageNamed:@"toolbar_home"title:@"主页"];
+    [self addChildViewController:[[HomeViewController alloc] init] imageNamed:@"toolbar_help"title:@"主页"];
     
     [self addChildViewController:[[WishViewController alloc] init] imageNamed:@"toolbar_vow" title:@"许愿"];
-    [self addChildViewController:[[bangbangViewController alloc] init] imageNamed:@"toolbar_help" title:@"帮帮"];
+//    [self addChildViewController:[[bangbangViewController alloc] init] imageNamed:@"toolbar_help" title:@"帮帮"];
     
     [self addChildViewController:[[ConnectionViewController alloc] init] imageNamed:@"toolbar_contacts" title:@"人脉"];
     [self addChildViewController:[[MeViewController alloc] init] imageNamed:@"toolbar_me" title:@"我"];
+    tabBar.colorfulView.subviews[0].hidden = NO;
+    [((LYTtarBTN *)(tabBar.colorfulView.subviews[0])) doAnimation ];
 }
 
 - (void)addChildViewController:(UIViewController *)childController imageNamed:(NSString *)imageName title:(NSString *)title
@@ -66,6 +71,41 @@
     //        nav.navigationBar.shadowImage = [[UIImage alloc] init];
     //        nav.navigationBar.translucent = YES;
     //    }
+    
     [self addChildViewController:nav];
+}
+
+#pragma mark - tabbar的代理方法
+//- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+//{
+//    // 这里不需要调用super，因为父类没有实现这个代理方法
+//    NSLog(@"%s",__func__);
+//}
+# pragma mark - UITabBarDelegate
+
+- (void)tabBar:(TColorfulTabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    
+    NSInteger index = [self.tabBar.items indexOfObject:item];
+//    tabBar
+    tabBar.toIndex = index;
+    //    [self animation];
+    
+    if (tabBar.fromeIndex != tabBar.toIndex) {
+        for (int i=0; i<tabBar.colorfulView.subviews.count; i++) {
+        if (i==index) {
+            tabBar.colorfulView.subviews[i].hidden = NO;
+            [((LYTtarBTN *)(tabBar.colorfulView.subviews[index])) doAnimation ];
+        }
+        else
+        {
+            tabBar.colorfulView.subviews[i].hidden = YES;
+        }
+    }
+        tabBar.fromeIndex = tabBar.toIndex;
+        
+        
+        
+    }
+    
 }
 @end

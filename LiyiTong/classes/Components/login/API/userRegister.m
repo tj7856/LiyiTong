@@ -22,7 +22,8 @@
     if ([response isKindOfClass:[NSDictionary class]]) {
         NSLog(@"注册返回的数据 %@",response);
         NSLog(@"注册返回的数据 %@",response[@"msg"]);
-        self.success=[response copy];
+//        self.success=[response copy];
+         self.result = ((NSNumber *)response[@"status"]).integerValue;
 //        NSLog(@">>>>>success>>>>>%@",self.success[@"status"]);
     }
 }

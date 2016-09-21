@@ -9,5 +9,6 @@
 #import "LYTAFRequest.h"
 
 @interface login : LYTAFRequest
-@property (nonatomic,copy)NSDictionary *success;
+//@property (nonatomic,copy)NSDictionary *success;
+@property(nonatomic,assign)NSInteger result;
 @end

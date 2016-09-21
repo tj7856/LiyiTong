@@ -22,7 +22,9 @@
 #import "WXApi.h"
 #import <TencentOpenAPI/TencentOAuth.h>
 #import "PreferencesMgr.h"
-
+#import "MBProgressHUD.h"
+#import "WeixinLogin.h"
+#import "AccountMgr.h"
 
 #define KEY_USER_PRELOGIN_MODE                   @"lyt.per.login.mode"
 
@@ -50,6 +52,15 @@
 @property (weak, nonatomic) IBOutlet UIView *PreLoginMode;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *Prelog;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *PrelogBottom;
+@property (weak, nonatomic) IBOutlet UIButton *ZCshoujiClear;
+@property (weak, nonatomic) IBOutlet UIButton *ZCyanzhengmaClear;
+@property (weak, nonatomic) IBOutlet UIButton *ZCmimaClear;
+@property (weak, nonatomic) IBOutlet UIButton *NormalshoujiClear;
+@property (weak, nonatomic) IBOutlet UIButton *NormaomimaClear;
+@property (weak, nonatomic) IBOutlet UIButton *YZshoujiClear;
+@property (weak, nonatomic) IBOutlet UIButton *YZmimaClear;
+
+@property(weak,nonatomic)LYTAfnetworkingManager *manager;
 
 @end
 
@@ -62,6 +73,14 @@
 }
 -(void)setup
 {
+    self.NormalshoujiClear.hidden =YES;
+    self.NormaomimaClear.hidden =YES;
+    self.YZmimaClear.hidden =YES;
+    self.YZshoujiClear.hidden =YES;
+    self.ZCyanzhengmaClear.hidden =YES;
+    self.ZCmimaClear.hidden =YES;
+    self.ZCshoujiClear.hidden =YES;
+    
     
     self.title = @"登录";
     
@@ -151,6 +170,9 @@
 
 -(void)back
 {
+    [self.view endEditing:YES];
+ 
+    [self.manager cancelAllOperations];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -204,6 +226,25 @@
   
     
 }
+- (IBAction)ClearBTNclick:(UIButton *)sender {
+    if (sender == _NormalshoujiClear) {
+        self.normalShoujihao.text =@"";
+    } else if(sender == _NormaomimaClear){
+        self.normalMIma.text =@"";
+    }else if(sender == _ZCshoujiClear){
+        self.ZCshoujihao.text =@"";
+    }else if(sender == _ZCyanzhengmaClear){
+        self.ZCyanzhengma.text =@"";
+    }else if(sender == _ZCmimaClear){
+        self.ZCmima.text =@"";
+    }else if(sender == _YZshoujiClear){
+        self.YZshouji.text =@"";
+    }else if(sender == _YZmimaClear){
+        self.YZmima.text =@"";
+    }
+    
+    
+}
 - (IBAction)ForgotPwd:(id)sender {
 }
 - (IBAction)getYanzhengma:(UIButton *)sender {
@@ -222,10 +263,15 @@
 -(void)getPassNum:(UITextField *)phoneNum WithBTN:(UIButton *)sender{
     
     LYTAfnetworkingManager *manager = [LYTAfnetworkingManager new];
-    [self showHint:@"验证码发送中..."];
+    self.manager =manager;
+//    [self showHint:@"验证码发送中..."];
     sendSMS *sendSms=[[sendSMS alloc]init];
     sendSms.parameters=@{@"phone":phoneNum.text};
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
     [manager sendRequest:sendSms response:^(NSError *err) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+
         if (!err) {
             //            [self makeLabelAtLeft:sender]; UILabel *label;
             UILabel *label;
@@ -279,6 +325,7 @@
                         label.text=strTime;
                         //                self.daojishi.text =strTime;
                         [sender setTitle:@"秒后重新获取" forState:UIControlStateNormal];
+                        sender.enabled = NO;
                         //                sender.userInteractionEnabled = NO;
                         
                     });
@@ -300,6 +347,7 @@
 -(void)isNotRegister:(UITextField *)mobileNum WithBTN:(UIButton *)Btn{
     
     LYTAfnetworkingManager *manager = [LYTAfnetworkingManager new];
+    self.manager = manager;
     CheckPhone *req = [CheckPhone new];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     req.parameters =  @{@"phone":mobileNum.text}; //@(month)
@@ -368,11 +416,22 @@
 -(void)NormalLogin
 {
     LYTAfnetworkingManager *manager = [LYTAfnetworkingManager new];
+    self.manager =manager;
     login *userlogin=[login new];
     userlogin.parameters=@{@"phone":self.normalShoujihao.text,@"password":self.normalMIma.text};
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
     [manager sendRequest:userlogin response:^(NSError *err) {
+        [MBProgressHUD  hideHUDForView:self.view animated:YES];
         if (!err) {
-            [self showHint:@"登录成功"];
+            if (userlogin.result ==1) {
+                [self showHint:@"登录成功"];
+            }
+            else
+            {
+                 [YFAlert showAlertViewCertainWithTitle:@"登录失败" WithUIViewController:self];
+            }
+            
         }else{
             [YFAlert showAlertViewCertainWithTitle:@"登录失败" WithUIViewController:self];
         }
@@ -383,11 +442,22 @@
 -(void)shortcutLogin
 {
     LYTAfnetworkingManager *manager = [LYTAfnetworkingManager new];
+    self.manager =manager;
     CodeLogin *codelogin=[CodeLogin new];
     codelogin.parameters=@{@"phone":self.YZshouji.text,@"code":self.YZmima.text};
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [manager sendRequest:codelogin response:^(NSError *err) {
+        [MBProgressHUD  hideHUDForView:self.view animated:YES];
         if (!err) {
-            [self showHint:@"登录成功"];
+            if (codelogin.result ==1) {
+                [self showHint:@"登录成功"];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+            else
+            {
+                 [YFAlert showAlertViewCertainWithTitle:@"登录失败" WithUIViewController:self];
+            }
+            
         }else{
             [YFAlert showAlertViewCertainWithTitle:@"登录失败" WithUIViewController:self];
         }
@@ -397,11 +467,22 @@
 -(void)RegisterLogin
 {
     LYTAfnetworkingManager *manager = [LYTAfnetworkingManager new];
+     self.manager =manager;
     userRegister *sendSms=[userRegister new];
     sendSms.parameters=@{@"phone":self.ZCshoujihao.text,@"password":self.ZCmima.text,@"code":self.ZCyanzhengma.text};
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [manager sendRequest:sendSms response:^(NSError *err) {
+        [MBProgressHUD  hideHUDForView:self.view animated:YES];
         if (!err) {
-            [self showHint:@"注册成功"];
+            if (sendSms.result ==1) {
+                [self showHint:@"登录成功"];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+            else
+            {
+                [YFAlert showAlertViewCertainWithTitle:@"注册失败" WithUIViewController:self];
+            }
+
         }else{
             [YFAlert showAlertViewCertainWithTitle:@"注册失败" WithUIViewController:self];
         }
@@ -462,6 +543,14 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
+    self.NormalshoujiClear.hidden =YES;
+    self.NormaomimaClear.hidden =YES;
+    self.YZmimaClear.hidden =YES;
+    self.YZshoujiClear.hidden =YES;
+    self.ZCyanzhengmaClear.hidden =YES;
+    self.ZCmimaClear.hidden =YES;
+    self.ZCshoujiClear.hidden =YES;
+    
     if ((textField == self.normalShoujihao&&![self.normalShoujihao.text isEqualToString:@""])||(textField == self.YZshouji&&![self.YZshouji.text isEqualToString:@""])||(textField == self.ZCshoujihao&&![self.ZCshoujihao.text isEqualToString:@""])) {
         if (![self isMobileNumber:textField.text]) {
              [YFAlert showAlertViewCertainWithTitle:@"请检查您的手机号是否有误" WithUIViewController:self];
@@ -502,9 +591,79 @@
     }
 }
 
+//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+//    
+//    
+//    
+//    //返回BOOL值，指定是否允许文本字段结束编辑，当编辑结束，文本字段会让出first responder
+//    
+//    //要想在用户结束编辑时阻止文本字段消失，可以返回NO
+//    
+//    //这对一些文本字段必须始终保持活跃状态的程序很有用，比如即时消息
+//    
+//    
+//    if ((textField == _YZmima||textField==_ZCmima) &&textField.text.length <6) {
+//        return NO;
+//    }
+//    
+//    
+//    return YES;
+//    
+//}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField == _normalShoujihao) {
+        self.NormalshoujiClear.hidden = NO;
+    }
+    else if(textField == _normalMIma)
+    {
+        self.NormaomimaClear.hidden = NO;
+    }
+    else if(textField == _ZCshoujihao)
+    {
+        self.ZCshoujiClear.hidden = NO;
+    }
+    else if(textField == _ZCmima)
+    {
+        self.ZCmimaClear.hidden = NO;
+    }
+    else if(textField == _ZCyanzhengma)
+    {
+        self.ZCyanzhengmaClear.hidden = NO;
+    }
+    else if(textField == _YZshouji)
+    {
+        self.YZshoujiClear.hidden = NO;
+    }
+    else if(textField == _YZmima)
+    {
+        self.YZmimaClear.hidden = NO;
+    }
+    
+    
+    if(textField==_normalMIma&&![self.normalShoujihao.text isEqualToString:@""])
+    {
+        self.normalLogBTN.enabled = YES;
+    }
+    else if (textField == _YZmima&&![self.YZshouji.text isEqualToString:@""])
+    {
+        self.YZloginBTN.enabled = YES;
+    }
+    else if (textField == _ZCmima&&![self.ZCshoujihao.text isEqualToString:@""])
+    {
+        self.ZClogBTN.enabled = YES;
+    }
+}
+
+//- (void)textFieldDidBeginEditing:(UITextField*)textField
+//{
+//    
+//}
+
 #pragma mark---QQ与微信登录---
 -(IBAction)QQLogin:(UIButton *)sender{
-    tencentOAuth=[[TencentOAuth alloc]initWithAppId:@"1105518549"andDelegate:self];
+    tencentOAuth=[[TencentOAuth alloc]initWithAppId:@"1105518985"andDelegate:self];
     NSArray *permissions= [NSArray arrayWithObjects:@"get_user_info",@"get_simple_userinfo",@"get_vip_info",@"get_vip_rich_info",@"get_info",@"add_t",nil];
     //    permissions = [NSArray arrayWithObjects:
     //                   kOPEN_PERMISSION_GET_USER_INFO,
@@ -601,7 +760,7 @@
 }
 //wx获取用户信息
 - (void)getUserInfoWithAccessToken:(NSString *)accessToken andOpenId:(NSString *)openId{
-    __weak __typeof(self) weakSelf = self;
+    
     
     NSString *urlString =[NSString stringWithFormat:@"https://api.weixin.qq.com/sns/userinfo"];
     NSDictionary *parameters =@{@"access_token":accessToken,@"openid":openId};
@@ -612,9 +771,7 @@
         NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         NSLog(@"用户的信息%@",dic);
         NSLog(@"用户的名字%@",dic[@"nickname"]);
-        [[NSUserDefaults standardUserDefaults] setObject:dic[@"nickname"] forKey:@"nickname"];
-         [PreferencesMgr saveObject:@"weixin" with:KEY_USER_PRELOGIN_MODE];
-        [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        [self WeixinLogin:dic];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"获取用户信息失败");
@@ -627,5 +784,39 @@
     [self getUserInfoWithAccessToken:[dic objectForKey:@"access_token"] andOpenId:[dic objectForKey:@"openid"]];
 }
 
+-(void)WeixinLogin:(NSDictionary *)dic 
+{
+    __weak __typeof(self) weakSelf = self;
+    LYTAfnetworkingManager *manager = [LYTAfnetworkingManager new];
+     self.manager =manager;
+    WeixinLogin *weixin=[WeixinLogin new];
+    weixin.parameters=@{@"nickname":dic[@"nickname"],@"openid":dic[@"openid"],@"sex":dic[@"sex"],@"headimgurl":dic[@"headimgurl"]};
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [manager sendRequest:weixin response:^(NSError *err) {
+        [MBProgressHUD  hideHUDForView:self.view animated:YES];
+        if (!err) {
+            if (weixin.status ==1) {
+//                [[AccountMgr instance] accountMgrInitialize];
+                
+//                User* user = [User fromDictionary:response];
+//                NSString* token = [response objectForKey:@"token"];
+//                [[AccountMgr instance] signinWith:self.parameters[@"account"] password:self.parameters[@"pwd"] user:user token:token];
+            [[NSUserDefaults standardUserDefaults] setObject:dic[@"nickname"] forKey:@"nickname"];
+                [PreferencesMgr saveObject:@"weixin" with:KEY_USER_PRELOGIN_MODE];
+                [weakSelf dismissViewControllerAnimated:YES completion:nil];
+
+               
+            }
+            else
+            {
+                [YFAlert showAlertViewCertainWithTitle:@"注册失败" WithUIViewController:self];
+            }
+            
+        }else{
+            [YFAlert showAlertViewCertainWithTitle:@"注册失败" WithUIViewController:self];
+        }
+    }];
+}
+     
 
 @end

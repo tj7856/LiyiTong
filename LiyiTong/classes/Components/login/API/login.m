@@ -21,7 +21,8 @@
     if (!response) return;
     if ([response isKindOfClass:[NSDictionary class]]) {
         NSLog(@"登录返回的数据 %@",response);
-        self.success=[response copy];
+//        self.success=[response copy];
+        self.result = ((NSNumber *)response[@"status"]).integerValue;
 //        NSLog(@">>>>>success>>>>>%@",self.success[@"status"]);
     }
 }

@@ -16,4 +16,5 @@ typedef void(^ServerResponse)(NSError *err);
 @property (nonatomic, strong) NSDictionary *extralHTTPHeaderField; //http头部需要额外封装进去的字典(如：token等)
 
 - (void)sendRequest:(LYTAFRequest *)req response:(ServerResponse)serverResponse;
+-(void)cancelAllOperations;
 @end

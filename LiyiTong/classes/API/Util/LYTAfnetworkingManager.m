@@ -15,7 +15,7 @@
 
 @property(nonatomic,copy)ServerResponse serverResponse;
 @property(nonatomic,strong)LYTAFRequest *theReq;
-
+@property(nonatomic,weak)AFHTTPSessionManager *manager;
 
 @end
 
@@ -25,9 +25,24 @@
     self = [super init];
     if (self) {
         _timeoutInterval = 10;
+        
+        
     }
     return self;
 }
+//+ (instancetype)instance {
+//    static LYTAfnetworkingManager *_instance = nil;
+//    static dispatch_once_t onceToken;
+//    
+//    dispatch_once(&onceToken, ^{
+//        if (_instance == nil) {
+//            _instance = [[self alloc] init];
+//        }
+//    });
+//     _instance.timeoutInterval = 10;
+//    return _instance;
+//    
+//}
 
 - (void)setTimeoutInterval:(NSTimeInterval)timeoutInterval {
     if (timeoutInterval != _timeoutInterval) {
@@ -46,14 +61,23 @@
     _serverResponse = serverResponse;
     
     NSURL *baseUrl = [NSURL URLWithString:req.url];
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        self.manager = [[AFHTTPSessionManager alloc] init];
+//        
+//    });
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseUrl];
-    manager.requestSerializer.timeoutInterval = self.timeoutInterval;
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain", nil];
+    self.manager =manager;
+//     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
+
+   self.manager.requestSerializer.timeoutInterval = self.timeoutInterval;
+   self. manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain", nil];
 //    [self configureExtralHttpHeadField:manager];
+    
     
     switch (req.reqType) {
         case kRequestTypeGet: {
-            [manager GET:req.url parameters:req.parameters progress:^(NSProgress *downloadProgress) {
+            [self.manager GET:req.url parameters:req.parameters progress:^(NSProgress *downloadProgress) {
                 [self handleProgress:downloadProgress];
             } success:^(NSURLSessionDataTask *task, id responseObject) {
                 [self handleRequestSuccess:responseObject task:task req:req];
@@ -65,7 +89,7 @@
             break;
         case kRequestTypePost: {
             if (req.multipartData) {
-                [manager POST:req.url parameters:req.parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+                [self.manager POST:req.url parameters:req.parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
                     if (req.multiDataType == kMultiDataTypeImage) {
                         [formData appendPartWithFileData:req.fileData name:@"file" fileName:@"pic.jpg" mimeType:@"image/*"];
                     } else if (req.multiDataType == kMultiDataTypeVideo) {
@@ -83,7 +107,7 @@
                     [self handleRequestError:error task:task];
                 }];
             }else {
-                [manager POST:req.url parameters:req.parameters progress:^(NSProgress *uploadProgress) {
+                [self.manager POST:req.url parameters:req.parameters progress:^(NSProgress *uploadProgress) {
                     [self handleProgress:uploadProgress];
                 } success:^(NSURLSessionDataTask *task, id responseObject) {
                     [self handleRequestSuccess:responseObject task:task req:req];
@@ -94,7 +118,7 @@
         }
             break;
         case kRequestTypeHead: {
-            [manager HEAD:req.url parameters:req.parameters success:^(NSURLSessionDataTask * _Nonnull task) {
+            [self.manager HEAD:req.url parameters:req.parameters success:^(NSURLSessionDataTask * _Nonnull task) {
                 [self handleRequestSuccess:nil task:task req:req];
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [self handleRequestError:error task:task];
@@ -102,7 +126,7 @@
         }
             break;
         case kRequestTypePut: {
-            [manager PUT:req.url parameters:req.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [self.manager PUT:req.url parameters:req.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [self handleRequestSuccess:responseObject task:task req:req];
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [self handleRequestError:error task:task];
@@ -110,7 +134,7 @@
         }
             break;
         case kRequestTypePatch: {
-            [manager PATCH:req.url parameters:req.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [self.manager PATCH:req.url parameters:req.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [self handleRequestSuccess:responseObject task:task req:req];
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [self handleRequestError:error task:task];
@@ -118,7 +142,7 @@
         }
             break;
         case kRequestTypeDelete: {
-            [manager DELETE:req.url parameters:req.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [self.manager DELETE:req.url parameters:req.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [self handleRequestSuccess:responseObject task:task req:req];
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [self handleRequestError:error task:task];
@@ -177,20 +201,20 @@
         }
         if(statusCode == 401
            && code.intValue == 33){
-            LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:@"登录失效，请重新登录" cancelButton:nil confirmButton:nil];
-            [Alert show];
+//            LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:@"登录失效，请重新登录" cancelButton:nil confirmButton:nil];
+//            [Alert show];
 //            [AppDelegate popToLoginView:YES];
             return;
         }
         else if (statusCode == 400 && code.intValue == 9999){
-            LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:msg cancelButton:nil confirmButton:nil];
-            [Alert show];
+//            LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:msg cancelButton:nil confirmButton:nil];
+//            [Alert show];
 //            [AppDelegate popToLoginView:YES];
             return;
         }
         if (msg) {
-            LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:msg cancelButton:nil confirmButton:nil];
-            [Alert show];
+//            LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:msg cancelButton:nil confirmButton:nil];
+//            [Alert show];
             NSLog(@"error msg: %@", msg);
             if (_serverResponse != nil) {
                 _serverResponse(error);
@@ -201,18 +225,22 @@
     if (statusCode == 0) {
 //        LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:@"网络有点慢，请稍后再试~" cancelButton:nil confirmButton:nil];
 //        [Alert show];
+//        LYTAlertView *Alert = [[LYTAlertView alloc]init];
+//    [Alert setMsgText:@"网络有点慢，请稍后再试~" cancelButton:nil confirmButton:nil showAlertWithSender:nil]
+//        [Alert show];
+        
     }
     else{
-        LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:@"数据异常" cancelButton:nil confirmButton:nil];
-        [Alert show];
+//        LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:@"数据异常" cancelButton:nil confirmButton:nil];
+//        [Alert show];
     }
     
     NSLog(@"request error %@",error.localizedDescription);
     if (_serverResponse != nil) {
         _serverResponse(error);
     }
-    //    LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:@"数据异常" cancelButton:nil confirmButton:nil];
-    //    [Alert show];
+//        LYTAlertView *Alert = [[LYTAlertView alloc] initWithText:@"数据异常" cancelButton:nil confirmButton:nil];
+//        [Alert show];
 }
 
 //- (void)configureExtralHttpHeadField:(AFHTTPSessionManager *)manager {
@@ -229,6 +257,11 @@
 
 - (void)dealloc {
     
+}
+
+-(void)cancelAllOperations
+{
+    [self.manager.operationQueue cancelAllOperations];
 }
 
 @end

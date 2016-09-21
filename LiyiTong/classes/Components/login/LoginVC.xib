@@ -10,19 +10,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC">
             <connections>
                 <outlet property="LoginLeading" destination="7A7-4K-l8f" id="IF9-yk-Wgr"/>
+                <outlet property="NormalshoujiClear" destination="n61-qx-PLa" id="EPx-g9-e3O"/>
+                <outlet property="NormaomimaClear" destination="7mZ-Dp-RaP" id="0HX-hk-bZ5"/>
                 <outlet property="PreLoginMode" destination="Yt8-S2-pDi" id="qG0-Ip-LQo"/>
                 <outlet property="Prelog" destination="j7O-AF-PDH" id="mfb-sA-hKv"/>
                 <outlet property="PrelogBottom" destination="MG6-Xi-avy" id="tch-U3-hRY"/>
                 <outlet property="YZloginBTN" destination="RgX-Ps-BZC" id="WMW-rw-pfW"/>
                 <outlet property="YZmima" destination="7IX-Od-7XN" id="aw9-3D-iWd"/>
+                <outlet property="YZmimaClear" destination="6of-Aa-9z3" id="syH-YC-wJ1"/>
                 <outlet property="YZshouji" destination="yoX-aB-Fzl" id="mie-Wt-ANA"/>
+                <outlet property="YZshoujiClear" destination="aut-Up-ClD" id="mCD-CZ-561"/>
                 <outlet property="YZyanzhengBTN" destination="pdm-gU-PlJ" id="Z6D-6x-Taq"/>
                 <outlet property="ZCdaojishi" destination="EFq-38-IcD" id="UB8-x5-rG6"/>
                 <outlet property="ZClogBTN" destination="SBM-h5-aKq" id="ESc-Cw-sma"/>
                 <outlet property="ZCmima" destination="w3s-qW-bvf" id="yDD-vq-lgN"/>
+                <outlet property="ZCmimaClear" destination="7wp-HH-njU" id="P9e-u8-jOX"/>
+                <outlet property="ZCshoujiClear" destination="qNM-LR-ztw" id="KDX-yz-E2Y"/>
                 <outlet property="ZCshoujihao" destination="BVA-6S-AZK" id="hqZ-gT-DBR"/>
                 <outlet property="ZCyanzhengBTN" destination="1pY-rJ-Oja" id="zr8-5L-PPI"/>
                 <outlet property="ZCyanzhengma" destination="b21-cC-ZFP" id="llI-ZO-jo6"/>
+                <outlet property="ZCyanzhengmaClear" destination="UG6-HL-jRO" id="oTg-rU-cqu"/>
                 <outlet property="ZYyanzhengBTN" destination="pdm-gU-PlJ" id="Xbj-GE-Xek"/>
                 <outlet property="daojishi" destination="cyr-Oe-mZu" id="4sw-Xb-Uyn"/>
                 <outlet property="normalLogBTN" destination="tBz-tt-GFM" id="bzl-xO-YRM"/>
@@ -37,7 +44,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page_bg" translatesAutoresizingMaskIntoConstraints="NO" id="2E5-tA-C2m">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="page_bg" translatesAutoresizingMaskIntoConstraints="NO" id="2E5-tA-C2m">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQQ-kb-XAn" userLabel="View1">
@@ -73,7 +80,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="u9Y-1g-Qnx"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="k28-Ck-t65">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k28-Ck-t65">
                                                     <rect key="frame" x="46" y="11" width="221" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -91,6 +98,13 @@
                                                         <outlet property="delegate" destination="-1" id="MGX-yX-hUW"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n61-qx-PLa">
+                                                    <rect key="frame" x="247" y="15" width="20" height="22"/>
+                                                    <state key="normal" image="0x_03"/>
+                                                    <connections>
+                                                        <action selector="ClearBTNclick:" destination="-1" eventType="touchUpInside" id="RkP-K6-JdQ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -100,7 +114,9 @@
                                                 <constraint firstItem="k28-Ck-t65" firstAttribute="leading" secondItem="lJ3-0a-tBR" secondAttribute="trailing" constant="8" id="RxV-4T-YUI"/>
                                                 <constraint firstItem="k28-Ck-t65" firstAttribute="top" secondItem="lJ3-0a-tBR" secondAttribute="top" id="jfV-O0-tTG"/>
                                                 <constraint firstItem="k28-Ck-t65" firstAttribute="height" secondItem="lJ3-0a-tBR" secondAttribute="height" id="jmn-uB-PZh"/>
+                                                <constraint firstItem="n61-qx-PLa" firstAttribute="centerY" secondItem="eyH-oa-nkX" secondAttribute="centerY" id="le7-fa-4U8"/>
                                                 <constraint firstItem="lJ3-0a-tBR" firstAttribute="centerY" secondItem="eyH-oa-nkX" secondAttribute="centerY" id="rB3-kI-7DM"/>
+                                                <constraint firstAttribute="trailing" secondItem="n61-qx-PLa" secondAttribute="trailing" constant="8" id="rez-Rm-P9d"/>
                                                 <constraint firstItem="k28-Ck-t65" firstAttribute="height" secondItem="lJ3-0a-tBR" secondAttribute="height" id="zHJ-YC-wR7"/>
                                             </constraints>
                                             <variation key="default">
@@ -120,7 +136,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="lBY-bO-39t"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6-32字母数字组合" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="neC-s2-URO">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6-32字母数字组合" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="neC-s2-URO">
                                                     <rect key="frame" x="46" y="7" width="221" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -130,14 +146,23 @@
                                                         <outlet property="delegate" destination="-1" id="gHd-Di-Pha"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mZ-Dp-RaP">
+                                                    <rect key="frame" x="247" y="11" width="20" height="22"/>
+                                                    <state key="normal" image="0x_03"/>
+                                                    <connections>
+                                                        <action selector="ClearBTNclick:" destination="-1" eventType="touchUpInside" id="OAy-5g-pls"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="neC-s2-URO" firstAttribute="leading" secondItem="AHY-P4-Tr5" secondAttribute="trailing" constant="8" id="5AR-sT-Fe9"/>
+                                                <constraint firstAttribute="trailing" secondItem="7mZ-Dp-RaP" secondAttribute="trailing" constant="8" id="8R6-pd-OZU"/>
                                                 <constraint firstItem="neC-s2-URO" firstAttribute="top" secondItem="AHY-P4-Tr5" secondAttribute="top" id="NrA-GU-Lzl"/>
                                                 <constraint firstItem="AHY-P4-Tr5" firstAttribute="leading" secondItem="CUh-eP-kbn" secondAttribute="leading" constant="8" id="X3e-7Q-xLN"/>
                                                 <constraint firstItem="neC-s2-URO" firstAttribute="height" secondItem="AHY-P4-Tr5" secondAttribute="height" id="XNL-0h-fd3"/>
                                                 <constraint firstItem="AHY-P4-Tr5" firstAttribute="centerY" secondItem="CUh-eP-kbn" secondAttribute="centerY" id="a2n-GN-8Jl"/>
+                                                <constraint firstItem="7mZ-Dp-RaP" firstAttribute="centerY" secondItem="CUh-eP-kbn" secondAttribute="centerY" id="q5R-pQ-Bk5"/>
                                                 <constraint firstAttribute="trailing" secondItem="neC-s2-URO" secondAttribute="trailing" constant="8" id="q7M-ZE-7p5"/>
                                             </constraints>
                                         </view>
@@ -301,7 +326,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="x2W-9V-tE9"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yoX-aB-Fzl">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yoX-aB-Fzl">
                                                     <rect key="frame" x="46" y="2" width="221" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -311,6 +336,13 @@
                                                         <outlet property="delegate" destination="-1" id="KSg-H5-Jao"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aut-Up-ClD">
+                                                    <rect key="frame" x="247" y="6" width="20" height="22"/>
+                                                    <state key="normal" image="0x_03"/>
+                                                    <connections>
+                                                        <action selector="ClearBTNclick:" destination="-1" eventType="touchUpInside" id="LKV-DP-sPg"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -320,7 +352,9 @@
                                                 <constraint firstItem="yoX-aB-Fzl" firstAttribute="top" secondItem="9OV-s9-2ox" secondAttribute="top" id="Oba-c9-k2y"/>
                                                 <constraint firstItem="9OV-s9-2ox" firstAttribute="centerY" secondItem="Dvk-Fo-ILf" secondAttribute="centerY" id="PcI-o4-qOe"/>
                                                 <constraint firstAttribute="trailing" secondItem="yoX-aB-Fzl" secondAttribute="trailing" constant="8" id="Pxl-Pm-hxA"/>
+                                                <constraint firstItem="aut-Up-ClD" firstAttribute="centerY" secondItem="Dvk-Fo-ILf" secondAttribute="centerY" id="RzZ-Yw-06a"/>
                                                 <constraint firstItem="yoX-aB-Fzl" firstAttribute="leading" secondItem="9OV-s9-2ox" secondAttribute="trailing" constant="8" id="WZa-LP-9he"/>
+                                                <constraint firstAttribute="trailing" secondItem="aut-Up-ClD" secondAttribute="trailing" constant="8" id="Xif-Cf-wgb"/>
                                                 <constraint firstAttribute="height" constant="33" id="t64-oP-4sR"/>
                                             </constraints>
                                             <variation key="default">
@@ -349,7 +383,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="ydE-F6-jS6"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6-32字母数字组合" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7IX-Od-7XN">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6-32字母数字组合" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7IX-Od-7XN">
                                                     <rect key="frame" x="46" y="2" width="221" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -359,12 +393,21 @@
                                                         <outlet property="delegate" destination="-1" id="GnJ-du-cHz"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6of-Aa-9z3">
+                                                    <rect key="frame" x="247" y="6" width="20" height="22"/>
+                                                    <state key="normal" image="0x_03"/>
+                                                    <connections>
+                                                        <action selector="ClearBTNclick:" destination="-1" eventType="touchUpInside" id="dL6-U5-Yp5"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="6of-Aa-9z3" secondAttribute="trailing" constant="8" id="1pV-ga-tc3"/>
                                                 <constraint firstItem="7IX-Od-7XN" firstAttribute="top" secondItem="ZUu-Ss-VLP" secondAttribute="top" id="4tD-s3-DoO"/>
                                                 <constraint firstItem="7IX-Od-7XN" firstAttribute="leading" secondItem="ZUu-Ss-VLP" secondAttribute="trailing" constant="8" id="PKm-4b-dah"/>
                                                 <constraint firstItem="ZUu-Ss-VLP" firstAttribute="centerY" secondItem="YFR-8J-WMw" secondAttribute="centerY" id="VHf-DN-zTT"/>
+                                                <constraint firstItem="6of-Aa-9z3" firstAttribute="centerY" secondItem="YFR-8J-WMw" secondAttribute="centerY" id="d4q-Z6-HhR"/>
                                                 <constraint firstItem="7IX-Od-7XN" firstAttribute="height" secondItem="ZUu-Ss-VLP" secondAttribute="height" id="jtj-QP-73Y"/>
                                                 <constraint firstAttribute="trailing" secondItem="7IX-Od-7XN" secondAttribute="trailing" constant="8" id="qMQ-gu-qEI"/>
                                                 <constraint firstItem="ZUu-Ss-VLP" firstAttribute="leading" secondItem="YFR-8J-WMw" secondAttribute="leading" constant="8" id="wh9-P0-LWY"/>
@@ -622,7 +665,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="d7Y-HX-hg1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BVA-6S-AZK">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVA-6S-AZK">
                                                     <rect key="frame" x="46" y="2" width="221" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -632,13 +675,22 @@
                                                         <outlet property="delegate" destination="-1" id="PQl-Zq-J9S"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNM-LR-ztw">
+                                                    <rect key="frame" x="247" y="6" width="20" height="22"/>
+                                                    <state key="normal" image="0x_03"/>
+                                                    <connections>
+                                                        <action selector="ClearBTNclick:" destination="-1" eventType="touchUpInside" id="jd3-B8-3OS"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="BVA-6S-AZK" firstAttribute="top" secondItem="rnq-cD-gNL" secondAttribute="top" id="1nj-1E-qRe"/>
                                                 <constraint firstItem="rnq-cD-gNL" firstAttribute="centerY" secondItem="hAm-b6-HWU" secondAttribute="centerY" id="NI4-km-Mv2"/>
+                                                <constraint firstAttribute="trailing" secondItem="qNM-LR-ztw" secondAttribute="trailing" constant="8" id="O4t-vo-QTd"/>
                                                 <constraint firstItem="BVA-6S-AZK" firstAttribute="leading" secondItem="rnq-cD-gNL" secondAttribute="trailing" constant="8" id="SBz-n1-jrk"/>
                                                 <constraint firstItem="rnq-cD-gNL" firstAttribute="top" secondItem="hAm-b6-HWU" secondAttribute="top" constant="8" id="SKS-Hp-Xmj"/>
+                                                <constraint firstItem="qNM-LR-ztw" firstAttribute="centerY" secondItem="hAm-b6-HWU" secondAttribute="centerY" id="TH7-gA-Ieh"/>
                                                 <constraint firstItem="rnq-cD-gNL" firstAttribute="leading" secondItem="hAm-b6-HWU" secondAttribute="leading" constant="8" id="X4A-zV-K6Y"/>
                                                 <constraint firstAttribute="height" constant="33" id="eAi-9h-akz"/>
                                                 <constraint firstAttribute="trailing" secondItem="BVA-6S-AZK" secondAttribute="trailing" constant="8" id="hOd-36-ZB6"/>
@@ -660,7 +712,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="BbY-RV-9gD"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6-32字母数字组合" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b21-cC-ZFP">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6-32字母数字组合" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b21-cC-ZFP">
                                                     <rect key="frame" x="46" y="2" width="221" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -670,6 +722,13 @@
                                                         <outlet property="delegate" destination="-1" id="feO-zB-qCt"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UG6-HL-jRO">
+                                                    <rect key="frame" x="247" y="6" width="20" height="22"/>
+                                                    <state key="normal" image="0x_03"/>
+                                                    <connections>
+                                                        <action selector="ClearBTNclick:" destination="-1" eventType="touchUpInside" id="vmk-Cn-917"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -677,7 +736,9 @@
                                                 <constraint firstItem="b21-cC-ZFP" firstAttribute="top" secondItem="C4U-i0-OfF" secondAttribute="top" id="1lK-jY-kPb"/>
                                                 <constraint firstItem="C4U-i0-OfF" firstAttribute="leading" secondItem="Dou-SR-evi" secondAttribute="leading" constant="8" id="6UT-aJ-DSv"/>
                                                 <constraint firstAttribute="trailing" secondItem="b21-cC-ZFP" secondAttribute="trailing" constant="8" id="CEe-8m-6gH"/>
+                                                <constraint firstAttribute="trailing" secondItem="UG6-HL-jRO" secondAttribute="trailing" constant="8" id="SGK-KY-EZq"/>
                                                 <constraint firstItem="b21-cC-ZFP" firstAttribute="leading" secondItem="C4U-i0-OfF" secondAttribute="trailing" constant="8" id="fiK-gX-qg8"/>
+                                                <constraint firstItem="UG6-HL-jRO" firstAttribute="centerY" secondItem="Dou-SR-evi" secondAttribute="centerY" id="lqB-uJ-N7u"/>
                                                 <constraint firstItem="C4U-i0-OfF" firstAttribute="centerY" secondItem="Dou-SR-evi" secondAttribute="centerY" id="shQ-vq-zAs"/>
                                             </constraints>
                                         </view>
@@ -697,7 +758,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="qiJ-sS-IHX"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6-32字母数字组合" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w3s-qW-bvf">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6-32字母数字组合" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w3s-qW-bvf">
                                                     <rect key="frame" x="46" y="2" width="221" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -707,11 +768,20 @@
                                                         <outlet property="delegate" destination="-1" id="8Tg-pt-IzU"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wp-HH-njU">
+                                                    <rect key="frame" x="247" y="6" width="20" height="22"/>
+                                                    <state key="normal" image="0x_03"/>
+                                                    <connections>
+                                                        <action selector="ClearBTNclick:" destination="-1" eventType="touchUpInside" id="uC8-T1-CeE"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="w3s-qW-bvf" firstAttribute="top" secondItem="JzK-uF-Ws6" secondAttribute="top" id="0yQ-ON-oNc"/>
                                                 <constraint firstItem="JzK-uF-Ws6" firstAttribute="leading" secondItem="dda-9i-irf" secondAttribute="leading" constant="8" id="J10-Ag-raV"/>
+                                                <constraint firstItem="7wp-HH-njU" firstAttribute="centerY" secondItem="dda-9i-irf" secondAttribute="centerY" id="O3l-nU-rzr"/>
+                                                <constraint firstAttribute="trailing" secondItem="7wp-HH-njU" secondAttribute="trailing" constant="8" id="VqW-1H-m96"/>
                                                 <constraint firstAttribute="trailing" secondItem="w3s-qW-bvf" secondAttribute="trailing" constant="8" id="acO-TG-UNt"/>
                                                 <constraint firstItem="w3s-qW-bvf" firstAttribute="height" secondItem="JzK-uF-Ws6" secondAttribute="height" id="gf1-ge-jk2"/>
                                                 <constraint firstItem="JzK-uF-Ws6" firstAttribute="centerY" secondItem="dda-9i-irf" secondAttribute="centerY" id="hpZ-oA-p4F"/>
@@ -906,10 +976,11 @@
                     <exclude reference="Dyc-cI-5iQ"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="-260.5" y="308"/>
+            <point key="canvasLocation" x="-260.5" y="307.5"/>
         </view>
     </objects>
     <resources>
+        <image name="0x_03" width="20" height="20"/>
         <image name="denglu_hui_03" width="281" height="41"/>
         <image name="denglu_lv_03" width="281" height="41"/>
         <image name="ico_03" width="57" height="57"/>

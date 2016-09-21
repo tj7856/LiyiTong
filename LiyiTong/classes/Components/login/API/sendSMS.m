@@ -14,7 +14,7 @@
 }
 
 - (RequestType)reqType {
-    return kRequestTypeGet;
+    return kRequestTypePost;
 }
 
 - (void)ResponseSuccess:(id)response{

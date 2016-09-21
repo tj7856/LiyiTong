@@ -25,7 +25,7 @@
 {
     if (!_underLine) {
         UIView *underLine = [[UIView alloc] initWithFrame:CGRectMake(DefaultMargin*7, self.height-4, Home_Seleted_Item_W , 2)];
-        underLine.backgroundColor = [UIColor whiteColor];
+        underLine.backgroundColor = [UIColor colorWithRed:11/255.0 green:230/255.0 blue:196/255.0 alpha:1];
         [self addSubview:underLine];
         _underLine = underLine;
     }
@@ -88,8 +88,8 @@
     UIButton *btn = [[UIButton alloc] init];
 //    btn.titleLabel.font = [UIFont systemFontOfSize:19];
     [btn setTitle:title forState:UIControlStateNormal];
-    [btn setTitleColor:[[UIColor whiteColor] colorWithAlphaComponent:0.6] forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [btn setTitleColor:[UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor colorWithRed:11/255.0 green:230/255.0 blue:196/255.0 alpha:1] forState:UIControlStateSelected];
     btn.titleLabel.adjustsFontSizeToFitWidth =YES;
     btn.tag = tag;
     [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
