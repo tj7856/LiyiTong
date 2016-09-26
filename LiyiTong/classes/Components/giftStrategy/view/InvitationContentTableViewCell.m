@@ -170,7 +170,7 @@
                 [giftView addSubview:share];
                 share.sd_layout.leftSpaceToView(giftView,0).topSpaceToView(giftView,16).rightSpaceToView(giftView,0).autoHeightRatio(0);
                 UIView *giftContent = [[UIView alloc]init];
-                giftContent.backgroundColor = [UIColor colorWithRed:236/255.0 green:237/255.0 blue:238/255.0 alpha:1];
+                giftContent.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
                 [giftView addSubview:giftContent];
                 giftContent.sd_layout.topSpaceToView(share,8).leftSpaceToView(giftView,0).widthRatioToView(giftView,1.0f).heightIs(112);
                 UIImageView *giftImag = [[UIImageView alloc]init];

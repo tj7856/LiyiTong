@@ -30,7 +30,7 @@
 -(void)setup
 {
     UIImageView *image = [[UIImageView alloc]init];
-    image.image = [UIImage imageNamed:@"4"];
+    image.image = [UIImage imageNamed:@"b2_14"];
     [self.contentView addSubview:image];
     image.sd_layout.widthIs(45).heightIs(32).topSpaceToView(self.contentView,10).leftSpaceToView(self.contentView,10);
     UILabel *title = [[UILabel alloc]init];
@@ -49,11 +49,19 @@
     
     UIButton *detail =[UIButton buttonWithType:(UIButtonTypeCustom)];
     [self.contentView addSubview:detail];
-    detail.backgroundColor = [UIColor colorWithRed:12/255.0 green:230/255.0 blue:196/255 alpha:1];
-    [detail setTitle:@"chakanxiangx" forState:(UIControlStateNormal)];
-    [detail setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+    detail.backgroundColor = [UIColor whiteColor];
+    [detail setTitle:@"查看详情" forState:(UIControlStateNormal)];
+    [detail setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
+    detail.titleLabel.adjustsFontSizeToFitWidth =YES;
+    detail.layer.cornerRadius =2;
+    detail.layer.masksToBounds =YES;
+    detail.layer.borderWidth =1;
+    detail.layer.borderColor = [UIColor colorWithRed:170/255.0 green:170/255.0 blue:170/255.0 alpha:1].CGColor;
     detail.sd_layout.widthIs(62).heightIs(25).rightSpaceToView(self.contentView,0).topSpaceToView(self.contentView,13);
-    
+    UIView *bottom = [[UIView alloc]init];
+    bottom.backgroundColor =[UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
+    [self.contentView addSubview:bottom];
+    bottom.sd_layout.widthRatioToView(self.contentView,1.0f).bottomSpaceToView(self.contentView,0).leftSpaceToView(self.contentView,0).heightIs(6);
     
     
     

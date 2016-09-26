@@ -7,6 +7,7 @@
 //
 
 #import "SelectedView.h"
+#import <SDAutoLayout.h>
 
 // 首页的选择器的宽度
 #define Home_Seleted_Item_W  60
@@ -21,12 +22,15 @@
 
 @implementation SelectedView
 
+
+
 - (UIView *)underLine
 {
     if (!_underLine) {
         UIView *underLine = [[UIView alloc] initWithFrame:CGRectMake(DefaultMargin*7, self.height-4, Home_Seleted_Item_W , 2)];
         underLine.backgroundColor = [UIColor colorWithRed:11/255.0 green:230/255.0 blue:196/255.0 alpha:1];
         [self addSubview:underLine];
+        
         _underLine = underLine;
     }
     return _underLine;
@@ -50,19 +54,22 @@
 //    [self addSubview:careBtn];
     _hotBtn = hotBtn;
     
-    [newBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(self);
-//        make.width.equalTo(@(Home_Seleted_Item_W));
-        make.right.equalTo(@(-DefaultMargin*7 ));
-                make.centerY.equalTo(self);
-                make.width.equalTo(@(Home_Seleted_Item_W));
-    }];
+    newBtn.sd_layout.centerYEqualToView(self).widthIs(Home_Seleted_Item_W).rightSpaceToView(self,DefaultMargin*7).heightIs(30);
+    hotBtn.sd_layout.centerYEqualToView(self).widthIs(Home_Seleted_Item_W).leftSpaceToView(self,DefaultMargin*7).heightIs(30);
     
-    [hotBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@(DefaultMargin*7 ));
-        make.centerY.equalTo(self);
-        make.width.equalTo(@(Home_Seleted_Item_W));
-    }];
+//    [newBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+////        make.center.equalTo(self);
+////        make.width.equalTo(@(Home_Seleted_Item_W));
+//        make.right.equalTo(@(-DefaultMargin*7 ));
+//                make.centerY.equalTo(self);
+//                make.width.equalTo(@(Home_Seleted_Item_W));
+//    }];
+//    
+//    [hotBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(@(DefaultMargin*7 ));
+//        make.centerY.equalTo(self);
+//        make.width.equalTo(@(Home_Seleted_Item_W));
+//    }];
     
 //    [careBtn mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.right.equalTo(@(-DefaultMargin*4 ));
@@ -70,7 +77,7 @@
 //        make.width.equalTo(@(Home_Seleted_Item_W));
 //    }];
     
-    // 强制更新一次
+   //  强制更新一次
     [self layoutIfNeeded];
     // 默认选中最热
     [self click:hotBtn];
@@ -90,7 +97,9 @@
     [btn setTitle:title forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1] forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor colorWithRed:11/255.0 green:230/255.0 blue:196/255.0 alpha:1] forState:UIControlStateSelected];
+    [btn setTitleColor:[UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1] forState:UIControlStateHighlighted];
     btn.titleLabel.adjustsFontSizeToFitWidth =YES;
+ 
     btn.tag = tag;
     [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
     return btn;
@@ -112,10 +121,13 @@
 // 点击事件
 - (void)click:(UIButton *)btn
 {
-    self.selectedBtn.selected = NO;
-    btn.selected = YES;
-    self.selectedBtn = btn;
-    
+//    btn.selected = !btn.selected;
+    if(self.selectedBtn!=btn)
+    {
+//    self.selectedBtn.selected = NO;
+//    btn.selected = YES;
+//    self.selectedBtn = btn;
+//    
 //    [UIView animateWithDuration:0.5 animations:^{
 //        self.underLine.x = btn.x ;
 ////        self.underLine.x += 10;
@@ -124,6 +136,7 @@
     
     if (self.selectedBlock) {
         self.selectedBlock(btn.tag);
+    }
     }
 }
 @end

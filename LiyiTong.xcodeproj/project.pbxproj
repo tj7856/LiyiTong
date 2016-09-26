@@ -215,6 +215,9 @@
 		FBE13F651D90C7EB00DF4D17 /* PostsContent.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE13F641D90C7EB00DF4D17 /* PostsContent.m */; };
 		FBE13F681D9152F500DF4D17 /* InvitationContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE13F671D9152F500DF4D17 /* InvitationContentTableViewCell.m */; };
 		FBE13F6B1D9280A200DF4D17 /* FormTopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE13F6A1D9280A200DF4D17 /* FormTopicTableViewCell.m */; };
+		FBE13F6E1D93BB9400DF4D17 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE13F6D1D93BB9400DF4D17 /* CommentTableViewCell.m */; };
+		FBE13F711D94B5E600DF4D17 /* SubResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE13F701D94B5E600DF4D17 /* SubResponse.m */; };
+		FBE13F741D94B97300DF4D17 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE13F731D94B97300DF4D17 /* Response.m */; };
 		FBF322B41D58619F005CCA00 /* AccountMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF322B11D58619F005CCA00 /* AccountMgr.m */; };
 		FBF322B51D58619F005CCA00 /* PreferencesMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF322B31D58619F005CCA00 /* PreferencesMgr.m */; };
 		FBF322B91D586457005CCA00 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF322B81D586457005CCA00 /* User.m */; };
@@ -592,6 +595,12 @@
 		FBE13F671D9152F500DF4D17 /* InvitationContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationContentTableViewCell.m; sourceTree = "<group>"; };
 		FBE13F691D9280A200DF4D17 /* FormTopicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormTopicTableViewCell.h; sourceTree = "<group>"; };
 		FBE13F6A1D9280A200DF4D17 /* FormTopicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormTopicTableViewCell.m; sourceTree = "<group>"; };
+		FBE13F6C1D93BB9400DF4D17 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		FBE13F6D1D93BB9400DF4D17 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		FBE13F6F1D94B5E600DF4D17 /* SubResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubResponse.h; path = LiyiTong/classes/Components/giftStrategy/view/SubResponse.h; sourceTree = SOURCE_ROOT; };
+		FBE13F701D94B5E600DF4D17 /* SubResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubResponse.m; path = LiyiTong/classes/Components/giftStrategy/view/SubResponse.m; sourceTree = SOURCE_ROOT; };
+		FBE13F721D94B97300DF4D17 /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Response.h; path = LiyiTong/classes/Components/giftStrategy/view/Response.h; sourceTree = SOURCE_ROOT; };
+		FBE13F731D94B97300DF4D17 /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Response.m; path = LiyiTong/classes/Components/giftStrategy/view/Response.m; sourceTree = SOURCE_ROOT; };
 		FBF322AB1D5486A4005CCA00 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBF322B01D58619F005CCA00 /* AccountMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountMgr.h; sourceTree = "<group>"; };
 		FBF322B11D58619F005CCA00 /* AccountMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountMgr.m; sourceTree = "<group>"; };
@@ -1320,6 +1329,10 @@
 			children = (
 				FBE13F631D90C7EB00DF4D17 /* PostsContent.h */,
 				FBE13F641D90C7EB00DF4D17 /* PostsContent.m */,
+				FBE13F6F1D94B5E600DF4D17 /* SubResponse.h */,
+				FBE13F701D94B5E600DF4D17 /* SubResponse.m */,
+				FBE13F721D94B97300DF4D17 /* Response.h */,
+				FBE13F731D94B97300DF4D17 /* Response.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1347,6 +1360,8 @@
 				FBE13F671D9152F500DF4D17 /* InvitationContentTableViewCell.m */,
 				FBE13F691D9280A200DF4D17 /* FormTopicTableViewCell.h */,
 				FBE13F6A1D9280A200DF4D17 /* FormTopicTableViewCell.m */,
+				FBE13F6C1D93BB9400DF4D17 /* CommentTableViewCell.h */,
+				FBE13F6D1D93BB9400DF4D17 /* CommentTableViewCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1945,6 +1960,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE13F741D94B97300DF4D17 /* Response.m in Sources */,
 				FB47D6661D48693D008EE4D6 /* bangbangViewController.m in Sources */,
 				FB1546C21D83B6700019C5A1 /* POPAnimationRuntime.mm in Sources */,
 				FB1546CD1D83B6700019C5A1 /* POPSpringAnimation.mm in Sources */,
@@ -2014,6 +2030,7 @@
 				FB1546C41D83B6700019C5A1 /* POPAnimator.mm in Sources */,
 				FB1546CF1D83B6700019C5A1 /* TransformationMatrix.cpp in Sources */,
 				C206072E1D6550F700AD2884 /* getGiftViewController.m in Sources */,
+				FBE13F711D94B5E600DF4D17 /* SubResponse.m in Sources */,
 				C2B605911D587B8400110E39 /* detailViewController.m in Sources */,
 				C20607471D68877C00AD2884 /* addressTableViewCell.m in Sources */,
 				C20607421D66AFF400AD2884 /* OSAddressPickerView.m in Sources */,
@@ -2029,6 +2046,7 @@
 				C206073D1D65AE6000AD2884 /* allAddressViewController.m in Sources */,
 				FB1546CC1D83B6700019C5A1 /* POPPropertyAnimation.mm in Sources */,
 				FB47D6751D487CA1008EE4D6 /* SelectedView.m in Sources */,
+				FBE13F6E1D93BB9400DF4D17 /* CommentTableViewCell.m in Sources */,
 				FBF322B91D586457005CCA00 /* User.m in Sources */,
 				FB73C73C1D630DF90054D3B3 /* WXMediaMessage+messageConstruct.m in Sources */,
 				FB47D7081D48935C008EE4D6 /* View+MASAdditions.m in Sources */,

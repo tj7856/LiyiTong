@@ -32,16 +32,20 @@
 - (UITextView *)placeholderView
 {
     if (_placeholderView == nil) {
-        UITextView *placeholderView = [[UITextView alloc] init];
+        UITextView *placeholderView = [[UITextView alloc] initWithFrame:self.bounds];
         _placeholderView = placeholderView;
         _placeholderView.scrollEnabled = NO;
         _placeholderView.showsHorizontalScrollIndicator = NO;
         _placeholderView.showsVerticalScrollIndicator = NO;
         _placeholderView.userInteractionEnabled = NO;
         _placeholderView.font = self.font;
+        _placeholderView.backgroundColor =[UIColor lightGrayColor];
         _placeholderView.textColor = [UIColor lightGrayColor];
         _placeholderView.backgroundColor = [UIColor clearColor];
+     NSInteger height =   ceilf([_placeholderView sizeThatFits:CGSizeMake(self.bounds.size.width, MAXFLOAT)].height);
+        
         [self addSubview:placeholderView];
+        _placeholderView.sd_layout.leftSpaceToView(self,0).rightSpaceToView(self,0).topEqualToView(self).bottomEqualToView(self);
     }
     return _placeholderView;
 }
@@ -69,14 +73,15 @@
     self.layer.cornerRadius = 5;
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidBeginEditingNotification object:self];
 }
 
 - (void)setMaxNumberOfLines:(NSUInteger)maxNumberOfLines
 {
     _maxNumberOfLines = maxNumberOfLines;
     
-    NSInteger m = ceil(45.6);
-    CGFloat k = self.font.lineHeight * maxNumberOfLines + self.textContainerInset.top + self.textContainerInset.bottom;
+//    NSInteger m = ceil(45.6);
+//    CGFloat k = self.font.lineHeight * maxNumberOfLines + self.textContainerInset.top + self.textContainerInset.bottom;
     // 计算最大高度 = (每行高度 * 总行数 + 文字上下间距)
     _maxTextH = ceil(self.font.lineHeight * maxNumberOfLines + self.textContainerInset.top + self.textContainerInset.bottom);
     
@@ -91,7 +96,7 @@
 - (void)setYz_textHeightChangeBlock:(void (^)(NSString *, CGFloat))yz_textChangeBlock
 {
     _yz_textHeightChangeBlock = yz_textChangeBlock;
-    
+//    _placeholderView.frame = self.bounds;
     [self textDidChange];
 }
 
@@ -112,7 +117,9 @@
 - (void)textDidChange
 {
     // 占位文字是否显示
-    self.placeholderView.hidden = self.text.length > 0;
+    NSLog(@"pV=%@,%ld",NSStringFromCGRect(self.placeholderView.frame),self.text.length);
+    
+    self.placeholderView.hidden = self.text.length >0;
     
     NSInteger height = ceilf([self sizeThatFits:CGSizeMake(self.bounds.size.width, MAXFLOAT)].height);
     
@@ -128,10 +135,12 @@
             _yz_textHeightChangeBlock(self.text,height);
 //            [self.superview layoutIfNeeded];
             [self.superview updateLayout];
-            self.placeholderView.frame = self.bounds;
+//            self.placeholderView.frame = self.bounds;
         }
     }
 }
+
+
 
 - (void)dealloc
 {

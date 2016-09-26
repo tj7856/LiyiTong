@@ -13,8 +13,13 @@
 #import "PostsContent.h"
 #import "UIImageView+WebCache.h"
 #import "InvitationContentTableViewCell.h"
+#import "FormTopicTableViewCell.h"
+#import "CommentTableViewCell.h"
 
-@interface InvitationDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "Response.h"
+#import "SubResponse.h"
+
+@interface InvitationDetailViewController ()<UITableViewDelegate,UITableViewDataSource,UITextViewDelegate>
 
 @property(nonatomic,weak)UIView *bottomV;
 @property(nonatomic,weak)UIView *InvitationView;
@@ -24,7 +29,10 @@
 @property(nonatomic,weak)UIView *contentView;
 
 @property(nonatomic,strong)NSArray *items;
-
+@property(nonatomic,strong)NSMutableArray *items1;
+@property(nonatomic,strong)Response *currentResp;
+@property(nonatomic,strong)SubResponse *currentSubResp;
+@property(nonatomic,strong)NSIndexPath* currentEditingIndexthPath;
 
 
 @end
@@ -82,9 +90,42 @@
     return _items;
 }
 
+
+-(NSMutableArray *)items1
+{
+    if (!_items1) {
+        
+         NSMutableArray *arry = [NSMutableArray array];
+        SubResponse *s1 = [[SubResponse alloc]init];
+        s1.comment = @"小西瓜小西瓜小西瓜";
+        s1.name = @"小徐";
+        s1.Comment_Username = @"竖的是的";
+        SubResponse *s2 = [[SubResponse alloc]init];
+        s2.comment = @"粗黄瓜粗黄瓜粗黄瓜";
+        s2.name = @"小陈";
+        s2.Comment_Username = @"小徐";
+        SubResponse *s3 = [[SubResponse alloc]init];
+        s3.comment = @"我是苦瓜";
+        s3.name = @"苦瓜";
+        s3.Comment_Username = @"小陈";
+        SubResponse *s4 = [[SubResponse alloc]init];
+        s4.comment = @"你是傻瓜";
+        s4.name = @"傻瓜";
+        s4.Comment_Username = @"竖的是的";
+        
+        Response *res = [[Response alloc]init];
+        res.SubRep = [NSMutableArray arrayWithObjects:s1,s2,s3,s4, nil];
+        res.name = @"竖的是的";
+        res.comment = @"大西瓜大西瓜大西瓜大西瓜大西瓜大西瓜大西瓜大西瓜大西瓜大西瓜大西瓜大西瓜大西瓜大西瓜大西瓜大西瓜大西瓜";
+        [arry addObject:res];
+        _items1 =arry;
+    }
+    return _items1;
+    
+}
 -(void)layout
 {
-    self.view.backgroundColor = [UIColor colorWithRed:236/255.0 green:237/255.0 blue:238/255.0 alpha:1];
+    self.view.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
     UIView *InvitationView = [[UIView alloc]init];
     InvitationView.backgroundColor = [UIColor whiteColor];
   
@@ -165,28 +206,38 @@
     [bottomView addSubview:line1];
     line1.sd_layout.widthIs(1).centerYEqualToView(bottomView).rightSpaceToView(fayan,0).heightIs(43);
     
-    YZInputView *input = [[YZInputView alloc]init];
-    self.input = input;
-//    UITextField *input = [[UITextField alloc]init];
-    input.layer.borderColor=[[UIColor whiteColor] CGColor];
+    UIButton *talk = [UIButton buttonWithType:(UIButtonTypeCustom)];
+//    input.layer.borderColor=[[UIColor whiteColor] CGColor];
+
+    [talk setTitle:@"我来说两句" forState:(UIControlStateNormal)];
+    [talk setTitleColor:[UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1] forState:UIControlStateNormal];
   
-    
-//    input.placeholderColor = [UIColor colorWithRed:235/255.0 green:237/255.0 blue:238/255.0 alpha:1];
-    [bottomView addSubview:input];
-    input.sd_layout.leftSpaceToView(bi,0).rightSpaceToView(line1,0).topSpaceToView(bottomView,2).bottomSpaceToView(bottomView,2);
+    talk.titleLabel.adjustsFontSizeToFitWidth =YES;
+    [talk addTarget:self action:@selector(talk:) forControlEvents:(UIControlEventTouchUpInside)];
+    [bottomView addSubview:talk];
+    talk.sd_layout.leftSpaceToView(bi,0).rightSpaceToView(line1,10).topSpaceToView(bottomView,4).bottomSpaceToView(bottomView,4);
 //    input.sd_layout.topSpaceToView(bottomView,0).bottomSpaceToView(bottomView,0);
     // 监听键盘弹出
+    YZInputView *input = [[YZInputView alloc]init];
+    self.input = input;
+    input.returnKeyType = UIReturnKeySend;
+    input.delegate = self;
+    [self.view addSubview:input];
+    self.input.sd_layout.bottomSpaceToView(self.view,-50).leftSpaceToView(self.view,10).rightSpaceToView(self.view,10).heightIs(36);
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-    input.placeholder = @"我来说两句";
-    input.placeholderColor = [UIColor colorWithRed:235/255.0 green:237/255.0 blue:238/255.0 alpha:1];
+    input.font =[UIFont systemFontOfSize:16];
+    input.placeholderColor = [UIColor colorWithRed:170/255.0 green:170/255.0 blue:170/255.0 alpha:1];
+   
+    
     
     input.yz_textHeightChangeBlock = ^(NSString *text,CGFloat textHeight){
         // 文本框文字高度改变会自动执行这个【block】，可以在这【修改底部View的高度】
         // 设置底部条的高度 = 文字高度 + textView距离上下间距约束
         // 为什么添加10 ？（10 = 底部View距离上（5）底部View距离下（5）间距总和）
 //        _bottomHCons.constant = textHeight + 10;
-        bottomView.sd_layout.heightIs(textHeight + 10);
-//        [self.bottomV updateLayout];  
+        self.input.sd_layout.heightIs(textHeight );
+//        [self.bottomV updateLayout];
 
     };
   
@@ -201,7 +252,7 @@
     content.dataSource =self;
     self.tabview = content;
     [InvitationView addSubview:content];
-    content.sd_layout.topSpaceToView(userView,0).leftSpaceToView(InvitationView,6).rightSpaceToView(InvitationView,6).bottomSpaceToView(bottomView,0);
+    content.sd_layout.topSpaceToView(userView,0).leftSpaceToView(InvitationView,0).rightSpaceToView(InvitationView,0).bottomSpaceToView(bottomView,0);
 //    content.contentSize = CGSizeMake(ScreenWidth, 1000);
 //    [self fillContent];
 }
@@ -213,17 +264,31 @@
 #pragma mark -uitabviewdelegate,uitabviewdataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    switch (section) {
+        case 0:
+            return 2;
+            break;
+        case 1:
+            return self.items1.count+1;
+            break;
+            
+        default:
+            
+            break;
+    }
+    return 0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    InvitationContentTableViewCell* cell = [[InvitationContentTableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+         InvitationContentTableViewCell* cell = [[InvitationContentTableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell1"];
     cell.items =self.items;
     [cell setGoButtonClickedOperation:^(PostsContent *item) {
         NSLog(@"go");
@@ -239,25 +304,144 @@
     ///////////////////////////////////////////////////////////////////////
     
     return cell;
+
+    }
+    else
+    {
+        FormTopicTableViewCell *cell = [[FormTopicTableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell2"];
+        return cell;
+    }
+    }
+    else if(indexPath.section == 1)
+    {
+        if (indexPath.row == 0) {
+            UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:nil];
+            cell.textLabel.text = @"最赞回应";
+            cell.textLabel.font = [UIFont systemFontOfSize:15];
+            cell.textLabel.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1];
+             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+            
+        }
+        else
+        {
+            CommentTableViewCell * cell= [[CommentTableViewCell alloc ]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"Comment"];
+         __weak __typeof(self) weakSelf = self;
+        cell.Rep = self.items1[indexPath.row-1];
+            [cell setLabelClickedOperation:^(Response *res,NSUInteger index,UITableViewCell *cell) {
+                weakSelf.currentResp = res;
+                _currentEditingIndexthPath = [self.tabview indexPathForCell:cell];
+                if (index == 0) {
+                    
+                    [weakSelf.input becomeFirstResponder];
+                    weakSelf.input.placeholder = [NSString stringWithFormat:@" :回复 %@",res.name];
+                }
+                else
+                {
+                   
+                    SubResponse * subreP = res.SubRep[index -1];
+                    weakSelf.currentSubResp = subreP;
+                    [weakSelf.input becomeFirstResponder];
+                    weakSelf.input.placeholder = [NSString stringWithFormat:@" :回复 %@",subreP.name];
+                }
+            }];
+//        [cell useCellFrameCacheWithIndexPath:indexPath tableView:tableView];
+        return cell;
+        }
+        
+    }
+    return nil;
+        
 }
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // >>>>>>>>>>>>>>>>>>>>> * cell自适应 * >>>>>>>>>>>>>>>>>>>>>>>>
-//    id model = self.dataArray[indexPath.row];
-    return [tableView cellHeightForIndexPath:indexPath model:self.items keyPath:@"items" cellClass:[InvitationContentTableViewCell class] contentViewWidth:[self cellContentViewWith]];
-//  return [self.tabview cellHeightForIndexPath:indexPath cellContentViewWidth:[UIScreen mainScreen].bounds.size.width];
+    if (indexPath.section == 0) {
+         if (indexPath.row ==0) {
+        return [tableView cellHeightForIndexPath:indexPath model:self.items keyPath:@"items" cellClass:[InvitationContentTableViewCell class] contentViewWidth:[self cellContentViewWith]];
+    }
+    else
+    {
+        return 61;
+    }
+    }
+    else if (indexPath.section==1)
+    {
+        if (indexPath.row == 0) {
+            return 38;
+        }
+        else
+        {
+        Response *mode = self.items1[indexPath.row-1];
+        return [tableView cellHeightForIndexPath:indexPath model:mode keyPath:@"Rep" cellClass:[CommentTableViewCell class] contentViewWidth:[self cellContentViewWith]];
+        }
+    }
+   
+    return 0;
+  
+//  return [self cellHeightForIndexPath:indexPath cellContentViewWidth:[UIScreen mainScreen].bounds.size.width];
 //    return 1000;
 }
+
+
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [self.input resignFirstResponder];
-    self.input.placeholder = @"我来说两句";
-    self.input.text = @"";
+    
+    self.input.text = nil;
+     self.input.hidden = YES;
 }
 
+-(BOOL)textView:(YZInputView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString*)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        if (![self.input.placeholder isEqualToString:@"走心也分好几种，敢评论的最有种"]&&textView.text.length>1) {
+            SubResponse * subreP =   [[SubResponse alloc]init];
+        subreP.comment = textView.text;
+        subreP.name = @"哥";
+        if (!self.currentSubResp) {
+            subreP.Comment_Username = @"竖的是的";
+            
+        }
+        else
+        {
+            subreP.Comment_Username = self.currentSubResp.name;
+        }
+        NSUInteger index = [self.items1 indexOfObjectIdenticalTo:self.currentResp];
+        [((Response *)(self.items1[index])).SubRep addObject:subreP];
+        [self.tabview reloadRowsAtIndexPaths:@[_currentEditingIndexthPath] withRowAnimation:UITableViewRowAnimationNone];
+        }
+        else if (textView.text.length>1)
+        {
+            Response * reP =   [[Response alloc]init];
+            reP.name = @"哥";
+            reP.comment = textView.text;
+            [self.items1 addObject:reP];
+            _currentEditingIndexthPath = [NSIndexPath indexPathForRow:self.items1.count inSection:1];
+            
+          [self.tabview insertRowsAtIndexPaths:@[_currentEditingIndexthPath] withRowAnimation:UITableViewRowAnimationNone];
+        }
+        
+        
+        NSLog(@"评论成功");
+        self.input.text = nil;
+        self.input.hidden = YES;
+        
+        return NO;
+    }
+    return YES;
+}
 
+//- (void)textViewDidEndEditing:(UITextView *)textView{
+//    
+//    NSLog(@"textViewDidEndEditing:");
+//    
+//}
 
 - (CGFloat)cellContentViewWith
 {
@@ -276,6 +460,12 @@
     send.selected = !send.selected;
 }
 
+-(void)talk:(UIButton *)sender
+{
+     [self.input becomeFirstResponder];
+    self.input.placeholder = @"走心也分好几种，敢评论的最有种";
+}
+
 // 键盘弹出会调用
 - (void)keyboardWillChangeFrame:(NSNotification *)note
 {
@@ -289,18 +479,20 @@
     // 修改底部视图距离底部的间距
     CGFloat f = endFrame.origin.y != screenH?endFrame.size.height:0;
 //    self.bottomV.sd_layout.bottomSpaceToView(self.InvitationView,f).leftSpaceToView(self.InvitationView,0).widthRatioToView(self.InvitationView,1.0f).heightIs(49);
-    self.bottomV.sd_layout.bottomSpaceToView(self.InvitationView,f);
+    self.input.hidden = NO;
+    self.input.sd_layout.bottomSpaceToView(self.view,f);
     
 //    NSLog(@"f=%f",f);
     // 约束动画
     [UIView animateWithDuration:duration animations:^{
 //        [self.view layoutIfNeeded];
-        [self.bottomV updateLayout];
+        [self.input updateLayout];
     }];
 }
 
--  (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [self.view endEditing:YES];
-}
+//-  (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+//    [self.view endEditing:YES];
+//    self.input.hidden = YES;
+//}
 @end

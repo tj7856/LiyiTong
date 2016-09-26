@@ -22,8 +22,8 @@
 @property(nonatomic,weak)giftStrategyViewController *giftSVc;
 /**猜ta喜欢**/
 @property(nonatomic,weak)GuessViewController *guessVc;
-/**大家都在送**/
-@property(nonatomic,weak)GiveViewController *giveVc;
+///**大家都在送**/
+//@property(nonatomic,weak)GiveViewController *giveVc;
 
 @end
 
@@ -73,6 +73,8 @@
 //    _giveVc = give;
 //    
     self.view = view;
+  
+    self.automaticallyAdjustsScrollViewInsets =YES;
     self.scrollView = view;
 }
 - (void)viewDidLoad {
@@ -115,7 +117,8 @@
     selectedView.x = 45;
     selectedView.width = ScreenWidth - 45 * 2;
     [selectedView setSelectedBlock:^(HomeType type) {
-        [self.scrollView setContentOffset:CGPointMake(type * ScreenWidth, 0) animated:YES];
+        [self.scrollView setContentOffset:CGPointMake(type * ScreenWidth, -64) animated:YES];
+     
     }];
     [self.navigationController.navigationBar addSubview:selectedView];
     _selectedView = selectedView;
@@ -137,7 +140,11 @@
     }else if (page > 1){
         self.selectedView.underLine.x = offsetX + DefaultMargin*7;
     }
-    self.selectedView.selectedType = (int)(page + 0.5);
+    self.selectedView.selectedType = (int)(page+0.5 );
+    NSLog(@"%@---%@",NSStringFromCGRect(self.scrollView.frame),NSStringFromCGRect(self.guessVc.view.frame));
+  
+   
+    
 }
 
 @end
