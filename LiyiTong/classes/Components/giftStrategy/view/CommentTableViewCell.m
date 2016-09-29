@@ -171,16 +171,45 @@
              juli = 10.0;
         }
         else juli = 0;
+//        UIView *view = [[UIView alloc]init];
+//        view.backgroundColor = [UIColor redColor];
+//        [self.contentView addSubview:view];
         
         UILabel *label = [[UILabel alloc]init];
         label.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
-        label.text =[NSString stringWithFormat:@"%@回复%@：%@",resp.name,resp.Comment_Username,resp.comment];
+        NSString *originStr = [NSString stringWithFormat:@"%@回复%@：%@",resp.name,resp.Comment_Username,resp.comment];
+//        label.text =[NSString stringWithFormat:@"%@回复%@：%@",resp.name,resp.Comment_Username,resp.comment];
         [self.contentView addSubview:label];
+        //第一段
+        NSDictionary *attrDict1 = @{NSForegroundColorAttributeName: [UIColor colorWithRed:11/255.0 green:196/255.0 blue:230/255.0 alpha:1],NSKernAttributeName:@2 };
+        NSAttributedString *attrStr1 = [[NSAttributedString alloc] initWithString: [originStr substringWithRange: NSMakeRange(0, resp.name.length)] attributes: attrDict1];//9为title的长度加4
+        
+        //第二段
+        NSDictionary *attrDict2 = @{NSForegroundColorAttributeName: [UIColor blackColor]};
+        NSAttributedString *attrStr2 = [[NSAttributedString alloc] initWithString: [originStr substringWithRange: NSMakeRange(resp.name.length, originStr.length-resp.name.length)] attributes: attrDict2];
+        
+        
+        //合并
+        NSMutableAttributedString *attributedStr03 = [[NSMutableAttributedString alloc] initWithAttributedString: attrStr1];
+        [attributedStr03 appendAttributedString: attrStr2];
+        
+        
+        label.attributedText = attributedStr03;
+      
+//        [view addSubview:label];
         [self.LabelArry addObject:label];
         label.sd_layout.widthIs(289).leftEqualToView(self.layoutView).topSpaceToView(self.layoutView,juli).autoHeightRatio(0);
+        UIView *placeholder =[[UIView alloc]init];
+        placeholder.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
+        [self.contentView addSubview:placeholder];
+        placeholder.sd_layout.leftEqualToView(label).rightEqualToView(label).topSpaceToView(label,0).heightIs(3);
+        
+//        label.sd_layout.widthIs(289).leftEqualToView(view).topSpaceToView(view,0).autoHeightRatio(0);
+//        
+//        view.sd_layout.widthIs(289).leftEqualToView(self.layoutView).topSpaceToView(self.layoutView,juli).bottomEqualToView(label);
         [self addTapGestureRecognizerForView:label action:@selector(LabelCellTouchUpInside:)];
         label.userInteractionEnabled = YES;
-        self.layoutView = label;
+        self.layoutView = placeholder;
     }
     
     [self setupAutoHeightWithBottomView:self.layoutView bottomMargin:10 ];

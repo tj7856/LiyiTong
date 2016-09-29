@@ -13,6 +13,6 @@
 @property(nonatomic,)Response* Rep;
 
 @property (nonatomic, copy) void (^LabelClickedOperation)(Response *item,NSUInteger index,UITableViewCell *cell);
-//+(instancetype)initinitWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier indexpath:(NSInteger )index;
--(void)setRep:(Response *)Rep WithIndex:(NSInteger)index;
+
+//-(void)setRep:(Response *)Rep WithIndex:(NSInteger)index;
 @end

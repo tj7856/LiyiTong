@@ -42,7 +42,7 @@
         _placeholderView.backgroundColor =[UIColor lightGrayColor];
         _placeholderView.textColor = [UIColor lightGrayColor];
         _placeholderView.backgroundColor = [UIColor clearColor];
-     NSInteger height =   ceilf([_placeholderView sizeThatFits:CGSizeMake(self.bounds.size.width, MAXFLOAT)].height);
+//     NSInteger height =   ceilf([_placeholderView sizeThatFits:CGSizeMake(self.bounds.size.width, MAXFLOAT)].height);
         
         [self addSubview:placeholderView];
         _placeholderView.sd_layout.leftSpaceToView(self,0).rightSpaceToView(self,0).topEqualToView(self).bottomEqualToView(self);
@@ -125,7 +125,7 @@
     
     if (_textH != height) { // 高度不一样，就改变了高度
         
-        [self setMaxNumberOfLines:4];
+//        [self setMaxNumberOfLines:100];
         // 最大高度，可以滚动
         self.scrollEnabled = height > _maxTextH && _maxTextH > 0;
         

@@ -209,6 +209,54 @@
 		FB73C7611D632AC20054D3B3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB73C7601D632AC20054D3B3 /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FB73C7631D632C050054D3B3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB73C7621D632C050054D3B3 /* libsqlite3.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
 		FB73C7651D632C370054D3B3 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FB73C7641D632C370054D3B3 /* libz.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
+		FB790F2C1D98B9EA0007F689 /* NewResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F2B1D98B9EA0007F689 /* NewResponse.m */; };
+		FB790F2F1D98BB3E0007F689 /* NewCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F2E1D98BB3E0007F689 /* NewCommentTableViewCell.m */; };
+		FB790F321D993C450007F689 /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F311D993C450007F689 /* PublishViewController.m */; };
+		FB790F4D1D9A673F0007F689 /* LGPhotoAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F361D9A673F0007F689 /* LGPhotoAssets.m */; };
+		FB790F4E1D9A673F0007F689 /* LGPhotoPickerDatas.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F381D9A673F0007F689 /* LGPhotoPickerDatas.m */; };
+		FB790F4F1D9A673F0007F689 /* LGPhotoPickerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F3A1D9A673F0007F689 /* LGPhotoPickerGroup.m */; };
+		FB790F501D9A673F0007F689 /* LGPhotoPickerAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F3D1D9A673F0007F689 /* LGPhotoPickerAssetsViewController.m */; };
+		FB790F511D9A673F0007F689 /* LGPhotoPickerGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F3F1D9A673F0007F689 /* LGPhotoPickerGroupViewController.m */; };
+		FB790F521D9A673F0007F689 /* LGPhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F411D9A673F0007F689 /* LGPhotoPickerViewController.m */; };
+		FB790F531D9A673F0007F689 /* LGPhotoPickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F441D9A673F0007F689 /* LGPhotoPickerCollectionView.m */; };
+		FB790F541D9A673F0007F689 /* LGPhotoPickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F461D9A673F0007F689 /* LGPhotoPickerCollectionViewCell.m */; };
+		FB790F551D9A673F0007F689 /* LGPhotoPickerFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F481D9A673F0007F689 /* LGPhotoPickerFooterCollectionReusableView.m */; };
+		FB790F561D9A673F0007F689 /* LGPhotoPickerGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F4A1D9A673F0007F689 /* LGPhotoPickerGroupTableViewCell.m */; };
+		FB790F571D9A673F0007F689 /* LGPhotoPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F4C1D9A673F0007F689 /* LGPhotoPickerImageView.m */; };
+		FB790F5B1D9A674F0007F689 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F5A1D9A674F0007F689 /* DACircularProgressView.m */; };
+		FB790F601D9A684B0007F689 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F5F1D9A684B0007F689 /* UIView+Layout.m */; };
+		FB790F771D9A6BA10007F689 /* LGPhotoPickerBrowserPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F661D9A6BA10007F689 /* LGPhotoPickerBrowserPhoto.m */; };
+		FB790F781D9A6BA10007F689 /* LGPhotoRect.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F681D9A6BA10007F689 /* LGPhotoRect.m */; };
+		FB790F791D9A6BA10007F689 /* LGPhotoPickerBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F6B1D9A6BA10007F689 /* LGPhotoPickerBrowserViewController.m */; };
+		FB790F7A1D9A6BA10007F689 /* LGImagePickerSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F6E1D9A6BA10007F689 /* LGImagePickerSelectView.m */; };
+		FB790F7B1D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F701D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoImageView.m */; };
+		FB790F7C1D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F721D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoScrollView.m */; };
+		FB790F7D1D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F741D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoView.m */; };
+		FB790F7E1D9A6BA10007F689 /* LGPhotoPickerCustomToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790F761D9A6BA10007F689 /* LGPhotoPickerCustomToolBarView.m */; };
+		FB790F941D9A6DCF0007F689 /* broswerPic0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB790F801D9A6DCF0007F689 /* broswerPic0.jpg */; };
+		FB790F951D9A6DCF0007F689 /* broswerPic1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB790F811D9A6DCF0007F689 /* broswerPic1.jpg */; };
+		FB790F961D9A6DCF0007F689 /* broswerPic2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB790F821D9A6DCF0007F689 /* broswerPic2.jpg */; };
+		FB790F971D9A6DCF0007F689 /* broswerPic3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB790F831D9A6DCF0007F689 /* broswerPic3.jpg */; };
+		FB790F981D9A6DCF0007F689 /* broswerPic4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB790F841D9A6DCF0007F689 /* broswerPic4.jpg */; };
+		FB790F991D9A6DCF0007F689 /* btn_back_imagePicker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F851D9A6DCF0007F689 /* btn_back_imagePicker@2x.png */; };
+		FB790F9A1D9A6DCF0007F689 /* checkbox_pic2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F861D9A6DCF0007F689 /* checkbox_pic2@2x.png */; };
+		FB790F9B1D9A6DCF0007F689 /* checkbox_pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F871D9A6DCF0007F689 /* checkbox_pic@2x.png */; };
+		FB790F9C1D9A6DCF0007F689 /* checkbox_pic_non2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F881D9A6DCF0007F689 /* checkbox_pic_non2@2x.png */; };
+		FB790F9D1D9A6DCF0007F689 /* checkbox_pic_non@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F891D9A6DCF0007F689 /* checkbox_pic_non@2x.png */; };
+		FB790F9E1D9A6DCF0007F689 /* icon_pic_break@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F8A1D9A6DCF0007F689 /* icon_pic_break@2x.png */; };
+		FB790F9F1D9A6DCF0007F689 /* lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F8B1D9A6DCF0007F689 /* lock@2x.png */; };
+		FB790FA01D9A6DCF0007F689 /* paizhao.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F8C1D9A6DCF0007F689 /* paizhao.png */; };
+		FB790FA11D9A6DCF0007F689 /* paizhao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F8D1D9A6DCF0007F689 /* paizhao@2x.png */; };
+		FB790FA21D9A6DCF0007F689 /* shanguangdeng2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F8E1D9A6DCF0007F689 /* shanguangdeng2.png */; };
+		FB790FA31D9A6DCF0007F689 /* shanguangdeng2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F8F1D9A6DCF0007F689 /* shanguangdeng2@2x.png */; };
+		FB790FA41D9A6DCF0007F689 /* X.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F901D9A6DCF0007F689 /* X.png */; };
+		FB790FA51D9A6DCF0007F689 /* X@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F911D9A6DCF0007F689 /* X@2x.png */; };
+		FB790FA61D9A6DCF0007F689 /* xiang.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F921D9A6DCF0007F689 /* xiang.png */; };
+		FB790FA71D9A6DCF0007F689 /* xiang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB790F931D9A6DCF0007F689 /* xiang@2x.png */; };
+		FB790FAE1D9B726B0007F689 /* SearchGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790FAC1D9B726B0007F689 /* SearchGoodsViewController.m */; };
+		FB790FAF1D9B726B0007F689 /* SearchGoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB790FAD1D9B726B0007F689 /* SearchGoodsViewController.xib */; };
+		FB790FB21D9CADA70007F689 /* WebSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB790FB11D9CADA70007F689 /* WebSearchViewController.m */; };
+		FB790FB41D9CADD10007F689 /* WebSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB790FB31D9CADD10007F689 /* WebSearchViewController.xib */; };
 		FBE13F531D88EE7000DF4D17 /* InvitationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE13F521D88EE7000DF4D17 /* InvitationDetailViewController.m */; };
 		FBE13F561D8D6AB900DF4D17 /* YZInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE13F551D8D6AB900DF4D17 /* YZInputView.m */; };
 		FBE13F621D8FAB0500DF4D17 /* WeixinLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE13F611D8FAB0500DF4D17 /* WeixinLogin.m */; };
@@ -583,6 +631,82 @@
 		FB73C7621D632C050054D3B3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		FB73C7641D632C370054D3B3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		FB73C7661D6597780054D3B3 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
+		FB790F2A1D98B9EA0007F689 /* NewResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewResponse.h; path = LiyiTong/classes/Components/giftStrategy/view/NewResponse.h; sourceTree = SOURCE_ROOT; };
+		FB790F2B1D98B9EA0007F689 /* NewResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewResponse.m; path = LiyiTong/classes/Components/giftStrategy/view/NewResponse.m; sourceTree = SOURCE_ROOT; };
+		FB790F2D1D98BB3E0007F689 /* NewCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCommentTableViewCell.h; sourceTree = "<group>"; };
+		FB790F2E1D98BB3E0007F689 /* NewCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCommentTableViewCell.m; sourceTree = "<group>"; };
+		FB790F301D993C450007F689 /* PublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishViewController.h; sourceTree = "<group>"; };
+		FB790F311D993C450007F689 /* PublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishViewController.m; sourceTree = "<group>"; };
+		FB790F351D9A673F0007F689 /* LGPhotoAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoAssets.h; sourceTree = "<group>"; };
+		FB790F361D9A673F0007F689 /* LGPhotoAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoAssets.m; sourceTree = "<group>"; };
+		FB790F371D9A673F0007F689 /* LGPhotoPickerDatas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerDatas.h; sourceTree = "<group>"; };
+		FB790F381D9A673F0007F689 /* LGPhotoPickerDatas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerDatas.m; sourceTree = "<group>"; };
+		FB790F391D9A673F0007F689 /* LGPhotoPickerGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerGroup.h; sourceTree = "<group>"; };
+		FB790F3A1D9A673F0007F689 /* LGPhotoPickerGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerGroup.m; sourceTree = "<group>"; };
+		FB790F3C1D9A673F0007F689 /* LGPhotoPickerAssetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerAssetsViewController.h; sourceTree = "<group>"; };
+		FB790F3D1D9A673F0007F689 /* LGPhotoPickerAssetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerAssetsViewController.m; sourceTree = "<group>"; };
+		FB790F3E1D9A673F0007F689 /* LGPhotoPickerGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerGroupViewController.h; sourceTree = "<group>"; };
+		FB790F3F1D9A673F0007F689 /* LGPhotoPickerGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerGroupViewController.m; sourceTree = "<group>"; };
+		FB790F401D9A673F0007F689 /* LGPhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerViewController.h; sourceTree = "<group>"; };
+		FB790F411D9A673F0007F689 /* LGPhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerViewController.m; sourceTree = "<group>"; };
+		FB790F431D9A673F0007F689 /* LGPhotoPickerCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerCollectionView.h; sourceTree = "<group>"; };
+		FB790F441D9A673F0007F689 /* LGPhotoPickerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerCollectionView.m; sourceTree = "<group>"; };
+		FB790F451D9A673F0007F689 /* LGPhotoPickerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerCollectionViewCell.h; sourceTree = "<group>"; };
+		FB790F461D9A673F0007F689 /* LGPhotoPickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerCollectionViewCell.m; sourceTree = "<group>"; };
+		FB790F471D9A673F0007F689 /* LGPhotoPickerFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerFooterCollectionReusableView.h; sourceTree = "<group>"; };
+		FB790F481D9A673F0007F689 /* LGPhotoPickerFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerFooterCollectionReusableView.m; sourceTree = "<group>"; };
+		FB790F491D9A673F0007F689 /* LGPhotoPickerGroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerGroupTableViewCell.h; sourceTree = "<group>"; };
+		FB790F4A1D9A673F0007F689 /* LGPhotoPickerGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerGroupTableViewCell.m; sourceTree = "<group>"; };
+		FB790F4B1D9A673F0007F689 /* LGPhotoPickerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerImageView.h; sourceTree = "<group>"; };
+		FB790F4C1D9A673F0007F689 /* LGPhotoPickerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerImageView.m; sourceTree = "<group>"; };
+		FB790F591D9A674F0007F689 /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
+		FB790F5A1D9A674F0007F689 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
+		FB790F5E1D9A684B0007F689 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		FB790F5F1D9A684B0007F689 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		FB790F611D9A68AA0007F689 /* LGPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGPhoto.h; sourceTree = "<group>"; };
+		FB790F621D9A68AA0007F689 /* LGPhotoPickerCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerCommon.h; sourceTree = "<group>"; };
+		FB790F651D9A6BA10007F689 /* LGPhotoPickerBrowserPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerBrowserPhoto.h; sourceTree = "<group>"; };
+		FB790F661D9A6BA10007F689 /* LGPhotoPickerBrowserPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerBrowserPhoto.m; sourceTree = "<group>"; };
+		FB790F671D9A6BA10007F689 /* LGPhotoRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoRect.h; sourceTree = "<group>"; };
+		FB790F681D9A6BA10007F689 /* LGPhotoRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoRect.m; sourceTree = "<group>"; };
+		FB790F6A1D9A6BA10007F689 /* LGPhotoPickerBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerBrowserViewController.h; sourceTree = "<group>"; };
+		FB790F6B1D9A6BA10007F689 /* LGPhotoPickerBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerBrowserViewController.m; sourceTree = "<group>"; };
+		FB790F6D1D9A6BA10007F689 /* LGImagePickerSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGImagePickerSelectView.h; sourceTree = "<group>"; };
+		FB790F6E1D9A6BA10007F689 /* LGImagePickerSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGImagePickerSelectView.m; sourceTree = "<group>"; };
+		FB790F6F1D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerBrowserPhotoImageView.h; sourceTree = "<group>"; };
+		FB790F701D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerBrowserPhotoImageView.m; sourceTree = "<group>"; };
+		FB790F711D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerBrowserPhotoScrollView.h; sourceTree = "<group>"; };
+		FB790F721D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerBrowserPhotoScrollView.m; sourceTree = "<group>"; };
+		FB790F731D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerBrowserPhotoView.h; sourceTree = "<group>"; };
+		FB790F741D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerBrowserPhotoView.m; sourceTree = "<group>"; };
+		FB790F751D9A6BA10007F689 /* LGPhotoPickerCustomToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhotoPickerCustomToolBarView.h; sourceTree = "<group>"; };
+		FB790F761D9A6BA10007F689 /* LGPhotoPickerCustomToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPhotoPickerCustomToolBarView.m; sourceTree = "<group>"; };
+		FB790F801D9A6DCF0007F689 /* broswerPic0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = broswerPic0.jpg; sourceTree = "<group>"; };
+		FB790F811D9A6DCF0007F689 /* broswerPic1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = broswerPic1.jpg; sourceTree = "<group>"; };
+		FB790F821D9A6DCF0007F689 /* broswerPic2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = broswerPic2.jpg; sourceTree = "<group>"; };
+		FB790F831D9A6DCF0007F689 /* broswerPic3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = broswerPic3.jpg; sourceTree = "<group>"; };
+		FB790F841D9A6DCF0007F689 /* broswerPic4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = broswerPic4.jpg; sourceTree = "<group>"; };
+		FB790F851D9A6DCF0007F689 /* btn_back_imagePicker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back_imagePicker@2x.png"; sourceTree = "<group>"; };
+		FB790F861D9A6DCF0007F689 /* checkbox_pic2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_pic2@2x.png"; sourceTree = "<group>"; };
+		FB790F871D9A6DCF0007F689 /* checkbox_pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_pic@2x.png"; sourceTree = "<group>"; };
+		FB790F881D9A6DCF0007F689 /* checkbox_pic_non2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_pic_non2@2x.png"; sourceTree = "<group>"; };
+		FB790F891D9A6DCF0007F689 /* checkbox_pic_non@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_pic_non@2x.png"; sourceTree = "<group>"; };
+		FB790F8A1D9A6DCF0007F689 /* icon_pic_break@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_pic_break@2x.png"; sourceTree = "<group>"; };
+		FB790F8B1D9A6DCF0007F689 /* lock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock@2x.png"; sourceTree = "<group>"; };
+		FB790F8C1D9A6DCF0007F689 /* paizhao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paizhao.png; sourceTree = "<group>"; };
+		FB790F8D1D9A6DCF0007F689 /* paizhao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhao@2x.png"; sourceTree = "<group>"; };
+		FB790F8E1D9A6DCF0007F689 /* shanguangdeng2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shanguangdeng2.png; sourceTree = "<group>"; };
+		FB790F8F1D9A6DCF0007F689 /* shanguangdeng2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shanguangdeng2@2x.png"; sourceTree = "<group>"; };
+		FB790F901D9A6DCF0007F689 /* X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = X.png; sourceTree = "<group>"; };
+		FB790F911D9A6DCF0007F689 /* X@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X@2x.png"; sourceTree = "<group>"; };
+		FB790F921D9A6DCF0007F689 /* xiang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiang.png; sourceTree = "<group>"; };
+		FB790F931D9A6DCF0007F689 /* xiang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiang@2x.png"; sourceTree = "<group>"; };
+		FB790FAB1D9B726B0007F689 /* SearchGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchGoodsViewController.h; sourceTree = "<group>"; };
+		FB790FAC1D9B726B0007F689 /* SearchGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchGoodsViewController.m; sourceTree = "<group>"; };
+		FB790FAD1D9B726B0007F689 /* SearchGoodsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchGoodsViewController.xib; sourceTree = "<group>"; };
+		FB790FB01D9CADA70007F689 /* WebSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSearchViewController.h; sourceTree = "<group>"; };
+		FB790FB11D9CADA70007F689 /* WebSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSearchViewController.m; sourceTree = "<group>"; };
+		FB790FB31D9CADD10007F689 /* WebSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebSearchViewController.xib; sourceTree = "<group>"; };
 		FBE13F511D88EE7000DF4D17 /* InvitationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationDetailViewController.h; sourceTree = "<group>"; };
 		FBE13F521D88EE7000DF4D17 /* InvitationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationDetailViewController.m; sourceTree = "<group>"; };
 		FBE13F541D8D6AB900DF4D17 /* YZInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZInputView.h; sourceTree = "<group>"; };
@@ -1304,6 +1428,7 @@
 		FB47D67F1D488586008EE4D6 /* giftStrategy */ = {
 			isa = PBXGroup;
 			children = (
+				FB790F7F1D9A6DCF0007F689 /* Images */,
 				FB47D6801D488586008EE4D6 /* contorl */,
 				FB47D6811D488586008EE4D6 /* model */,
 				FB47D6821D488586008EE4D6 /* view */,
@@ -1320,6 +1445,14 @@
 				C2192A3F1D54A80E00F8F6A4 /* strategyViewController.m */,
 				FBE13F511D88EE7000DF4D17 /* InvitationDetailViewController.h */,
 				FBE13F521D88EE7000DF4D17 /* InvitationDetailViewController.m */,
+				FB790F301D993C450007F689 /* PublishViewController.h */,
+				FB790F311D993C450007F689 /* PublishViewController.m */,
+				FB790FAB1D9B726B0007F689 /* SearchGoodsViewController.h */,
+				FB790FAC1D9B726B0007F689 /* SearchGoodsViewController.m */,
+				FB790FAD1D9B726B0007F689 /* SearchGoodsViewController.xib */,
+				FB790FB01D9CADA70007F689 /* WebSearchViewController.h */,
+				FB790FB11D9CADA70007F689 /* WebSearchViewController.m */,
+				FB790FB31D9CADD10007F689 /* WebSearchViewController.xib */,
 			);
 			path = contorl;
 			sourceTree = "<group>";
@@ -1333,6 +1466,8 @@
 				FBE13F701D94B5E600DF4D17 /* SubResponse.m */,
 				FBE13F721D94B97300DF4D17 /* Response.h */,
 				FBE13F731D94B97300DF4D17 /* Response.m */,
+				FB790F2A1D98B9EA0007F689 /* NewResponse.h */,
+				FB790F2B1D98B9EA0007F689 /* NewResponse.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1362,6 +1497,8 @@
 				FBE13F6A1D9280A200DF4D17 /* FormTopicTableViewCell.m */,
 				FBE13F6C1D93BB9400DF4D17 /* CommentTableViewCell.h */,
 				FBE13F6D1D93BB9400DF4D17 /* CommentTableViewCell.m */,
+				FB790F2D1D98BB3E0007F689 /* NewCommentTableViewCell.h */,
+				FB790F2E1D98BB3E0007F689 /* NewCommentTableViewCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1575,6 +1712,11 @@
 		FB73C71D1D630DF90054D3B3 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				FB790F631D9A6BA10007F689 /* LGPhotoBrowser */,
+				FB790F611D9A68AA0007F689 /* LGPhoto.h */,
+				FB790F621D9A68AA0007F689 /* LGPhotoPickerCommon.h */,
+				FB790F581D9A674F0007F689 /* DACircularProgress */,
+				FB790F331D9A673F0007F689 /* LGPhotoPicker */,
 				FB73C71E1D630DF90054D3B3 /* weixin */,
 			);
 			path = ThirdParty;
@@ -1626,9 +1768,163 @@
 			path = Control;
 			sourceTree = "<group>";
 		};
+		FB790F331D9A673F0007F689 /* LGPhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				FB790F341D9A673F0007F689 /* Models */,
+				FB790F3B1D9A673F0007F689 /* ViewControllers */,
+				FB790F421D9A673F0007F689 /* Views */,
+			);
+			path = LGPhotoPicker;
+			sourceTree = "<group>";
+		};
+		FB790F341D9A673F0007F689 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FB790F351D9A673F0007F689 /* LGPhotoAssets.h */,
+				FB790F361D9A673F0007F689 /* LGPhotoAssets.m */,
+				FB790F371D9A673F0007F689 /* LGPhotoPickerDatas.h */,
+				FB790F381D9A673F0007F689 /* LGPhotoPickerDatas.m */,
+				FB790F391D9A673F0007F689 /* LGPhotoPickerGroup.h */,
+				FB790F3A1D9A673F0007F689 /* LGPhotoPickerGroup.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FB790F3B1D9A673F0007F689 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB790F3C1D9A673F0007F689 /* LGPhotoPickerAssetsViewController.h */,
+				FB790F3D1D9A673F0007F689 /* LGPhotoPickerAssetsViewController.m */,
+				FB790F3E1D9A673F0007F689 /* LGPhotoPickerGroupViewController.h */,
+				FB790F3F1D9A673F0007F689 /* LGPhotoPickerGroupViewController.m */,
+				FB790F401D9A673F0007F689 /* LGPhotoPickerViewController.h */,
+				FB790F411D9A673F0007F689 /* LGPhotoPickerViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FB790F421D9A673F0007F689 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB790F431D9A673F0007F689 /* LGPhotoPickerCollectionView.h */,
+				FB790F441D9A673F0007F689 /* LGPhotoPickerCollectionView.m */,
+				FB790F451D9A673F0007F689 /* LGPhotoPickerCollectionViewCell.h */,
+				FB790F461D9A673F0007F689 /* LGPhotoPickerCollectionViewCell.m */,
+				FB790F471D9A673F0007F689 /* LGPhotoPickerFooterCollectionReusableView.h */,
+				FB790F481D9A673F0007F689 /* LGPhotoPickerFooterCollectionReusableView.m */,
+				FB790F491D9A673F0007F689 /* LGPhotoPickerGroupTableViewCell.h */,
+				FB790F4A1D9A673F0007F689 /* LGPhotoPickerGroupTableViewCell.m */,
+				FB790F4B1D9A673F0007F689 /* LGPhotoPickerImageView.h */,
+				FB790F4C1D9A673F0007F689 /* LGPhotoPickerImageView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FB790F581D9A674F0007F689 /* DACircularProgress */ = {
+			isa = PBXGroup;
+			children = (
+				FB790F591D9A674F0007F689 /* DACircularProgressView.h */,
+				FB790F5A1D9A674F0007F689 /* DACircularProgressView.m */,
+			);
+			path = DACircularProgress;
+			sourceTree = "<group>";
+		};
+		FB790F5C1D9A684B0007F689 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FB790F5D1D9A684B0007F689 /* Category */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FB790F5D1D9A684B0007F689 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				FB790F5E1D9A684B0007F689 /* UIView+Layout.h */,
+				FB790F5F1D9A684B0007F689 /* UIView+Layout.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		FB790F631D9A6BA10007F689 /* LGPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				FB790F641D9A6BA10007F689 /* Models */,
+				FB790F691D9A6BA10007F689 /* ViewControllers */,
+				FB790F6C1D9A6BA10007F689 /* Views */,
+			);
+			path = LGPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		FB790F641D9A6BA10007F689 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FB790F651D9A6BA10007F689 /* LGPhotoPickerBrowserPhoto.h */,
+				FB790F661D9A6BA10007F689 /* LGPhotoPickerBrowserPhoto.m */,
+				FB790F671D9A6BA10007F689 /* LGPhotoRect.h */,
+				FB790F681D9A6BA10007F689 /* LGPhotoRect.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FB790F691D9A6BA10007F689 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB790F6A1D9A6BA10007F689 /* LGPhotoPickerBrowserViewController.h */,
+				FB790F6B1D9A6BA10007F689 /* LGPhotoPickerBrowserViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FB790F6C1D9A6BA10007F689 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB790F6D1D9A6BA10007F689 /* LGImagePickerSelectView.h */,
+				FB790F6E1D9A6BA10007F689 /* LGImagePickerSelectView.m */,
+				FB790F6F1D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoImageView.h */,
+				FB790F701D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoImageView.m */,
+				FB790F711D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoScrollView.h */,
+				FB790F721D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoScrollView.m */,
+				FB790F731D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoView.h */,
+				FB790F741D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoView.m */,
+				FB790F751D9A6BA10007F689 /* LGPhotoPickerCustomToolBarView.h */,
+				FB790F761D9A6BA10007F689 /* LGPhotoPickerCustomToolBarView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FB790F7F1D9A6DCF0007F689 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FB790F801D9A6DCF0007F689 /* broswerPic0.jpg */,
+				FB790F811D9A6DCF0007F689 /* broswerPic1.jpg */,
+				FB790F821D9A6DCF0007F689 /* broswerPic2.jpg */,
+				FB790F831D9A6DCF0007F689 /* broswerPic3.jpg */,
+				FB790F841D9A6DCF0007F689 /* broswerPic4.jpg */,
+				FB790F851D9A6DCF0007F689 /* btn_back_imagePicker@2x.png */,
+				FB790F861D9A6DCF0007F689 /* checkbox_pic2@2x.png */,
+				FB790F871D9A6DCF0007F689 /* checkbox_pic@2x.png */,
+				FB790F881D9A6DCF0007F689 /* checkbox_pic_non2@2x.png */,
+				FB790F891D9A6DCF0007F689 /* checkbox_pic_non@2x.png */,
+				FB790F8A1D9A6DCF0007F689 /* icon_pic_break@2x.png */,
+				FB790F8B1D9A6DCF0007F689 /* lock@2x.png */,
+				FB790F8C1D9A6DCF0007F689 /* paizhao.png */,
+				FB790F8D1D9A6DCF0007F689 /* paizhao@2x.png */,
+				FB790F8E1D9A6DCF0007F689 /* shanguangdeng2.png */,
+				FB790F8F1D9A6DCF0007F689 /* shanguangdeng2@2x.png */,
+				FB790F901D9A6DCF0007F689 /* X.png */,
+				FB790F911D9A6DCF0007F689 /* X@2x.png */,
+				FB790F921D9A6DCF0007F689 /* xiang.png */,
+				FB790F931D9A6DCF0007F689 /* xiang@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		FBF322AF1D58619F005CCA00 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				FB790F5C1D9A684B0007F689 /* Utils */,
 				FBF322B01D58619F005CCA00 /* AccountMgr.h */,
 				FBF322B11D58619F005CCA00 /* AccountMgr.m */,
 				FBF322B21D58619F005CCA00 /* PreferencesMgr.h */,
@@ -1805,22 +2101,32 @@
 				C2CDBF671D5D633D0000584D /* a_27.png in Resources */,
 				C2567EF11D582FE400A2FAD0 /* weixin.png in Resources */,
 				C2F8A86A1D64110600209A40 /* moximoxi.png in Resources */,
+				FB790F971D9A6DCF0007F689 /* broswerPic3.jpg in Resources */,
 				C2487E611D4F4D780085107B /* top_bg.jpg in Resources */,
 				C2487E5E1D4F4D780085107B /* t3.png in Resources */,
+				FB790FAF1D9B726B0007F689 /* SearchGoodsViewController.xib in Resources */,
 				C2B605A31D58AEB400110E39 /* choose.png in Resources */,
 				C2487E511D4F4D780085107B /* active.png in Resources */,
 				C2567EE61D582FE400A2FAD0 /* x_03.png in Resources */,
+				FB790FA11D9A6DCF0007F689 /* paizhao@2x.png in Resources */,
+				FB790FA71D9A6DCF0007F689 /* xiang@2x.png in Resources */,
 				C2B605A41D58AEB400110E39 /* more.png in Resources */,
 				C206073F1D66AFE800AD2884 /* city.plist in Resources */,
 				C20607341D655D7900AD2884 /* dingwei_xiao.png in Resources */,
+				FB790F951D9A6DCF0007F689 /* broswerPic1.jpg in Resources */,
 				C228C8FB1D6A89F5007E14ED /* dadui_hui_03.png in Resources */,
 				C2567EE51D582FE400A2FAD0 /* tou_03.png in Resources */,
+				FB790F9A1D9A6DCF0007F689 /* checkbox_pic2@2x.png in Resources */,
+				FB790FA41D9A6DCF0007F689 /* X.png in Resources */,
 				C2567EE91D582FE400A2FAD0 /* 12_07.png in Resources */,
 				C2567EE81D582FE400A2FAD0 /* 密码登录.png in Resources */,
+				FB790FA21D9A6DCF0007F689 /* shanguangdeng2.png in Resources */,
 				C2567EDB1D582FE400A2FAD0 /* back.png in Resources */,
 				C2567EDE1D582FE400A2FAD0 /* share.png in Resources */,
 				C2487E5C1D4F4D780085107B /* t1.png in Resources */,
+				FB790F991D9A6DCF0007F689 /* btn_back_imagePicker@2x.png in Resources */,
 				C2CDBF681D5D633D0000584D /* a_30.png in Resources */,
+				FB790F961D9A6DCF0007F689 /* broswerPic2.jpg in Resources */,
 				C2567EE01D582FE400A2FAD0 /* d_active.png in Resources */,
 				C2567EE11D582FE400A2FAD0 /* denglu_btn_03.png in Resources */,
 				C2487E3B1D4F47C60085107B /* unlock.png in Resources */,
@@ -1836,7 +2142,10 @@
 				C2487E5B1D4F4D780085107B /* seeAll.PNG in Resources */,
 				C2CDBF711D5D6B6C0000584D /* shengritrue.png in Resources */,
 				FBF5133C1D52E99700AB88F2 /* confrimOrderViewController.storyboard in Resources */,
+				FB790F9F1D9A6DCF0007F689 /* lock@2x.png in Resources */,
 				C2CDBF6F1D5D6B6C0000584D /* labarm.png in Resources */,
+				FB790F9B1D9A6DCF0007F689 /* checkbox_pic@2x.png in Resources */,
+				FB790FA01D9A6DCF0007F689 /* paizhao.png in Resources */,
 				C20607441D66D87400AD2884 /* choose_huise.png in Resources */,
 				C228C8F71D6A88B6007E14ED /* choose_off_03.png in Resources */,
 				C228C8F81D6A88B6007E14ED /* choose_on_03.png in Resources */,
@@ -1846,15 +2155,19 @@
 				FB58F96D1D4846A500C207DD /* LaunchScreen.storyboard in Resources */,
 				C2F8A86C1D64115200209A40 /* kawayi.png in Resources */,
 				FB5CA1D71D50313200BD9CD7 /* Assets.xcassets in Resources */,
+				FB790F941D9A6DCF0007F689 /* broswerPic0.jpg in Resources */,
 				C2567EEE1D582FE400A2FAD0 /* kongjian.png in Resources */,
 				C2CDBF7C1D5DCE2A0000584D /* bg_01.png in Resources */,
 				C2487E361D4F447E0085107B /* 2.jpg in Resources */,
 				C2487E631D4F4D780085107B /* vow.png in Resources */,
+				FB790F981D9A6DCF0007F689 /* broswerPic4.jpg in Resources */,
 				C2567EEC1D582FE400A2FAD0 /* 3332_02.png in Resources */,
+				FB790FA61D9A6DCF0007F689 /* xiang.png in Resources */,
 				C2F8A85E1D62D51600209A40 /* shoulian_order.png in Resources */,
 				C2B605A61D58AEE700110E39 /* 手链.png in Resources */,
 				C2487E571D4F4D780085107B /* magnifying.png in Resources */,
 				C2CDBF721D5D6B6C0000584D /* tianjia.png in Resources */,
+				FB790F9E1D9A6DCF0007F689 /* icon_pic_break@2x.png in Resources */,
 				C2487E5D1D4F4D780085107B /* t2.png in Resources */,
 				C2567EE31D582FE400A2FAD0 /* phone_03.png in Resources */,
 				C20607331D655D7900AD2884 /* dingwei_da.png in Resources */,
@@ -1866,20 +2179,25 @@
 				C2567EE71D582FE400A2FAD0 /* xinfeng.png in Resources */,
 				FB58F9681D4846A500C207DD /* Main.storyboard in Resources */,
 				C2CDBF821D5DCF800000584D /* du.PNG in Resources */,
+				FB790F9D1D9A6DCF0007F689 /* checkbox_pic_non@2x.png in Resources */,
 				C2B605A01D58AEB400110E39 /* bg_05.png in Resources */,
 				C228C9581D6B2D00007E14ED /* read_me.txt in Resources */,
 				C2487E601D4F4D780085107B /* tmp.png in Resources */,
 				C2567EE41D582FE400A2FAD0 /* phone_06.png in Resources */,
 				FBFC669A1D7D8B1800E33D7F /* LoginVC.xib in Resources */,
 				C20834CD1D59B45300E1AC2E /* 4.jpg in Resources */,
+				FB790FA31D9A6DCF0007F689 /* shanguangdeng2@2x.png in Resources */,
 				C2487E551D4F4D780085107B /* help.png in Resources */,
+				FB790F9C1D9A6DCF0007F689 /* checkbox_pic_non2@2x.png in Resources */,
 				C2487E521D4F4D780085107B /* banner.jpg in Resources */,
 				C20834CB1D59B45300E1AC2E /* 2.jpg in Resources */,
 				C2567EEF1D582FE400A2FAD0 /* QQ.png in Resources */,
 				C20607351D655D7900AD2884 /* LI_01.png in Resources */,
 				C2567EDF1D582FE400A2FAD0 /* d.png in Resources */,
 				C20834CC1D59B45300E1AC2E /* 3.jpg in Resources */,
+				FB790FB41D9CADD10007F689 /* WebSearchViewController.xib in Resources */,
 				C20607371D65A35900AD2884 /* map_03.png in Resources */,
+				FB790FA51D9A6DCF0007F689 /* X@2x.png in Resources */,
 				C2567EDD1D582FE400A2FAD0 /* gonglue_04.png in Resources */,
 				C2487E581D4F4D780085107B /* me.png in Resources */,
 				C2CDBF801D5DCF730000584D /* dd_03.png in Resources */,
@@ -1961,11 +2279,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBE13F741D94B97300DF4D17 /* Response.m in Sources */,
+				FB790F2C1D98B9EA0007F689 /* NewResponse.m in Sources */,
 				FB47D6661D48693D008EE4D6 /* bangbangViewController.m in Sources */,
+				FB790F7C1D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoScrollView.m in Sources */,
 				FB1546C21D83B6700019C5A1 /* POPAnimationRuntime.mm in Sources */,
 				FB1546CD1D83B6700019C5A1 /* POPSpringAnimation.mm in Sources */,
 				FB47D6931D4885E6008EE4D6 /* giftStrategyViewController.m in Sources */,
+				FB790F541D9A673F0007F689 /* LGPhotoPickerCollectionViewCell.m in Sources */,
 				C2F8A8621D62FF8100209A40 /* giftListViewController.m in Sources */,
+				FB790F781D9A6BA10007F689 /* LGPhotoRect.m in Sources */,
 				FBE13F651D90C7EB00DF4D17 /* PostsContent.m in Sources */,
 				FB47D6791D487D54008EE4D6 /* UIView+SLExtension.m in Sources */,
 				C2192A3A1D54A7FB00F8F6A4 /* YFActionSheetItem.m in Sources */,
@@ -1983,23 +2305,32 @@
 				FBFC66991D7D8B1800E33D7F /* LoginVC.m in Sources */,
 				FB47D7041D48935C008EE4D6 /* MASViewAttribute.m in Sources */,
 				FB47D7031D48935C008EE4D6 /* MASLayoutConstraint.m in Sources */,
+				FB790F601D9A684B0007F689 /* UIView+Layout.m in Sources */,
 				FB1546C91D83B6700019C5A1 /* POPGeometry.mm in Sources */,
 				FB1546CE1D83B6700019C5A1 /* POPVector.mm in Sources */,
 				C2192A841D54AB1C00F8F6A4 /* TOPTableViewCell.m in Sources */,
 				FB15463E1D83AF8D0019C5A1 /* TColorfulTabBar+Configuration.m in Sources */,
 				FB47D7071D48935C008EE4D6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				FB790F771D9A6BA10007F689 /* LGPhotoPickerBrowserPhoto.m in Sources */,
 				FB1546C31D83B6700019C5A1 /* POPAnimationTracer.mm in Sources */,
+				FB790F7B1D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoImageView.m in Sources */,
 				FB4E3BEE1D5433AB00FA78D5 /* LYTAfnetworkingManager.m in Sources */,
+				FB790F2F1D98BB3E0007F689 /* NewCommentTableViewCell.m in Sources */,
 				C2192A8A1D54AB8D00F8F6A4 /* guessModel.m in Sources */,
+				FB790FAE1D9B726B0007F689 /* SearchGoodsViewController.m in Sources */,
 				FB47D7021D48935C008EE4D6 /* MASConstraintMaker.m in Sources */,
+				FB790F4D1D9A673F0007F689 /* LGPhotoAssets.m in Sources */,
 				FB1546CA1D83B6700019C5A1 /* POPLayerExtras.mm in Sources */,
 				FB47D64B1D486128008EE4D6 /* MainViewController.m in Sources */,
+				FB790F501D9A673F0007F689 /* LGPhotoPickerAssetsViewController.m in Sources */,
 				C2192A7E1D54AAE700F8F6A4 /* GiveViewController.m in Sources */,
 				C26660881D61DC4000555E11 /* popAlertView.m in Sources */,
 				FB47D6721D48699B008EE4D6 /* WishViewController.m in Sources */,
+				FB790F791D9A6BA10007F689 /* LGPhotoPickerBrowserViewController.m in Sources */,
 				FB73C73B1D630DF90054D3B3 /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */,
 				FB2F6F4B1D546CFC00FF5D14 /* CheckPhone.m in Sources */,
 				C2F8A86F1D644D0000209A40 /* orderStatusTableViewCell.m in Sources */,
+				FB790F561D9A673F0007F689 /* LGPhotoPickerGroupTableViewCell.m in Sources */,
 				FB1546BF1D83B6700019C5A1 /* POPAnimation.mm in Sources */,
 				FB15463D1D83AF8D0019C5A1 /* LYTtarBTN.m in Sources */,
 				C2CDBF771D5DBF780000584D /* addPersonViewController.m in Sources */,
@@ -2011,15 +2342,20 @@
 				C2192A471D54A95D00F8F6A4 /* loginViewController.m in Sources */,
 				FB1546C61D83B6700019C5A1 /* POPCGUtils.mm in Sources */,
 				FBE13F6B1D9280A200DF4D17 /* FormTopicTableViewCell.m in Sources */,
+				FB790F4F1D9A673F0007F689 /* LGPhotoPickerGroup.m in Sources */,
 				FB47D64E1D486251008EE4D6 /* LytNavigationViewController.m in Sources */,
+				FB790F551D9A673F0007F689 /* LGPhotoPickerFooterCollectionReusableView.m in Sources */,
 				FBF322B51D58619F005CCA00 /* PreferencesMgr.m in Sources */,
 				FB1546CB1D83B6700019C5A1 /* POPMath.mm in Sources */,
 				FB47D66C1D486978008EE4D6 /* HomeViewController.m in Sources */,
 				C2F8A85A1D62A4BB00209A40 /* giftListTableViewCell.m in Sources */,
+				FB790F531D9A673F0007F689 /* LGPhotoPickerCollectionView.m in Sources */,
 				FB47D66F1D48698B008EE4D6 /* MeViewController.m in Sources */,
+				FB790F7D1D9A6BA10007F689 /* LGPhotoPickerBrowserPhotoView.m in Sources */,
 				FB73C7551D6322A60054D3B3 /* WXApiManager.m in Sources */,
 				FB4E3BE91D53F49C00FA78D5 /* Order.m in Sources */,
 				C23263191D560E7E008F7751 /* login.m in Sources */,
+				FB790F321D993C450007F689 /* PublishViewController.m in Sources */,
 				C2192A3D1D54A80300F8F6A4 /* strategyTableViewCell.m in Sources */,
 				C2F8A8651D63059100209A40 /* orderStatusViewController.m in Sources */,
 				FB47D7001D48935C008EE4D6 /* MASCompositeConstraint.m in Sources */,
@@ -2028,11 +2364,13 @@
 				FB1546C11D83B6700019C5A1 /* POPAnimationExtras.mm in Sources */,
 				FB4E3BF71D543BCB00FA78D5 /* NSObject+LYTHUD.m in Sources */,
 				FB1546C41D83B6700019C5A1 /* POPAnimator.mm in Sources */,
+				FB790F7E1D9A6BA10007F689 /* LGPhotoPickerCustomToolBarView.m in Sources */,
 				FB1546CF1D83B6700019C5A1 /* TransformationMatrix.cpp in Sources */,
 				C206072E1D6550F700AD2884 /* getGiftViewController.m in Sources */,
 				FBE13F711D94B5E600DF4D17 /* SubResponse.m in Sources */,
 				C2B605911D587B8400110E39 /* detailViewController.m in Sources */,
 				C20607471D68877C00AD2884 /* addressTableViewCell.m in Sources */,
+				FB790F511D9A673F0007F689 /* LGPhotoPickerGroupViewController.m in Sources */,
 				C20607421D66AFF400AD2884 /* OSAddressPickerView.m in Sources */,
 				FB47D7061D48935C008EE4D6 /* NSArray+MASAdditions.m in Sources */,
 				FB2F6F481D545FE900FF5D14 /* LYTAlertView.m in Sources */,
@@ -2047,18 +2385,23 @@
 				FB1546CC1D83B6700019C5A1 /* POPPropertyAnimation.mm in Sources */,
 				FB47D6751D487CA1008EE4D6 /* SelectedView.m in Sources */,
 				FBE13F6E1D93BB9400DF4D17 /* CommentTableViewCell.m in Sources */,
+				FB790F4E1D9A673F0007F689 /* LGPhotoPickerDatas.m in Sources */,
 				FBF322B91D586457005CCA00 /* User.m in Sources */,
 				FB73C73C1D630DF90054D3B3 /* WXMediaMessage+messageConstruct.m in Sources */,
 				FB47D7081D48935C008EE4D6 /* View+MASAdditions.m in Sources */,
 				C2487E671D4F565E0085107B /* giftTableViewCell.m in Sources */,
+				FB790F5B1D9A674F0007F689 /* DACircularProgressView.m in Sources */,
 				C20835961D5A149D00E1AC2E /* ChineseToPinyin.m in Sources */,
 				FBE13F621D8FAB0500DF4D17 /* WeixinLogin.m in Sources */,
+				FB790FB21D9CADA70007F689 /* WebSearchViewController.m in Sources */,
 				FBF513391D520E2500AB88F2 /* confrimOrderViewController.m in Sources */,
 				FB47D7051D48935C008EE4D6 /* MASViewConstraint.m in Sources */,
 				FB1546D41D83E2A20019C5A1 /* TalkTableViewCell.m in Sources */,
 				FB1546C71D83B6700019C5A1 /* POPCustomAnimation.mm in Sources */,
 				C2192A391D54A7FB00F8F6A4 /* YFActionSheet.m in Sources */,
+				FB790F521D9A673F0007F689 /* LGPhotoPickerViewController.m in Sources */,
 				FB47D7011D48935C008EE4D6 /* MASConstraint.m in Sources */,
+				FB790F571D9A673F0007F689 /* LGPhotoPickerImageView.m in Sources */,
 				C2192A481D54A95D00F8F6A4 /* findPassWordViewController.m in Sources */,
 				C20834C31D59B1CB00E1AC2E /* TypeView.m in Sources */,
 				FB73C6D51D5DBC030054D3B3 /* zhifuModeViewController.m in Sources */,
@@ -2071,6 +2414,7 @@
 				FB15463F1D83AF8D0019C5A1 /* TColorfulTabBar.m in Sources */,
 				FB47D67E1D4882FB008EE4D6 /* Constant.m in Sources */,
 				C2192A811D54AB1100F8F6A4 /* TOPModel.m in Sources */,
+				FB790F7A1D9A6BA10007F689 /* LGImagePickerSelectView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

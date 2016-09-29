@@ -20,6 +20,8 @@
 //#import "login.h"
 #import "loginViewController.h"
 #import "LoginVC.h"
+#import "PublishViewController.h"
+
 @interface giftStrategyViewController ()<UITableViewDelegate,UITableViewDataSource,GGImagePageViewDelegate>
 {
     UIView *viwepager;
@@ -40,11 +42,23 @@
     _backGround.showsVerticalScrollIndicator = NO;
 //    _backGround.bounces = NO;
     _backGround.contentSize=CGSizeMake(0, ScreenWidth*270/750+235*WidthScale+450*WidthScale*10+74*WidthScale+self.tabBarController.tabBar.size.height+64);
-    self.view = _backGround;
+//    self.view = _backGround;
+    [self.view addSubview:_backGround];
+ 
+//    publish.backgroundColor=[UIColor colorWithRed:0.392 green:0.902 blue:0.725 alpha:1.000];
+    
     
     [self view1];
     [self view2];
     [self view3];
+       UIButton *publish = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [publish setImage:[UIImage imageNamed:@"send_bangbang_03"] forState:(UIControlStateNormal)];
+    
+    publish.layer.cornerRadius = 55;
+    [publish addTarget:self action:@selector(publish) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.view addSubview:publish];
+    publish.sd_layout.widthIs(55).heightIs(55).rightSpaceToView(self.view,10).bottomSpaceToView(self.view,77);
+    
 }
 -(void)view1{
     viwepager=[[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenWidth*270/750)];
@@ -186,6 +200,12 @@
         NSLog(@"不是第一次启动");
     }
     
+}
+
+-(void)publish
+{
+    PublishViewController *publish = [[PublishViewController alloc]init];
+    [self.navigationController pushViewController:publish animated:YES];
 }
 - (void)didSelectViewWithIndex:(NSInteger)index{
     NSLog(@"图片轮播%ld",index);
